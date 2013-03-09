@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: django-contrib.comments
+Version: 1.5
+Summary: The code formally known as django.contrib.comments.
+Home-page: http://github.com/django/django-contrib-comments
+Author: Django Software Foundation
+Author-email: jacob@jacobian.org
+License: BSD
+Description: UNKNOWN
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3

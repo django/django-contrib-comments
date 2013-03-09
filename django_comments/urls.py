@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-urlpatterns = patterns('django.contrib.comments.views',
+urlpatterns = patterns('django_comments.views',
     url(r'^post/$',          'comments.post_comment',       name='comments-post-comment'),
     url(r'^posted/$',        'comments.comment_done',       name='comments-comment-done'),
     url(r'^flag/(\d+)/$',    'moderation.flag',             name='comments-flag'),

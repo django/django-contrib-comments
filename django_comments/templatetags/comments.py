@@ -2,10 +2,11 @@ from django import template
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
-from django.contrib import comments
 from django.utils import six
 from django.utils.deprecation import RenameMethodsBase
 from django.utils.encoding import smart_text
+
+import django_comments
 
 register = template.Library()
 
@@ -65,7 +66,7 @@ class BaseCommentNode(six.with_metaclass(RenameBaseCommentNodeMethods, template.
     def __init__(self, ctype=None, object_pk_expr=None, object_expr=None, as_varname=None, comment=None):
         if ctype is None and object_expr is None:
             raise template.TemplateSyntaxError("Comment nodes must be given either a literal object or a ctype and object pk.")
-        self.comment_model = comments.get_model()
+        self.comment_model = django_comments.get_model()
         self.as_varname = as_varname
         self.ctype = ctype
         self.object_pk_expr = object_pk_expr
@@ -130,7 +131,7 @@ class CommentFormNode(BaseCommentNode):
     def get_form(self, context):
         obj = self.get_object(context)
         if obj:
-            return comments.get_form()(obj)
+            return django_comments.get_form()(obj)
         else:
             return None
 
@@ -323,7 +324,7 @@ def comment_form_target():
 
         <form action="{% comment_form_target %}" method="post">
     """
-    return comments.get_form_target()
+    return django_comments.get_form_target()
 
 @register.simple_tag
 def get_comment_permalink(comment, anchor_pattern=None):

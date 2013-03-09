@@ -2,11 +2,11 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.contrib.auth import get_user_model
-from django.contrib.comments.models import Comment
 from django.utils.translation import ugettext_lazy as _, ungettext, ungettext_lazy
-from django.contrib.comments import get_model
 from django.contrib.comments.views.moderation import perform_flag, perform_approve, perform_delete
 
+from django_comments import get_model
+from django_comments.models import Comment
 
 class UsernameSearch(object):
     """The User object may not be auth.User, so we need to provide

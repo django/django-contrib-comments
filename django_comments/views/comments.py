@@ -2,9 +2,6 @@ from __future__ import absolute_import
 
 from django import http
 from django.conf import settings
-from django.contrib import comments
-from django.contrib.comments import signals
-from django.contrib.comments.views.utils import next_redirect, confirmation_view
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import models
 from django.shortcuts import render_to_response
@@ -14,6 +11,9 @@ from django.utils.html import escape
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 
+import django_comments
+from django_comments import signals
+from django_comments.views.utils import next_redirect, confirmation_view
 
 class CommentPostBadRequest(http.HttpResponseBadRequest):
     """
@@ -72,7 +72,7 @@ def post_comment(request, next=None, using=None):
     preview = "preview" in data
 
     # Construct the comment form
-    form = comments.get_form()(target, data=data)
+    form = django_comments.get_form()(target, data=data)
 
     # Check security information
     if form.security_errors():
