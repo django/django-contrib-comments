@@ -3,16 +3,17 @@ from __future__ import absolute_import
 from xml.etree import ElementTree as ET
 
 from django.conf import settings
-from django.contrib.comments.models import Comment
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
+
+from django_comments.models import Comment
 
 from . import CommentTestCase
 from ..models import Article
 
 
 class CommentFeedTests(CommentTestCase):
-    urls = 'comment_tests.urls'
+    urls = 'testapp.urls'
     feed_url = '/rss/comments/'
 
     def setUp(self):

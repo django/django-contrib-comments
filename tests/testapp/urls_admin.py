@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include
 from django.contrib import admin
-from django.contrib.comments.admin import CommentsAdmin
-from django.contrib.comments.models import Comment
+from django_comments.admin import CommentsAdmin
+from django_comments.models import Comment
 
 # Make a new AdminSite to avoid picking up the deliberately broken admin
 # modules in other tests.

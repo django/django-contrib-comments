@@ -1,13 +1,13 @@
 [
   {
-    "model" : "comment_tests.book",
+    "model" : "testapp.book",
     "pk" : 1,
     "fields" : {
         "dewey_decimal" : "12.34"
     }
   },
   {
-    "model" : "comment_tests.author",
+    "model" : "testapp.author",
     "pk" : 1,
     "fields" : {
         "first_name" : "John",
@@ -15,7 +15,7 @@
     }
   },
   {
-    "model" : "comment_tests.author",
+    "model" : "testapp.author",
     "pk" : 2,
     "fields" : {
         "first_name" : "Peter",
@@ -23,7 +23,7 @@
     }
   },
   {
-    "model" : "comment_tests.article",
+    "model" : "testapp.article",
     "pk" : 1,
     "fields" : {
         "author" : 1,
@@ -31,7 +31,7 @@
     }
   },
   {
-    "model" : "comment_tests.article",
+    "model" : "testapp.article",
     "pk" : 2,
     "fields" : {
         "author" : 2,

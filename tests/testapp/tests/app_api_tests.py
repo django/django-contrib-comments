@@ -1,12 +1,13 @@
 from __future__ import absolute_import
 
 from django.conf import settings
-from django.contrib import comments
-from django.contrib.comments.models import Comment
-from django.contrib.comments.forms import CommentForm
 from django.core.exceptions import ImproperlyConfigured
 from django.test.utils import override_settings
 from django.utils import six
+
+import django_comments
+from django_comments.models import Comment
+from django_comments.forms import CommentForm
 
 from . import CommentTestCase
 
@@ -15,7 +16,7 @@ class CommentAppAPITests(CommentTestCase):
     """Tests for the "comment app" API"""
 
     def testGetCommentApp(self):
-        self.assertEqual(comments.get_comment_app(), comments)
+        self.assertEqual(django_comments.get_comment_app(), django_comments)
 
     @override_settings(
         COMMENTS_APP='missing_app',
@@ -23,58 +24,58 @@ class CommentAppAPITests(CommentTestCase):
     )
     def testGetMissingCommentApp(self):
         with six.assertRaisesRegex(self, ImproperlyConfigured, 'missing_app'):
-            _ = comments.get_comment_app()
+            _ = django_comments.get_comment_app()
 
     def testGetForm(self):
-        self.assertEqual(comments.get_form(), CommentForm)
+        self.assertEqual(django_comments.get_form(), CommentForm)
 
     def testGetFormTarget(self):
-        self.assertEqual(comments.get_form_target(), "/post/")
+        self.assertEqual(django_comments.get_form_target(), "/post/")
 
     def testGetFlagURL(self):
         c = Comment(id=12345)
-        self.assertEqual(comments.get_flag_url(c), "/flag/12345/")
+        self.assertEqual(django_comments.get_flag_url(c), "/flag/12345/")
 
     def getGetDeleteURL(self):
         c = Comment(id=12345)
-        self.assertEqual(comments.get_delete_url(c), "/delete/12345/")
+        self.assertEqual(django_comments.get_delete_url(c), "/delete/12345/")
 
     def getGetApproveURL(self):
         c = Comment(id=12345)
-        self.assertEqual(comments.get_approve_url(c), "/approve/12345/")
+        self.assertEqual(django_comments.get_approve_url(c), "/approve/12345/")
 
 
 @override_settings(
-    COMMENTS_APP='comment_tests.custom_comments',
+    COMMENTS_APP='custom_comments',
     INSTALLED_APPS=list(settings.INSTALLED_APPS) + [
-        'comment_tests.custom_comments'],
+        'custom_comments'],
 )
 class CustomCommentTest(CommentTestCase):
-    urls = 'comment_tests.urls'
+    urls = 'testapp.urls'
 
     def testGetCommentApp(self):
-        from comment_tests import custom_comments
-        self.assertEqual(comments.get_comment_app(), custom_comments)
+        import custom_comments
+        self.assertEqual(django_comments.get_comment_app(), custom_comments)
 
     def testGetModel(self):
-        from comment_tests.custom_comments.models import CustomComment
-        self.assertEqual(comments.get_model(), CustomComment)
+        from custom_comments.models import CustomComment
+        self.assertEqual(django_comments.get_model(), CustomComment)
 
     def testGetForm(self):
-        from comment_tests.custom_comments.forms import CustomCommentForm
-        self.assertEqual(comments.get_form(), CustomCommentForm)
+        from custom_comments.forms import CustomCommentForm
+        self.assertEqual(django_comments.get_form(), CustomCommentForm)
 
     def testGetFormTarget(self):
-        self.assertEqual(comments.get_form_target(), "/post/")
+        self.assertEqual(django_comments.get_form_target(), "/post/")
 
     def testGetFlagURL(self):
         c = Comment(id=12345)
-        self.assertEqual(comments.get_flag_url(c), "/flag/12345/")
+        self.assertEqual(django_comments.get_flag_url(c), "/flag/12345/")
 
     def getGetDeleteURL(self):
         c = Comment(id=12345)
-        self.assertEqual(comments.get_delete_url(c), "/delete/12345/")
+        self.assertEqual(django_comments.get_delete_url(c), "/delete/12345/")
 
     def getGetApproveURL(self):
         c = Comment(id=12345)
-        self.assertEqual(comments.get_approve_url(c), "/approve/12345/")
+        self.assertEqual(django_comments.get_approve_url(c), "/approve/12345/")

@@ -1,6 +1,6 @@
 from django.core import urlresolvers
-from comment_tests.custom_comments.models import CustomComment
-from comment_tests.custom_comments.forms import CustomCommentForm
+from .models import CustomComment
+from .forms import CustomCommentForm
 
 def get_model():
     return CustomComment
@@ -10,23 +10,23 @@ def get_form():
 
 def get_form_target():
     return urlresolvers.reverse(
-        "comment_tests.custom_comments.views.custom_submit_comment"
+        "custom_comments.views.custom_submit_comment"
     )
 
 def get_flag_url(c):
     return urlresolvers.reverse(
-        "comment_tests.custom_comments.views.custom_flag_comment",
+        "custom_comments.views.custom_flag_comment",
         args=(c.id,)
     )
 
 def get_delete_url(c):
     return urlresolvers.reverse(
-        "comment_tests.custom_comments.views.custom_delete_comment",
+        "custom_comments.views.custom_delete_comment",
         args=(c.id,)
     )
 
 def get_approve_url(c):
     return urlresolvers.reverse(
-        "comment_tests.custom_comments.views.custom_approve_comment",
+        "custom_comments.views.custom_approve_comment",
         args=(c.id,)
     )

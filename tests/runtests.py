@@ -14,8 +14,18 @@ sys.path[0:0] = [here, parent]
 from django.conf import settings
 settings.configure(
     DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3'}},
+    INSTALLED_APPS = [
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sites",
+        "django.contrib.admin",
+        "django_comments",
+        "testapp",
+        "custom_comments",
+    ],
+    ROOT_URLCONF = 'testapp.urls',
     SECRET_KEY = "it's a secret to everyone",
-    INSTALLED_APPS = ["django_comments", "testapp", "custom_comments"],
+    SITE_ID = 1,
 )
 
 from django.test.simple import DjangoTestSuiteRunner

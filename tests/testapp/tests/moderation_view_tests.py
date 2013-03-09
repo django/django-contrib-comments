@@ -1,10 +1,11 @@
 from __future__ import absolute_import, unicode_literals
 
 from django.contrib.auth.models import User, Permission
-from django.contrib.comments import signals
-from django.contrib.comments.models import Comment, CommentFlag
 from django.contrib.contenttypes.models import ContentType
 from django.utils import translation
+
+from django_comments import signals
+from django_comments.models import Comment, CommentFlag
 
 from . import CommentTestCase
 
@@ -252,7 +253,7 @@ class ApproveViewTests(CommentTestCase):
         self.assertTemplateUsed(response, "comments/approved.html")
 
 class AdminActionsTests(CommentTestCase):
-    urls = "comment_tests.urls_admin"
+    urls = "testapp.urls_admin"
 
     def setUp(self):
         super(AdminActionsTests, self).setUp()

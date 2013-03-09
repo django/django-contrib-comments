@@ -4,8 +4,9 @@ import re
 
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.contrib.comments import signals
-from django.contrib.comments.models import Comment
+
+from django_comments import signals
+from django_comments.models import Comment
 
 from . import CommentTestCase
 from ..models import Article, Book

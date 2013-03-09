@@ -1,9 +1,10 @@
 from __future__ import absolute_import
 
-from django.contrib.comments.models import Comment
-from django.contrib.comments.moderation import (moderator, CommentModerator,
-    AlreadyModerated)
 from django.core import mail
+
+from django_comments.models import Comment
+from django_comments.moderation import (moderator, CommentModerator,
+    AlreadyModerated)
 
 from . import CommentTestCase
 from ..models import Entry

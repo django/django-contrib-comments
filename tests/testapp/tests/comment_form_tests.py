@@ -3,8 +3,9 @@ from __future__ import absolute_import
 import time
 
 from django.conf import settings
-from django.contrib.comments.forms import CommentForm
-from django.contrib.comments.models import Comment
+
+from django_comments.forms import CommentForm
+from django_comments.models import Comment
 
 from . import CommentTestCase
 from ..models import Article
