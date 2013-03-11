@@ -2,8 +2,6 @@ from django import template
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
-from django.utils import six
-from django.utils.deprecation import RenameMethodsBase
 from django.utils.encoding import smart_text
 
 import django_comments
@@ -11,13 +9,7 @@ import django_comments
 register = template.Library()
 
 
-class RenameBaseCommentNodeMethods(RenameMethodsBase):
-    renamed_methods = (
-        ('get_query_set', 'get_queryset', PendingDeprecationWarning),
-    )
-
-
-class BaseCommentNode(six.with_metaclass(RenameBaseCommentNodeMethods, template.Node)):
+class BaseCommentNode(template.Node):
     """
     Base helper class (abstract) for handling the get_comment_* template tags.
     Looks a bit strange, but the subclasses below should make this a bit more
@@ -74,11 +66,11 @@ class BaseCommentNode(six.with_metaclass(RenameBaseCommentNodeMethods, template.
         self.comment = comment
 
     def render(self, context):
-        qs = self.get_queryset(context)
+        qs = self.get_query_set(context)
         context[self.as_varname] = self.get_context_value_from_queryset(context, qs)
         return ''
 
-    def get_queryset(self, context):
+    def get_query_set(self, context):
         ctype, object_pk = self.get_target_ctype_pk(context)
         if not object_pk:
             return self.comment_model.objects.none()
@@ -215,7 +207,7 @@ class RenderCommentListNode(CommentListNode):
                 "comments/%s/list.html" % ctype.app_label,
                 "comments/list.html"
             ]
-            qs = self.get_queryset(context)
+            qs = self.get_query_set(context)
             context.push()
             liststr = render_to_string(template_search_list, {
                 "comment_list" : self.get_context_value_from_queryset(context, qs)

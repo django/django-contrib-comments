@@ -17,6 +17,7 @@ settings.configure(
     INSTALLED_APPS = [
         "django.contrib.auth",
         "django.contrib.contenttypes",
+        "django.contrib.sessions",
         "django.contrib.sites",
         "django.contrib.admin",
         "django_comments",
@@ -31,8 +32,8 @@ settings.configure(
 from django.test.simple import DjangoTestSuiteRunner
 
 def main():
-    runner = DjangoTestSuiteRunner()
-    failures = runner.run_tests(['testapp'], verbosity=1, interactive=True)
+    runner = DjangoTestSuiteRunner(failfast=True, verbosity=1)
+    failures = runner.run_tests(['testapp'], interactive=True)
     sys.exit(failures)
 
 if __name__ == '__main__':

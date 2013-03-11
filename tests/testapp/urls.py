@@ -4,7 +4,7 @@ from django.conf.urls import patterns, url
 
 from django_comments.feeds import LatestCommentFeed
 
-from .custom_comments import views
+from custom_comments import views
 
 
 feeds = {

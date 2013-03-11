@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 from django.core import mail
+from django.test.utils import override_settings
 
 from django_comments.models import Comment
 from django_comments.moderation import (moderator, CommentModerator,
@@ -68,9 +69,10 @@ class CommentUtilsModeratorTests(CommentTestCase):
         self.assertRaises(AlreadyModerated, moderator.register, Entry, EntryModerator1)
 
     def testEmailNotification(self):
-        moderator.register(Entry, EntryModerator1)
-        self.createSomeComments()
-        self.assertEqual(len(mail.outbox), 2)
+        with override_settings(MANAGERS=("test@example.com",)):
+            moderator.register(Entry, EntryModerator1)
+            self.createSomeComments()
+            self.assertEqual(len(mail.outbox), 2)
 
     def testCommentsEnabled(self):
         moderator.register(Entry, EntryModerator2)

@@ -303,7 +303,7 @@ class Moderator(object):
             model_or_iterable = [model_or_iterable]
         for model in model_or_iterable:
             if model in self._registry:
-                raise AlreadyModerated("The model '%s' is already being moderated" % model._meta.model_name)
+                raise AlreadyModerated("The model '%s' is already being moderated" % model._meta.module_name)
             self._registry[model] = moderation_class(model)
 
     def unregister(self, model_or_iterable):
@@ -319,7 +319,7 @@ class Moderator(object):
             model_or_iterable = [model_or_iterable]
         for model in model_or_iterable:
             if model not in self._registry:
-                raise NotModerated("The model '%s' is not currently being moderated" % model._meta.model_name)
+                raise NotModerated("The model '%s' is not currently being moderated" % model._meta.module_name)
             del self._registry[model]
 
     def pre_save_moderation(self, sender, comment, request, **kwargs):
