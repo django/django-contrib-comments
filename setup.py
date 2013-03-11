@@ -12,7 +12,7 @@ setup(
     name='django-contrib-comments',
     version='1.5',
     url="http://github.com/django/django-contrib-comments",
-    description='The code formally known as django.contrib.comments.',
+    description='The code formerly known as django.contrib.comments.',
     long_description=long_description,
     author='Django Software Foundation',
     author_email='jacob@jacobian.org',

@@ -1,5 +1,5 @@
 ===============================================================
-Porting to ``django_commants`` from ``django.contrib.comments``
+Porting to ``django_comments`` from ``django.contrib.comments``
 ===============================================================
 
 FIXME
