@@ -9,7 +9,7 @@ except IOError:
     long_description = None
 
 setup(
-    name='django-contrib.comments',
+    name='django-contrib-comments',
     version='1.5',
     url="http://github.com/django/django-contrib-comments",
     description='The code formally known as django.contrib.comments.',
