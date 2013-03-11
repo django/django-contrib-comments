@@ -67,14 +67,14 @@ knows how to work with them to determine whether to allow a comment, whether
 to moderate a comment which will be allowed to post, and whether to email
 notifications of new comments.
 
-Built-in moderation options
----------------------------
+Moderation options
+------------------
 
 .. class:: CommentModerator
 
     Most common comment-moderation needs can be handled by subclassing
     :class:`CommentModerator` and
-    changing the values of pre-defined attributes; the full range of built-in
+    changing the values of pre-defined attributes; the full range of
     options is as follows.
 
     .. attribute:: auto_close_field
@@ -138,7 +138,7 @@ models registered using the subclass.
 Adding custom moderation methods
 --------------------------------
 
-For situations where the built-in options listed above are not
+For situations where the options listed above are not
 sufficient, subclasses of :class:`CommentModerator` can also override
 the methods which actually perform the moderation, and apply any logic
 they desire.  :class:`CommentModerator` defines three methods which

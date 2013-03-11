@@ -1,13 +1,13 @@
-===========================
-The built-in comment models
-===========================
+==================
+The comment models
+==================
 
 .. module:: django_comments.models
-   :synopsis: The built-in comment models
+   :synopsis: The comment models
 
 .. class:: Comment
 
-    Django's built-in comment model. Has the following fields:
+    The comment model. Has the following fields:
 
     .. attribute:: content_object
 

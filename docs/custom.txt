@@ -4,9 +4,9 @@ Customizing the comments framework
 
 .. currentmodule:: django_comments
 
-If the built-in comment framework doesn't quite fit your needs, you can extend
+If the comment framework doesn't quite fit your needs, you can extend
 the comment app's behavior to add custom data and logic. The comments framework
-lets you extend the built-in comment model, the built-in comment form, and the
+lets you extend the in comment model, the comment form, and the
 various comment views.
 
 The :setting:`COMMENTS_APP` setting is where this customization begins. Set
@@ -35,8 +35,8 @@ An example custom comments app
 ==============================
 
 One of the most common types of customization is modifying the set of fields
-provided on the built-in comment model. For example, some sites that allow
-comments want the commentator to provide a title for their comment; the built-in
+provided on the comment model. For example, some sites that allow
+comments want the commentator to provide a title for their comment; the
 comment model has no field for that title.
 
 To make this kind of customization, we'll need to do three things:
@@ -87,7 +87,7 @@ field::
         title = forms.CharField(max_length=300)
 
         def get_comment_model(self):
-            # Use our custom comment model instead of the built-in one.
+            # Use our custom comment model instead of the default one.
             return CommentWithTitle
 
         def get_comment_create_data(self):
@@ -164,7 +164,7 @@ however.
         spam-prevention features (see
         :ref:`notes-on-the-comment-form`).  If replacing it with your
         own form, you may want to look at the source code for the
-        built-in form and consider incorporating similar features.
+        default form and consider incorporating similar features.
 
 .. function:: get_form_target()
 

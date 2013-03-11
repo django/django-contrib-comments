@@ -1,8 +1,8 @@
 .. highlightlang:: html+django
 
-===========================================
-Example of using the built-in comments app
-===========================================
+=================================
+Example of using the comments app
+=================================
 
 Follow the first three steps of the :doc:`quick start guide <quickstart>`.
 
@@ -158,7 +158,7 @@ Moderation
 
 Now that we have the comments framework working, we might want to have some
 moderation setup to administer the comments. The comments framework comes
-built-in with :doc:`generic comment moderation
+with :doc:`generic comment moderation
 <moderation>`. The comment moderation has the following
 features (all of which or only certain can be enabled):
 
