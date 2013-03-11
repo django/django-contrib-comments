@@ -106,8 +106,8 @@ For example::
         ...
     {% endfor %}
 
-This returns a list of :class:`~django.contrib.comments.models.Comment` objects;
-see :doc:`the comment model documentation </ref/contrib/comments/models>` for
+This returns a list of :class:`~django_comments.models.Comment` objects;
+see :doc:`the comment model documentation <models>` for
 details.
 
 .. templatetag:: get_comment_permalink
@@ -195,7 +195,7 @@ Rendering a custom comment form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want more control over the look and feel of the comment form, you may use
-:ttag:`get_comment_form` to get a :doc:`form object </topics/forms/index>` that
+:ttag:`get_comment_form` to get a :class:`form object <django.forms.Form>` that
 you can use in the template::
 
     {% get_comment_form for [object] as [varname] %}
@@ -275,7 +275,7 @@ form`_ below.
 
 Note that we do not need to specify the user to be associated with comments
 submitted by authenticated users. This is possible because the :doc:`Built-in
-Comment Models</ref/contrib/comments/models>` that come with Django associate
+Comment Models <models>` that come with Django associate
 comments with authenticated users by default.
 
 In this example, the honeypot field will still be visible to the user; you'll
@@ -317,11 +317,12 @@ should know about:
   it with a warning field; if you use the comment form with a custom
   template you should be sure to do the same.
 
-The comments app also depends on the more general :doc:`Cross Site Request
-Forgery protection </ref/contrib/csrf>` that comes with Django.  As described in
+The comments app also depends on the more general `Cross Site Request
+Forgery protection`_ that comes with Django.  As described in
 the documentation, it is best to use ``CsrfViewMiddleware``.  However, if you
 are not using that, you will need to use the ``csrf_protect`` decorator on any
 views that include the comment form, in order for those views to be able to
 output the CSRF token and cookie.
 
+.. _cross site request forgery protection: https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/
 .. _honeypot: http://en.wikipedia.org/wiki/Honeypot_(computing)

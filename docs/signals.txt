@@ -2,30 +2,20 @@
 Signals sent by the comments app
 ================================
 
-.. module:: django.contrib.comments.signals
+.. module:: django_comments.signals
    :synopsis: Signals sent by the comment module.
 
-.. warning::
-
-    Django's comment framework has been deprecated and is no longer supported.
-    Most users will be better served with a custom solution, or a hosted
-    product like Disqus__.
-
-    The code formerly known as ``django.contrib.comments`` is `still available
-    in an external repository`__.
-
-    __ https://disqus.com/
-    __ https://github.com/django/django-contrib-comments
-
-The comment app sends a series of :doc:`signals </topics/signals>` to allow for
-comment moderation and similar activities. See :doc:`the introduction to signals
-</topics/signals>` for information about how to register for and receive these
+The comment app sends a series of signals_ to allow for
+comment moderation and similar activities. See `the introduction to signals`_ for information about how to register for and receive these
 signals.
+
+.. _signals: https://docs.djangoproject.com/en/1.5/topics/signals/
+.. _the introduction to signals: signals_
 
 comment_will_be_posted
 ======================
 
-.. data:: django.contrib.comments.signals.comment_will_be_posted
+.. data:: django_comments.signals.comment_will_be_posted
    :module:
 
 Sent just before a comment will be saved, after it's been sanity checked and
@@ -54,7 +44,7 @@ Arguments sent with this signal:
 comment_was_posted
 ==================
 
-.. data:: django.contrib.comments.signals.comment_was_posted
+.. data:: django_comments.signals.comment_was_posted
    :module:
 
 Sent just after the comment is saved.
@@ -75,7 +65,7 @@ Arguments sent with this signal:
 comment_was_flagged
 ===================
 
-.. data:: django.contrib.comments.signals.comment_was_flagged
+.. data:: django_comments.signals.comment_was_flagged
    :module:
 
 Sent after a comment was "flagged" in some way. Check the flag to see if this
@@ -93,7 +83,7 @@ Arguments sent with this signal:
     :meth:`~django.db.models.Model.save` again.
 
 ``flag``
-    The ``django.contrib.comments.models.CommentFlag`` that's been attached to
+    The ``django_comments.models.CommentFlag`` that's been attached to
     the comment.
 
 ``created``

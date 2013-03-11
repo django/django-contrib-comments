@@ -2,20 +2,8 @@
 The built-in comment models
 ===========================
 
-.. module:: django.contrib.comments.models
+.. module:: django_comments.models
    :synopsis: The built-in comment models
-
-.. warning::
-
-    Django's comment framework has been deprecated and is no longer supported.
-    Most users will be better served with a custom solution, or a hosted
-    product like Disqus__.
-
-    The code formerly known as ``django.contrib.comments`` is `still available
-    in an external repository`__.
-
-    __ https://disqus.com/
-    __ https://github.com/django/django-contrib-comments
 
 .. class:: Comment
 
@@ -82,7 +70,7 @@ The built-in comment models
     .. attribute:: is_public
 
         ``False`` if the comment is in moderation (see
-        :doc:`/ref/contrib/comments/moderation`); If ``True``, the comment will
+        :doc:`moderation`); If ``True``, the comment will
         be displayed on the site.
 
     .. attribute:: is_removed

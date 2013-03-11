@@ -4,8 +4,7 @@
 Example of using the built-in comments app
 ===========================================
 
-Follow the first three steps of the quick start guide in the
-:doc:`documentation </ref/contrib/comments/index>`.
+Follow the first three steps of the :doc:`quick start guide <quickstart>`.
 
 Now suppose, you have an app (``blog``) with a model (``Post``)
 to which you want to attach comments. Let's also suppose that
@@ -82,7 +81,7 @@ It looks for the ``form.html`` under the following directories
 Since we customize the form in the second method, we make use of another
 tag called :ttag:`comment_form_target`. This tag on rendering gives the URL
 where the comment form is posted. Without any :doc:`customization
-</ref/contrib/comments/custom>`, :ttag:`comment_form_target` evaluates to
+<custom>`, :ttag:`comment_form_target` evaluates to
 ``/comments/post/``. We use this tag in the form's ``action`` attribute.
 
 The :ttag:`get_comment_form` tag renders a ``form`` for a model instance by
@@ -135,14 +134,14 @@ found under the directory structure we saw for ``form.html``.
 Feeds
 =====
 
-Suppose you want to export a :doc:`feed </ref/contrib/syndication>` of the
+Suppose you want to export a feed__ of the
 latest comments, you can use the built-in ``LatestCommentFeed``. Just
 enable it in your project's ``urls.py``:
 
 .. code-block:: python
 
   from django.conf.urls import patterns
-  from django.contrib.comments.feeds import LatestCommentFeed
+  from django_comments.feeds import LatestCommentFeed
 
   urlpatterns = patterns('',
   # ...
@@ -152,6 +151,7 @@ enable it in your project's ``urls.py``:
 
 Now you should have the latest comment feeds being served off ``/feeds/latest/``.
 
+__ https://docs.djangoproject.com/en/1.5/ref/contrib/syndication/
 
 Moderation
 ==========
@@ -159,7 +159,7 @@ Moderation
 Now that we have the comments framework working, we might want to have some
 moderation setup to administer the comments. The comments framework comes
 built-in with :doc:`generic comment moderation
-</ref/contrib/comments/moderation>`. The comment moderation has the following
+<moderation>`. The comment moderation has the following
 features (all of which or only certain can be enabled):
 
 * Enable comments for a particular model instance.
@@ -174,8 +174,8 @@ following way:
 
 .. code-block:: python
 
-   from django.contrib.comments.moderation import CommentModerator, moderator
    from django.db import models
+   from django_comments.moderation import CommentModerator, moderator
 
    class Post(models.Model):
        title   = models.CharField(max_length = 255)
