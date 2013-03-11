@@ -36,5 +36,5 @@ setup(
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     test_suite='tests.runtests.main',
+    install_requires=['Django>=1.5']
 )
-
