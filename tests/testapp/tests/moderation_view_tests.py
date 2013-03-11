@@ -297,7 +297,7 @@ class AdminActionsTests(CommentTestCase):
                                           'index': 0},
                                     follow=True)
         messages = list(m.message for m in response.context['messages'])
-        self.assert_(expected_message in messages,
+        self.assertTrue(expected_message in messages,
                      ("Expected message '%s' wasn't set (messages were: %s)" %
                         (expected_message, messages)))
 
