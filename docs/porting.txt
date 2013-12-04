@@ -2,4 +2,41 @@
 Porting to ``django_comments`` from ``django.contrib.comments``
 ===============================================================
 
-FIXME
+To move from ``django.contrib.comments`` to ``django_comments``,
+follow these steps:
+
+#. Install the comments app by running ``pip install django-contrib-comments``.
+
+#. In :setting:`INSTALLED_APPS`, replace ``'django.contrib.comments'``
+   with ``'django_comments'``.
+
+   .. code-block:: python
+
+        INSTALLED_APPS = (
+            ...
+            'django_comments',
+            ...
+        )
+
+#. In your project's ``urls.py``, replace the url include
+   ``django.contrib.comments.urls`` with ``'django_comments.urls'``:
+
+   .. code-block:: python
+
+        urlpatterns = patterns('',
+            ...
+            (r'^comments/', include('django_comments.urls')),
+            ...
+        )
+
+#. If your project had :doc:`customized the comments framework
+   </custom>`, then update your imports to use the ``django_comments``
+   module instead of ``django.contrib.comments``. For example:
+
+   .. code-block:: python
+
+        from django.contrib.comments.models import Comment # old
+	from django_comments.models import Comment # new
+
+	from django.contrib.comments.forms import CommentForm # old
+        from django_comments.forms CommentForm # new
