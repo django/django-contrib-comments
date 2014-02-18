@@ -1,6 +1,5 @@
 include README.rst
 include LICENSE.txt
-include MANIFEST.in
 recursive-include docs *
 recursive-include tests *
 recursive-include django_comments/templates *
