@@ -5,7 +5,7 @@ Comment form classes
 .. module:: django_comments.forms
    :synopsis: Forms for dealing with the comment model.
 
-The ``django.contrib.comments.forms`` module contains a handful of forms
+The ``django_comments.forms`` module contains a handful of forms
 you'll use when writing custom views dealing with comments, or when writing
 :doc:`custom comment apps <custom>`.
 
