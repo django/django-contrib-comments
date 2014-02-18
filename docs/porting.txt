@@ -36,7 +36,7 @@ follow these steps:
    .. code-block:: python
 
         from django.contrib.comments.models import Comment # old
-	from django_comments.models import Comment # new
+        from django_comments.models import Comment # new
 
-	from django.contrib.comments.forms import CommentForm # old
+        from django.contrib.comments.forms import CommentForm # old
         from django_comments.forms CommentForm # new
