@@ -1,0 +1,7 @@
+include README.rst
+include LICENSE.txt
+recursive-include docs *
+recursive-include tests *
+recursive-include django_comments/templates *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
