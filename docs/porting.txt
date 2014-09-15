@@ -39,4 +39,4 @@ follow these steps:
         from django_comments.models import Comment # new
 
         from django.contrib.comments.forms import CommentForm # old
-        from django_comments.forms CommentForm # new
+        from django_comments.forms import CommentForm # new
