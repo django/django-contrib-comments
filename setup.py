@@ -10,7 +10,7 @@ except IOError:
 
 setup(
     name='django-contrib-comments',
-    version='1.5',
+    version='1.5.1',
     url="http://github.com/django/django-contrib-comments",
     description='The code formerly known as django.contrib.comments.',
     long_description=long_description,

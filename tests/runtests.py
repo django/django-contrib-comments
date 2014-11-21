@@ -6,6 +6,7 @@ Adapted from django-constance, which itself was adapted from django-adminfiles.
 
 import os
 import sys
+import django
 
 here = os.path.dirname(os.path.abspath(__file__))
 parent = os.path.dirname(here)
@@ -24,6 +25,11 @@ settings.configure(
         "testapp",
         "custom_comments",
     ],
+    MIDDLEWARE_CLASSES=(
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+    ),
     ROOT_URLCONF = 'testapp.urls',
     SECRET_KEY = "it's a secret to everyone",
     SITE_ID = 1,
@@ -32,6 +38,8 @@ settings.configure(
 from django.test.simple import DjangoTestSuiteRunner
 
 def main():
+    if django.VERSION >= (1, 7):
+        django.setup()
     runner = DjangoTestSuiteRunner(failfast=True, verbosity=1)
     failures = runner.run_tests(['testapp'], interactive=True)
     sys.exit(failures)

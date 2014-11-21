@@ -1,5 +1,12 @@
 from __future__ import absolute_import
 
+try:
+    import unittest2 as unittest
+except ImportError:
+    import unittest
+
+
+import django
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.test.utils import override_settings
@@ -18,6 +25,7 @@ class CommentAppAPITests(CommentTestCase):
     def testGetCommentApp(self):
         self.assertEqual(django_comments.get_comment_app(), django_comments)
 
+    @unittest.skipIf(django.VERSION >= (1, 7), "Missing apps raise ImportError with django 1.7")
     @override_settings(
         COMMENTS_APP='missing_app',
         INSTALLED_APPS=list(settings.INSTALLED_APPS) + ['missing_app'],
@@ -47,8 +55,6 @@ class CommentAppAPITests(CommentTestCase):
 
 @override_settings(
     COMMENTS_APP='custom_comments',
-    INSTALLED_APPS=list(settings.INSTALLED_APPS) + [
-        'custom_comments'],
 )
 class CustomCommentTest(CommentTestCase):
     urls = 'testapp.urls'
