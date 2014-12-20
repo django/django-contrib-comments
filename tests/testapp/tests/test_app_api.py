@@ -32,7 +32,7 @@ class CommentAppAPITests(CommentTestCase):
     )
     def testGetMissingCommentApp(self):
         with six.assertRaisesRegex(self, ImproperlyConfigured, 'missing_app'):
-            _ = django_comments.get_comment_app()
+            django_comments.get_comment_app()
 
     def testGetForm(self):
         self.assertEqual(django_comments.get_form(), CommentForm)

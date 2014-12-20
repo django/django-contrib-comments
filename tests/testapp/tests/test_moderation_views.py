@@ -96,11 +96,13 @@ class FlagViewTests(CommentTestCase):
 
         signals.comment_was_flagged.disconnect(receive)
 
+
 def makeModerator(username):
     u = User.objects.get(username=username)
     ct = ContentType.objects.get_for_model(Comment)
     p = Permission.objects.get(content_type=ct, codename="can_moderate")
     u.user_permissions.add(p)
+
 
 class DeleteViewTests(CommentTestCase):
 
@@ -175,6 +177,7 @@ class DeleteViewTests(CommentTestCase):
         response = self.client.get("/deleted/", data={"c": pk})
         self.assertTemplateUsed(response, "comments/deleted.html")
 
+
 class ApproveViewTests(CommentTestCase):
 
     def testApprovePermissions(self):
@@ -192,7 +195,8 @@ class ApproveViewTests(CommentTestCase):
     def testApprovePost(self):
         """POSTing the approve view should mark the comment as removed"""
         c1, c2, c3, c4 = self.createSomeComments()
-        c1.is_public = False; c1.save()
+        c1.is_public = False
+        c1.save()
 
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
@@ -208,7 +212,8 @@ class ApproveViewTests(CommentTestCase):
         url.
         """
         c1, c2, c3, c4 = self.createSomeComments()
-        c1.is_public = False; c1.save()
+        c1.is_public = False
+        c1.save()
 
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
@@ -223,7 +228,8 @@ class ApproveViewTests(CommentTestCase):
         provided url when redirecting.
         """
         c1, c2, c3, c4 = self.createSomeComments()
-        c1.is_public = False; c1.save()
+        c1.is_public = False
+        c1.save()
 
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
@@ -249,8 +255,9 @@ class ApproveViewTests(CommentTestCase):
     def testApprovedView(self):
         comments = self.createSomeComments()
         pk = comments[0].pk
-        response = self.client.get("/approved/", data={"c":pk})
+        response = self.client.get("/approved/", data={"c": pk})
         self.assertTemplateUsed(response, "comments/approved.html")
+
 
 class AdminActionsTests(CommentTestCase):
     urls = "testapp.urls_admin"
@@ -262,21 +269,21 @@ class AdminActionsTests(CommentTestCase):
         u = User.objects.get(username="normaluser")
         u.is_staff = True
         perms = Permission.objects.filter(
-            content_type__app_label = 'django_comments',
-            codename__endswith = 'comment'
+            content_type__app_label='django_comments',
+            codename__endswith='comment'
         )
         for perm in perms:
             u.user_permissions.add(perm)
         u.save()
 
     def testActionsNonModerator(self):
-        comments = self.createSomeComments()
+        self.createSomeComments()
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.get("/admin/django_comments/comment/")
         self.assertNotContains(response, "approve_comments")
 
     def testActionsModerator(self):
-        comments = self.createSomeComments()
+        self.createSomeComments()
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.get("/admin/django_comments/comment/")
@@ -284,7 +291,7 @@ class AdminActionsTests(CommentTestCase):
 
     def testActionsDisabledDelete(self):
         "Tests a CommentAdmin where 'delete_selected' has been disabled."
-        comments = self.createSomeComments()
+        self.createSomeComments()
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.get('/admin2/django_comments/comment/')
         self.assertEqual(response.status_code, 200)
@@ -308,12 +315,18 @@ class AdminActionsTests(CommentTestCase):
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
         with translation.override('en'):
-            #Test approving
-            self.performActionAndCheckMessage('approve_comments', one_comment, '1 comment was successfully approved.')
-            self.performActionAndCheckMessage('approve_comments', many_comments, '3 comments were successfully approved.')
-            #Test flagging
-            self.performActionAndCheckMessage('flag_comments', one_comment, '1 comment was successfully flagged.')
-            self.performActionAndCheckMessage('flag_comments', many_comments, '3 comments were successfully flagged.')
-            #Test removing
-            self.performActionAndCheckMessage('remove_comments', one_comment, '1 comment was successfully removed.')
-            self.performActionAndCheckMessage('remove_comments', many_comments, '3 comments were successfully removed.')
+            # Test approving
+            self.performActionAndCheckMessage('approve_comments', one_comment,
+                '1 comment was successfully approved.')
+            self.performActionAndCheckMessage('approve_comments', many_comments,
+                '3 comments were successfully approved.')
+            # Test flagging
+            self.performActionAndCheckMessage('flag_comments', one_comment,
+                '1 comment was successfully flagged.')
+            self.performActionAndCheckMessage('flag_comments', many_comments,
+                '3 comments were successfully flagged.')
+            # Test removing
+            self.performActionAndCheckMessage('remove_comments', one_comment,
+                '1 comment was successfully removed.')
+            self.performActionAndCheckMessage('remove_comments', many_comments,
+                '3 comments were successfully removed.')

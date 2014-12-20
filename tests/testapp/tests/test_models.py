@@ -20,6 +20,7 @@ class CommentModelTests(CommentTestCase):
         self.assertEqual(c1.user, None)
         self.assertEqual(c3.user, c4.user)
 
+
 class CommentManagerTests(CommentTestCase):
 
     def testInModeration(self):

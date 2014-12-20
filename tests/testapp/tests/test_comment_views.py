@@ -14,6 +14,7 @@ from ..models import Article, Book
 
 post_redirect_re = re.compile(r'^http://testserver/posted/\?c=(?P<pk>\d+$)')
 
+
 class CommentViewTests(CommentTestCase):
 
     def testPostCommentHTTPMethods(self):
@@ -214,7 +215,8 @@ class CommentViewTests(CommentTestCase):
         Test that the comment_will_be_posted signal can prevent the comment from
         actually getting saved
         """
-        def receive(sender, **kwargs): return False
+        def receive(sender, **kwargs):
+            return False
         signals.comment_will_be_posted.connect(receive, dispatch_uid="comment-test")
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
@@ -229,7 +231,7 @@ class CommentViewTests(CommentTestCase):
         it gets posted
         """
         def receive(sender, **kwargs):
-             # a bad but effective spam filter :)...
+            # a bad but effective spam filter :)...
             kwargs['comment'].is_public = False
 
         signals.comment_will_be_posted.connect(receive)
@@ -244,21 +246,21 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = post_redirect_re.match(location)
-        self.assertTrue(match != None, "Unexpected redirect location: %s" % location)
+        self.assertisNotNone(match, "Unexpected redirect location: %s" % location)
 
         data["next"] = "/somewhere/else/"
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = re.search(r"^http://testserver/somewhere/else/\?c=\d+$", location)
-        self.assertTrue(match != None, "Unexpected redirect location: %s" % location)
+        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
 
         data["next"] = "http://badserver/somewhere/else/"
         data["comment"] = "This is another comment with an unsafe next url"
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = post_redirect_re.match(location)
-        self.assertTrue(match != None, "Unsafe redirection to: %s" % location)
+        self.assertIsNotNone(match, "Unsafe redirection to: %s" % location)
 
     def testCommentDoneView(self):
         a = Article.objects.get(pk=1)
@@ -266,7 +268,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = post_redirect_re.match(location)
-        self.assertTrue(match != None, "Unexpected redirect location: %s" % location)
+        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
         pk = int(match.group('pk'))
         response = self.client.get(location)
         self.assertTemplateUsed(response, "comments/posted.html")
@@ -283,7 +285,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = re.search(r"^http://testserver/somewhere/else/\?foo=bar&c=\d+$", location)
-        self.assertTrue(match != None, "Unexpected redirect location: %s" % location)
+        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
 
     def testCommentPostRedirectWithInvalidIntegerPK(self):
         """
@@ -312,7 +314,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = re.search(r"^http://testserver/somewhere/else/\?foo=bar&c=\d+#baz$", location)
-        self.assertTrue(match != None, "Unexpected redirect location: %s" % location)
+        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
 
         # Without a query string
         a = Article.objects.get(pk=1)
@@ -322,4 +324,4 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = re.search(r"^http://testserver/somewhere/else/\?c=\d+#baz$", location)
-        self.assertTrue(match != None, "Unexpected redirect location: %s" % location)
+        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)

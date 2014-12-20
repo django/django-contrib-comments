@@ -66,6 +66,7 @@ from django.utils import timezone
 import django_comments
 from django_comments import signals
 
+
 class AlreadyModerated(Exception):
     """
     Raised when a model which is already registered for moderation is
@@ -74,6 +75,7 @@ class AlreadyModerated(Exception):
     """
     pass
 
+
 class NotModerated(Exception):
     """
     Raised when a model which is not registered for moderation is
@@ -81,6 +83,7 @@ class NotModerated(Exception):
 
     """
     pass
+
 
 class CommentModerator(object):
     """
@@ -209,7 +212,8 @@ class CommentModerator(object):
                 return False
         if self.auto_close_field and self.close_after is not None:
             close_after_date = getattr(content_object, self.auto_close_field)
-            if close_after_date is not None and self._get_delta(timezone.now(), close_after_date).days >= self.close_after:
+            if close_after_date is not None and self._get_delta(timezone.now(),
+                                                                close_after_date).days >= self.close_after:
                 return False
         return True
 
@@ -225,7 +229,8 @@ class CommentModerator(object):
         """
         if self.auto_moderate_field and self.moderate_after is not None:
             moderate_after_date = getattr(content_object, self.auto_moderate_field)
-            if moderate_after_date is not None and self._get_delta(timezone.now(), moderate_after_date).days >= self.moderate_after:
+            if moderate_after_date is not None and self._get_delta(timezone.now(),
+                                                                   moderate_after_date).days >= self.moderate_after:
                 return True
         return False
 
@@ -239,12 +244,13 @@ class CommentModerator(object):
             return
         recipient_list = [manager_tuple[1] for manager_tuple in settings.MANAGERS]
         t = loader.get_template('comments/comment_notification_email.txt')
-        c = Context({ 'comment': comment,
-                      'content_object': content_object })
+        c = Context({'comment': comment,
+                     'content_object': content_object})
         subject = '[%s] New comment posted on "%s"' % (get_current_site(request).name,
-                                                          content_object)
+                                                       content_object)
         message = t.render(c)
         send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list, fail_silently=True)
+
 
 class Moderator(object):
     """
@@ -277,6 +283,7 @@ class Moderator(object):
     around, will send any notification emails the comment generated.
 
     """
+
     def __init__(self):
         self._registry = {}
         self.connect()

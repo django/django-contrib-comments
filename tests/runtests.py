@@ -14,8 +14,8 @@ sys.path[0:0] = [here, parent]
 
 from django.conf import settings
 settings.configure(
-    DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3'}},
-    INSTALLED_APPS = [
+    DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}},
+    INSTALLED_APPS=[
         "django.contrib.auth",
         "django.contrib.contenttypes",
         "django.contrib.sessions",
@@ -30,12 +30,13 @@ settings.configure(
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
     ),
-    ROOT_URLCONF = 'testapp.urls',
-    SECRET_KEY = "it's a secret to everyone",
-    SITE_ID = 1,
+    ROOT_URLCONF='testapp.urls',
+    SECRET_KEY="it's a secret to everyone",
+    SITE_ID=1,
 )
 
 from django.test.runner import DiscoverRunner
+
 
 def main():
     if django.VERSION >= (1, 7):

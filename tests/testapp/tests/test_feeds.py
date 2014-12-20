@@ -17,17 +17,17 @@ class CommentFeedTests(CommentTestCase):
     feed_url = '/rss/comments/'
 
     def setUp(self):
-        site_2 = Site.objects.create(id=settings.SITE_ID+1,
+        site_2 = Site.objects.create(id=settings.SITE_ID + 1,
             domain="example2.com", name="example2.com")
         # A comment for another site
-        c5 = Comment.objects.create(
-            content_type = ContentType.objects.get_for_model(Article),
-            object_pk = "1",
-            user_name = "Joe Somebody",
-            user_email = "jsomebody@example.com",
-            user_url = "http://example.com/~joe/",
-            comment = "A comment for the second site.",
-            site = site_2,
+        Comment.objects.create(
+            content_type=ContentType.objects.get_for_model(Article),
+            object_pk="1",
+            user_name="Joe Somebody",
+            user_email="jsomebody@example.com",
+            user_url="http://example.com/~joe/",
+            comment="A comment for the second site.",
+            site=site_2,
         )
 
     def test_feed(self):

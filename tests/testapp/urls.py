@@ -8,7 +8,7 @@ from custom_comments import views
 
 
 feeds = {
-     'comments': LatestCommentFeed,
+    'comments': LatestCommentFeed,
 }
 
 urlpatterns = patterns('',

@@ -14,24 +14,30 @@ from ..models import Entry
 class EntryModerator1(CommentModerator):
     email_notification = True
 
+
 class EntryModerator2(CommentModerator):
     enable_field = 'enable_comments'
+
 
 class EntryModerator3(CommentModerator):
     auto_close_field = 'pub_date'
     close_after = 7
 
+
 class EntryModerator4(CommentModerator):
     auto_moderate_field = 'pub_date'
     moderate_after = 7
+
 
 class EntryModerator5(CommentModerator):
     auto_moderate_field = 'pub_date'
     moderate_after = 0
 
+
 class EntryModerator6(CommentModerator):
     auto_close_field = 'pub_date'
     close_after = 0
+
 
 class CommentUtilsModeratorTests(CommentTestCase):
     fixtures = ["comment_utils.xml"]

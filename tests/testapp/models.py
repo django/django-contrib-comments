@@ -17,6 +17,7 @@ class Author(models.Model):
     def __str__(self):
         return '%s %s' % (self.first_name, self.last_name)
 
+
 @python_2_unicode_compatible
 class Article(models.Model):
     author = models.ForeignKey(Author)
@@ -24,6 +25,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.headline
+
 
 @python_2_unicode_compatible
 class Entry(models.Model):
@@ -34,6 +36,7 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Book(models.Model):
     dewey_decimal = models.DecimalField(primary_key=True, decimal_places=2, max_digits=5)
