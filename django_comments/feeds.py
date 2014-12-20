@@ -4,6 +4,7 @@ from django.utils.translation import ugettext as _
 
 import django_comments
 
+
 class LatestCommentFeed(Feed):
     """Feed of latest comments on the current site."""
 
@@ -22,9 +23,9 @@ class LatestCommentFeed(Feed):
 
     def items(self):
         qs = django_comments.get_model().objects.filter(
-            site__pk = self.site.pk,
-            is_public = True,
-            is_removed = False,
+            site__pk=self.site.pk,
+            is_public=True,
+            is_removed=False,
         )
         return qs.order_by('-submit_date')[:40]
 

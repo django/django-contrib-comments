@@ -15,12 +15,14 @@ import django_comments
 from django_comments import signals
 from django_comments.views.utils import next_redirect, confirmation_view
 
+
 class CommentPostBadRequest(http.HttpResponseBadRequest):
     """
     Response returned when a comment post is invalid. If ``DEBUG`` is on a
     nice-ish error message will be displayed (for debugging purposes), but in
     production mode a simple opaque 400 page will be displayed.
     """
+
     def __init__(self, why):
         super(CommentPostBadRequest, self).__init__()
         if settings.DEBUG:
@@ -58,15 +60,15 @@ def post_comment(request, next=None, using=None):
     except AttributeError:
         return CommentPostBadRequest(
             "The given content-type %r does not resolve to a valid model." % \
-                escape(ctype))
+            escape(ctype))
     except ObjectDoesNotExist:
         return CommentPostBadRequest(
             "No object matching content-type %r and object PK %r exists." % \
-                (escape(ctype), escape(object_pk)))
+            (escape(ctype), escape(object_pk)))
     except (ValueError, ValidationError) as e:
         return CommentPostBadRequest(
             "Attempting go get content-type %r and object PK %r exists raised %s" % \
-                (escape(ctype), escape(object_pk), e.__class__.__name__))
+            (escape(ctype), escape(object_pk), e.__class__.__name__))
 
     # Do we want to preview the comment?
     preview = "preview" in data
@@ -78,7 +80,7 @@ def post_comment(request, next=None, using=None):
     if form.security_errors():
         return CommentPostBadRequest(
             "The comment form failed security verification: %s" % \
-                escape(str(form.security_errors())))
+            escape(str(form.security_errors())))
 
     # If there are errors or if we requested a preview show the comment
     if form.errors or preview:
@@ -129,7 +131,8 @@ def post_comment(request, next=None, using=None):
     )
 
     return next_redirect(request, fallback=next or 'comments-comment-done',
-        c=comment._get_pk_val())
+                         c=comment._get_pk_val())
+
 
 comment_done = confirmation_view(
     template="comments/posted.html",
