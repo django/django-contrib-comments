@@ -21,7 +21,7 @@ a Weblog::
     from django.db import models
 
     class Entry(models.Model):
-        title = models.CharField(maxlength=250)
+        title = models.CharField(max_length=250)
         body = models.TextField()
         pub_date = models.DateField()
         enable_comments = models.BooleanField()
