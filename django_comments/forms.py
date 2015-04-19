@@ -1,6 +1,7 @@
 import time
+
 from django import forms
-from django.forms.util import ErrorDict
+from django.forms.utils import ErrorDict
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.utils.crypto import salted_hmac, constant_time_compare
@@ -12,6 +13,7 @@ from django.utils.translation import ungettext, ugettext, ugettext_lazy as _
 from django_comments.models import Comment
 
 COMMENT_MAX_LENGTH = getattr(settings,'COMMENT_MAX_LENGTH', 3000)
+
 
 class CommentSecurityForm(forms.Form):
     """
