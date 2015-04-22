@@ -1,10 +1,12 @@
 from django.conf import settings
 from django.core import urlresolvers
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.importlib import import_module
 
-from django_comments.models import Comment
-from django_comments.forms import CommentForm
+try:
+    from importlib import import_module
+except ImportError:
+    from django.utils.importlib import import_module
+
 
 DEFAULT_COMMENTS_APP = 'django_comments'
 
@@ -35,6 +37,7 @@ def get_comment_app_name():
     return getattr(settings, 'COMMENTS_APP', DEFAULT_COMMENTS_APP)
 
 def get_model():
+    from django_comments.models import Comment
     """
     Returns the comment model class.
     """
@@ -44,6 +47,7 @@ def get_model():
         return Comment
 
 def get_form():
+    from django_comments.forms import CommentForm
     """
     Returns the comment ModelForm class.
     """
