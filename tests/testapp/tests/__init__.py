@@ -85,13 +85,3 @@ class CommentTestCase(TestCase):
         d = self.getData()
         d.update(f.initial)
         return d
-
-from .app_api_tests import *
-from .feed_tests import *
-from .model_tests import *
-from .comment_form_tests import *
-from .templatetag_tests import *
-from .comment_view_tests import *
-from .moderation_view_tests import *
-from .comment_utils_moderators_tests import *
-

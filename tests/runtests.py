@@ -35,12 +35,12 @@ settings.configure(
     SITE_ID = 1,
 )
 
-from django.test.simple import DjangoTestSuiteRunner
+from django.test.runner import DiscoverRunner
 
 def main():
     if django.VERSION >= (1, 7):
         django.setup()
-    runner = DjangoTestSuiteRunner(failfast=True, verbosity=1)
+    runner = DiscoverRunner(failfast=True, verbosity=1)
     failures = runner.run_tests(['testapp'], interactive=True)
     sys.exit(failures)
 
