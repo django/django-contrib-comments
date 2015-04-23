@@ -246,7 +246,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data)
         location = response["Location"]
         match = post_redirect_re.match(location)
-        self.assertisNotNone(match, "Unexpected redirect location: %s" % location)
+        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
 
         data["next"] = "/somewhere/else/"
         data["comment"] = "This is another comment"
