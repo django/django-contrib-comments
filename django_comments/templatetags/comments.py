@@ -66,11 +66,11 @@ class BaseCommentNode(template.Node):
         self.comment = comment
 
     def render(self, context):
-        qs = self.get_query_set(context)
+        qs = self.get_queryset(context)
         context[self.as_varname] = self.get_context_value_from_queryset(context, qs)
         return ''
 
-    def get_query_set(self, context):
+    def get_queryset(self, context):
         ctype, object_pk = self.get_target_ctype_pk(context)
         if not object_pk:
             return self.comment_model.objects.none()
@@ -207,7 +207,7 @@ class RenderCommentListNode(CommentListNode):
                 "comments/%s/list.html" % ctype.app_label,
                 "comments/list.html"
             ]
-            qs = self.get_query_set(context)
+            qs = self.get_queryset(context)
             context.push()
             liststr = render_to_string(template_search_list, {
                 "comment_list" : self.get_context_value_from_queryset(context, qs)

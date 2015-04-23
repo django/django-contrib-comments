@@ -328,5 +328,5 @@ are not using that, you will need to use the ``csrf_protect`` decorator on any
 views that include the comment form, in order for those views to be able to
 output the CSRF token and cookie.
 
-.. _cross site request forgery protection: https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/
+.. _cross site request forgery protection: https://docs.djangoproject.com/en/stable/ref/csrf/
 .. _honeypot: http://en.wikipedia.org/wiki/Honeypot_(computing)

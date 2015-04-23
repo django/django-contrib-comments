@@ -9,7 +9,7 @@ The comment app sends a series of signals_ to allow for
 comment moderation and similar activities. See `the introduction to signals`_ for information about how to register for and receive these
 signals.
 
-.. _signals: https://docs.djangoproject.com/en/1.5/topics/signals/
+.. _signals: https://docs.djangoproject.com/en/stable/topics/signals/
 .. _the introduction to signals: signals_
 
 comment_will_be_posted

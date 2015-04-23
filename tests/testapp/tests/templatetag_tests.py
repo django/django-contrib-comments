@@ -1,7 +1,8 @@
 from __future__ import absolute_import
 
 from django.contrib.contenttypes.models import ContentType
-from django.template import Template, Context, Library, libraries
+from django.template import Template, Context, Library
+from django.template.base import libraries
 
 from django_comments.forms import CommentForm
 from django_comments.models import Comment

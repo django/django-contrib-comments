@@ -10,7 +10,7 @@ except IOError:
 
 setup(
     name='django-contrib-comments',
-    version='1.5.1',
+    version='1.6.0',
     url="http://github.com/django/django-contrib-comments",
     description='The code formerly known as django.contrib.comments.',
     long_description=long_description,
@@ -36,5 +36,5 @@ setup(
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     test_suite='tests.runtests.main',
-    install_requires=['Django>=1.5']
+    install_requires=['Django>=1.6']
 )

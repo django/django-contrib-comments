@@ -151,7 +151,7 @@ enable it in your project's ``urls.py``:
 
 Now you should have the latest comment feeds being served off ``/feeds/latest/``.
 
-__ https://docs.djangoproject.com/en/1.5/ref/contrib/syndication/
+__ https://docs.djangoproject.com/en/stable/ref/contrib/syndication/
 
 Moderation
 ==========
