@@ -82,14 +82,19 @@ def post_comment(request, next=None, using=None):
 
     # If there are errors or if we requested a preview show the comment
     if form.errors or preview:
+        try:
+            model_name = model._meta.module_name
+        except:
+            model_name = model._meta.model_name
+
         template_list = [
             # These first two exist for purely historical reasons.
             # Django v1.0 and v1.1 allowed the underscore format for
             # preview templates, so we have to preserve that format.
-            "comments/%s_%s_preview.html" % (model._meta.app_label, model._meta.module_name),
+            "comments/%s_%s_preview.html" % (model._meta.app_label, model_name),
             "comments/%s_preview.html" % model._meta.app_label,
             # Now the usual directory based template hierarchy.
-            "comments/%s/%s/preview.html" % (model._meta.app_label, model._meta.module_name),
+            "comments/%s/%s/preview.html" % (model._meta.app_label, model_name),
             "comments/%s/preview.html" % model._meta.app_label,
             "comments/preview.html",
         ]
