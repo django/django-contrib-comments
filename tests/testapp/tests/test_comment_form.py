@@ -67,7 +67,7 @@ class CommentFormTests(CommentTestCase):
         d = self.getValidData(a)
 
         # Save settings in case other tests need 'em
-        saved = settings.PROFANITIES_LIST, settings.COMMENTS_ALLOW_PROFANITIES
+        saved = getattr(settings, 'PROFANITIES_LIST', []), getattr(settings, 'COMMENTS_ALLOW_PROFANITIES', False)
 
         # Don't wanna swear in the unit tests if we don't have to...
         settings.PROFANITIES_LIST = ["rooster"]
