@@ -24,6 +24,13 @@ this will be rejected. Defaults to 3000.
 
 .. setting:: COMMENTS_APP
 
+COMMENT_TIMEOUT
+------------------
+
+The maximum comment form timeout. Defaults is 2 hours.
+
+.. setting:: COMMENTS_TIMEOUT
+
 COMMENTS_APP
 ------------
 
