@@ -1,12 +1,12 @@
 from django.conf import settings
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
 from django.core import urlresolvers
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils.translation import ugettext_lazy as _
 
 from django_comments.managers import CommentManager
 
@@ -20,11 +20,12 @@ class BaseCommentAbstractModel(models.Model):
     """
 
     # Content-object field
-    content_type = models.ForeignKey(ContentType,
-            verbose_name=_('content type'),
-            related_name="content_type_set_for_%(class)s")
+    content_type = models.ForeignKey(
+        ContentType, verbose_name=_('content type'),
+        related_name="content_type_set_for_%(class)s")
     object_pk = models.TextField(_('object ID'))
-    content_object = generic.GenericForeignKey(ct_field="content_type", fk_field="object_pk")
+    content_object = GenericForeignKey(
+        ct_field="content_type", fk_field="object_pk")
 
     # Metadata about the comment
     site = models.ForeignKey(Site)
@@ -74,6 +75,7 @@ class Comment(BaseCommentAbstractModel):
     objects = CommentManager()
 
     class Meta:
+        app_label = 'django_comments'
         db_table = "django_comments"
         ordering = ('submit_date',)
         permissions = [("can_moderate", "Can moderate comments")]
@@ -186,6 +188,7 @@ class CommentFlag(models.Model):
     MODERATOR_APPROVAL = "moderator approval"
 
     class Meta:
+        app_label = 'django_comments'
         db_table = 'django_comment_flags'
         unique_together = [('user', 'comment', 'flag')]
         verbose_name = _('comment flag')
