@@ -2,9 +2,9 @@ import time
 from django import forms
 
 try:
-    from django.forms.util import ErrorDict    
-except ImportError:
     from django.forms.utils import ErrorDict
+except ImportError:
+    from django.forms.util import ErrorDict
 
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType

@@ -1,9 +1,9 @@
 from django.conf import settings
 
 try:
-    from django.contrib.contenttypes.generic import GenericForeignKey
-except ImportError:
     from django.contrib.contenttypes.fields import GenericForeignKey
+except ImportError:
+    from django.contrib.contenttypes.generic import GenericForeignKey
 
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site

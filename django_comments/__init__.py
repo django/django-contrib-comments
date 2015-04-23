@@ -3,10 +3,9 @@ from django.core import urlresolvers
 from django.core.exceptions import ImproperlyConfigured
 
 try:
-    from django.utils.importlib import import_module
-except ImportError:
-    # Django 1.9+
     from importlib import import_module
+except ImportError:
+    from django.utils.importlib import import_module
 
 
 DEFAULT_COMMENTS_APP = 'django_comments'
