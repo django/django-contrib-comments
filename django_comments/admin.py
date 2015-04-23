@@ -14,6 +14,7 @@ class UsernameSearch(object):
     a mechanism for issuing the equivalent of a .filter(user__username=...)
     search in CommentAdmin.
     """
+
     def __str__(self):
         return 'user__%s' % get_user_model().USERNAME_FIELD
 
@@ -21,15 +22,15 @@ class UsernameSearch(object):
 class CommentsAdmin(admin.ModelAdmin):
     fieldsets = (
         (None,
-           {'fields': ('content_type', 'object_pk', 'site')}
+         {'fields': ('content_type', 'object_pk', 'site')}
         ),
         (_('Content'),
-           {'fields': ('user', 'user_name', 'user_email', 'user_url', 'comment')}
+         {'fields': ('user', 'user_name', 'user_email', 'user_url', 'comment')}
         ),
         (_('Metadata'),
-           {'fields': ('submit_date', 'ip_address', 'is_public', 'is_removed')}
+         {'fields': ('submit_date', 'ip_address', 'is_public', 'is_removed')}
         ),
-     )
+    )
 
     list_display = ('name', 'content_type', 'object_pk', 'ip_address', 'submit_date', 'is_public', 'is_removed')
     list_filter = ('submit_date', 'site', 'is_public', 'is_removed')
@@ -54,16 +55,19 @@ class CommentsAdmin(admin.ModelAdmin):
     def flag_comments(self, request, queryset):
         self._bulk_flag(request, queryset, perform_flag,
                         lambda n: ungettext('flagged', 'flagged', n))
+
     flag_comments.short_description = _("Flag selected comments")
 
     def approve_comments(self, request, queryset):
         self._bulk_flag(request, queryset, perform_approve,
                         lambda n: ungettext('approved', 'approved', n))
+
     approve_comments.short_description = _("Approve selected comments")
 
     def remove_comments(self, request, queryset):
         self._bulk_flag(request, queryset, perform_delete,
                         lambda n: ungettext('removed', 'removed', n))
+
     remove_comments.short_description = _("Remove selected comments")
 
     def _bulk_flag(self, request, queryset, action, done_message):
