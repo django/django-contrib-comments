@@ -171,7 +171,7 @@ class CommentDetailsForm(CommentSecurityForm):
         contain anything in PROFANITIES_LIST.
         """
         comment = self.cleaned_data["comment"]
-        if settings.COMMENTS_ALLOW_PROFANITIES == False:
+        if not getattr(settings, 'COMMENTS_ALLOW_PROFANITIES', False):
             bad_words = [w for w in settings.PROFANITIES_LIST if w in comment.lower()]
             if bad_words:
                 raise forms.ValidationError(ungettext(
