@@ -27,7 +27,7 @@ this will be rejected. Defaults to 3000.
 COMMENT_TIMEOUT
 ------------------
 
-The maximum comment form timeout. Defaults is 2 hours.
+The maximum comment form timeout in seconds. Defaults is ``2 * 60 * 60`` (2 hours).
 
 .. setting:: COMMENTS_TIMEOUT
 
