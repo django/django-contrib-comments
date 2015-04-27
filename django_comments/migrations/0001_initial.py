@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                     verbose_name='is public')),
                 ('is_removed', models.BooleanField(default=False,
                     help_text='Check this box if the comment is inappropriate. A "This comment has been removed"'
-                              'message will be displayed instead.',
+                              ' message will be displayed instead.',
                     verbose_name='is removed')),
                 ('content_type', models.ForeignKey(related_name='content_type_set_for_comment',
                     verbose_name='content type', to='contenttypes.ContentType')),
