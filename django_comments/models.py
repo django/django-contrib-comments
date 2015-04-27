@@ -81,6 +81,7 @@ class Comment(BaseCommentAbstractModel):
     objects = CommentManager()
 
     class Meta:
+        app_label = 'django_comments'
         db_table = "django_comments"
         ordering = ('submit_date',)
         permissions = [("can_moderate", "Can moderate comments")]
@@ -197,6 +198,7 @@ class CommentFlag(models.Model):
     MODERATOR_APPROVAL = "moderator approval"
 
     class Meta:
+        app_label = 'django_comments'
         db_table = 'django_comment_flags'
         unique_together = [('user', 'comment', 'flag')]
         verbose_name = _('comment flag')
