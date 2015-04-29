@@ -17,6 +17,7 @@ from django.utils.translation import ungettext, ugettext, ugettext_lazy as _
 from django_comments.models import Comment
 
 COMMENT_MAX_LENGTH = getattr(settings, 'COMMENT_MAX_LENGTH', 3000)
+DEFAULT_COMMENTS_TIMEOUT = getattr(settings, 'COMMENTS_TIMEOUT', (2 * 60 * 60))  # 2h
 
 
 class CommentSecurityForm(forms.Form):
@@ -57,9 +58,9 @@ class CommentSecurityForm(forms.Form):
         return actual_hash
 
     def clean_timestamp(self):
-        """Make sure the timestamp isn't too far (> 2 hours) in the past."""
+        """Make sure the timestamp isn't too far (default is > 2 hours) in the past."""
         ts = self.cleaned_data["timestamp"]
-        if time.time() - ts > (2 * 60 * 60):
+        if time.time() - ts > DEFAULT_COMMENTS_TIMEOUT:
             raise forms.ValidationError("Timestamp check failed")
         return ts
 
