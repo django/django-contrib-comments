@@ -18,6 +18,7 @@ setup(
     author_email='jacob@jacobian.org',
     license='BSD',
     platforms='any',
+    zip_safe=False,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
