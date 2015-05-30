@@ -17,10 +17,10 @@ from django_comments import signals
 from django_comments.views.utils import next_redirect, confirmation_view
 
 
-if django.VERSION < (1, 8):
-    from django.db import models as apps
-else:
+try:
     from django.apps import apps
+except ImportError:
+    from django.db import models as apps
 
 
 class CommentPostBadRequest(http.HttpResponseBadRequest):
