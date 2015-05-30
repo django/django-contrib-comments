@@ -11,6 +11,11 @@ from django.utils.html import escape
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 
+try:
+    from django.apps import apps
+except ImportError:
+    from django.db import models as apps
+
 import django_comments
 from django_comments import signals
 from django_comments.views.utils import next_redirect, confirmation_view
@@ -52,7 +57,7 @@ def post_comment(request, next=None, using=None):
     if ctype is None or object_pk is None:
         return CommentPostBadRequest("Missing content_type or object_pk field.")
     try:
-        model = models.get_model(*ctype.split(".", 1))
+        model = apps.get_model(*ctype.split(".", 1))
         target = model._default_manager.using(using).get(pk=object_pk)
     except TypeError:
         return CommentPostBadRequest(
