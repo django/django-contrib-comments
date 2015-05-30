@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 
+import django
 from django import http
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
@@ -14,6 +15,12 @@ from django.views.decorators.http import require_POST
 import django_comments
 from django_comments import signals
 from django_comments.views.utils import next_redirect, confirmation_view
+
+
+if django.VERSION < (1, 8):
+    from django.db.models import get_model
+else:
+    from django.db.models.loading import get_model
 
 
 class CommentPostBadRequest(http.HttpResponseBadRequest):
@@ -52,7 +59,7 @@ def post_comment(request, next=None, using=None):
     if ctype is None or object_pk is None:
         return CommentPostBadRequest("Missing content_type or object_pk field.")
     try:
-        model = models.get_model(*ctype.split(".", 1))
+        model = get_model(*ctype.split(".", 1))
         target = model._default_manager.using(using).get(pk=object_pk)
     except TypeError:
         return CommentPostBadRequest(
