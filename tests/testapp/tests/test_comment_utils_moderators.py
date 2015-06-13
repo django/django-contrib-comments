@@ -8,7 +8,7 @@ from django_comments.moderation import (moderator, CommentModerator,
     AlreadyModerated)
 
 from . import CommentTestCase
-from ..models import Entry
+from testapp.models import Entry
 
 
 class EntryModerator1(CommentModerator):

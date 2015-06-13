@@ -7,7 +7,7 @@ from django.template.base import libraries
 from django_comments.forms import CommentForm
 from django_comments.models import Comment
 
-from ..models import Article, Author
+from testapp.models import Article, Author
 from . import CommentTestCase
 
 register = Library()

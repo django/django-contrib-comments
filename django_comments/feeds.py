@@ -1,8 +1,9 @@
 from django.contrib.syndication.views import Feed
-from django.contrib.sites.models import get_current_site
 from django.utils.translation import ugettext as _
 
 import django_comments
+
+from .compat import get_current_site
 
 
 class LatestCommentFeed(Feed):

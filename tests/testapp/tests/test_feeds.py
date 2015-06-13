@@ -9,7 +9,7 @@ from django.contrib.sites.models import Site
 from django_comments.models import Comment
 
 from . import CommentTestCase
-from ..models import Article
+from testapp.models import Article
 
 
 class CommentFeedTests(CommentTestCase):
