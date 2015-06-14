@@ -8,7 +8,7 @@ from django_comments.forms import CommentForm
 from django_comments.models import Comment
 
 from . import CommentTestCase
-from ..models import Article
+from testapp.models import Article
 
 
 class CommentFormTests(CommentTestCase):

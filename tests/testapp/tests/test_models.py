@@ -3,7 +3,7 @@ from __future__ import absolute_import
 from django_comments.models import Comment
 
 from . import CommentTestCase
-from ..models import Author, Article
+from testapp.models import Author, Article
 
 
 class CommentModelTests(CommentTestCase):

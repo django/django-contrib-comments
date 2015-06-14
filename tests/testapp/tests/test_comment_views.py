@@ -9,7 +9,7 @@ from django_comments import signals
 from django_comments.models import Comment
 
 from . import CommentTestCase
-from ..models import Article, Book
+from testapp.models import Article, Book
 
 
 post_redirect_re = re.compile(r'^http://testserver/posted/\?c=(?P<pk>\d+$)')

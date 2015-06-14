@@ -1,9 +1,9 @@
 from django.core import urlresolvers
-from .models import CustomComment
 from .forms import CustomCommentForm
 
 
 def get_model():
+    from .models import CustomComment
     return CustomComment
 
 
