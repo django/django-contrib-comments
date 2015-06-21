@@ -59,7 +59,7 @@ msgstr "Отстрани ги избраните коментари"
 #, python-format
 msgid "1 comment was successfully %(action)s."
 msgid_plural "%(count)s comments were successfully %(action)s."
-msgstr[0] "1 коментар беше успешно %(action)s."
+msgstr[0] "%(count)s коментар беше успешно %(action)s."
 msgstr[1] "%(count)s коментари беа успешно %(action)s."
 
 #: feeds.py:14

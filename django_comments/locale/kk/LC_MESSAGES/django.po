@@ -92,9 +92,7 @@ msgstr "Аңғартпа"
 msgid "Watch your mouth! The word %s is not allowed here."
 msgid_plural "Watch your mouth! The words %s are not allowed here."
 msgstr[0] ""
-"one: Байқап сөйлеңіз! Бұл жерде %s сөзіне тыйым салынған.\n"
-"\n"
-"other: Байқап сөйлеңіз! Бұл жерде %s сөздеріне тыйым салынған."
+"Байқап сөйлеңіз! Бұл жерде %s сөзіне тыйым салынған."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
