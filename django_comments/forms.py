@@ -13,7 +13,7 @@ from django.utils.crypto import salted_hmac, constant_time_compare
 from django.utils.encoding import force_text
 from django.utils.text import get_text_list
 from django.utils import timezone
-from django.utils.translation import ungettext, ugettext, ugettext_lazy as _
+from django.utils.translation import ungettext, ugettext, ugettext_lazy as _, pgettext_lazy
 from django_comments.models import Comment
 
 COMMENT_MAX_LENGTH = getattr(settings, 'COMMENT_MAX_LENGTH', 3000)
@@ -102,7 +102,7 @@ class CommentDetailsForm(CommentSecurityForm):
     """
     Handles the specific details of the comment (name, comment, etc.).
     """
-    name = forms.CharField(label=_("Name"), max_length=50)
+    name = forms.CharField(label=pgettext_lazy("Name of the person", "Name"), max_length=50)
     email = forms.EmailField(label=_("Email address"))
     url = forms.URLField(label=_("URL"), required=False)
     comment = forms.CharField(label=_('Comment'), widget=forms.Textarea,
