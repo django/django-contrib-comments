@@ -9,8 +9,7 @@
     {% if next %}
       <div><input type="hidden" name="next" value="{{ next }}"/></div>{% endif %}
     {% if form.errors %}
-      <h1>{% blocktrans count counter=form.errors|length %}Please correct the error below{% plural %}Please correct the
-        errors below{% endblocktrans %}</h1>
+      <h1>{% blocktrans count counter=form.errors|length %}Please correct the error below{% plural %}Please correct the errors below{% endblocktrans %}</h1>
     {% else %}
       <h1>{% trans "Preview your comment" %}</h1>
       <blockquote>{{ comment|linebreaks }}</blockquote>
