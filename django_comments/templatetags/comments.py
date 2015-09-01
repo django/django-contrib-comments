@@ -178,9 +178,12 @@ class RenderCommentFormNode(CommentFormNode):
                 "comments/%s/form.html" % ctype.app_label,
                 "comments/form.html"
             ]
-            context.push()
-            formstr = render_to_string(template_search_list, {"form": self.get_form(context)}, context)
-            context.pop()
+            # Django 1.6 does not have context.flatten().
+            context_dict = {}
+            for d in context.dicts:
+                context_dict.update(d)
+            context_dict['form'] = self.get_form(context)
+            formstr = render_to_string(template_search_list, context_dict)
             return formstr
         else:
             return ''
@@ -216,11 +219,12 @@ class RenderCommentListNode(CommentListNode):
                 "comments/list.html"
             ]
             qs = self.get_queryset(context)
-            context.push()
-            liststr = render_to_string(template_search_list, {
-                "comment_list": self.get_context_value_from_queryset(context, qs)
-            }, context)
-            context.pop()
+            # Django 1.6 does not have context.flatten().
+            context_dict = {}
+            for d in context.dicts:
+                context_dict.update(d)
+            context_dict['comment_list'] = self.get_context_value_from_queryset(context, qs)
+            liststr = render_to_string(template_search_list, context_dict)
             return liststr
         else:
             return ''
