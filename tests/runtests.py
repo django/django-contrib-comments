@@ -38,16 +38,15 @@ settings.configure(
 from django.test.runner import DiscoverRunner
 
 
-def main():
+def main(test_labels=None):
     if django.VERSION >= (1, 7):
         django.setup()
     runner = DiscoverRunner(failfast=True, verbosity=1)
-    if len(sys.argv) > 1:
-        test_labels = sys.argv[1:]
-    else:
-        test_labels = ['testapp']
-    failures = runner.run_tests(test_labels, interactive=True)
+    failures = runner.run_tests(test_labels or ['testapp'], interactive=True)
     sys.exit(failures)
 
 if __name__ == '__main__':
-    main()
+    test_labels = None
+    if len(sys.argv) > 1:
+        test_labels = sys.argv[1:]
+    main(test_labels)
