@@ -42,7 +42,11 @@ def main():
     if django.VERSION >= (1, 7):
         django.setup()
     runner = DiscoverRunner(failfast=True, verbosity=1)
-    failures = runner.run_tests(['testapp'], interactive=True)
+    if len(sys.argv) > 1:
+        test_labels = sys.argv[1:]
+    else:
+        test_labels = ['testapp']
+    failures = runner.run_tests(test_labels, interactive=True)
     sys.exit(failures)
 
 if __name__ == '__main__':
