@@ -23,11 +23,11 @@ follow these steps:
 
    .. code-block:: python
 
-        urlpatterns = patterns('',
+        urlpatterns = [
             ...
-            (r'^comments/', include('django_comments.urls')),
+            url(r'^comments/', include('django_comments.urls')),
             ...
-        )
+        ]
 
 #. If your project had :doc:`customized the comments framework
    </custom>`, then update your imports to use the ``django_comments``
