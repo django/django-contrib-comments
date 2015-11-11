@@ -56,6 +56,7 @@ class.
 
 import datetime
 
+from django import VERSION
 from django.conf import settings
 from django.core.mail import send_mail
 from django.db.models.base import ModelBase
@@ -245,11 +246,13 @@ class CommentModerator(object):
             return
         recipient_list = [manager_tuple[1] for manager_tuple in settings.MANAGERS]
         t = loader.get_template('comments/comment_notification_email.txt')
-        c = Context({'comment': comment,
-                     'content_object': content_object})
+        c = {
+            'comment': comment,
+            'content_object': content_object,
+        }
         subject = '[%s] New comment posted on "%s"' % (get_current_site(request).name,
                                                        content_object)
-        message = t.render(c)
+        message = t.render(Context(c) if VERSION < (1, 8) else c)
         send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list, fail_silently=True)
 
 
