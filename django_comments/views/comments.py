@@ -4,8 +4,7 @@ from django import http
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import models
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils.html import escape
 from django.views.decorators.csrf import csrf_protect
@@ -98,13 +97,11 @@ def post_comment(request, next=None, using=None):
             "comments/%s/preview.html" % model._meta.app_label,
             "comments/preview.html",
         ]
-        return render_to_response(
-            template_list, {
+        return render(request, template_list, {
                 "comment": form.data.get("comment", ""),
                 "form": form,
                 "next": data.get("next", next),
             },
-            RequestContext(request, {})
         )
 
     # Otherwise create the comment

@@ -1,9 +1,8 @@
 from __future__ import absolute_import
 
-from django import template
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
-from django.shortcuts import get_object_or_404, render_to_response
+from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import csrf_protect
 
 import django_comments
@@ -32,11 +31,7 @@ def flag(request, comment_id, next=None):
 
     # Render a form on GET
     else:
-        return render_to_response(
-            'comments/flag.html',
-            {'comment': comment, "next": next},
-            template.RequestContext(request)
-        )
+        return render(request, 'comments/flag.html', {'comment': comment, "next": next})
 
 
 @csrf_protect
@@ -62,11 +57,7 @@ def delete(request, comment_id, next=None):
 
     # Render a form on GET
     else:
-        return render_to_response(
-            'comments/delete.html',
-            {'comment': comment, "next": next},
-            template.RequestContext(request)
-        )
+        return render(request, 'comments/delete.html', {'comment': comment, "next": next})
 
 
 @csrf_protect
@@ -92,11 +83,7 @@ def approve(request, comment_id, next=None):
 
     # Render a form on GET
     else:
-        return render_to_response(
-            'comments/approve.html',
-            {'comment': comment, "next": next},
-            template.RequestContext(request)
-        )
+        return render(request, 'comments/approve.html', {'comment': comment, "next": next})
 
 
 # The following functions actually perform the various flag/aprove/delete
