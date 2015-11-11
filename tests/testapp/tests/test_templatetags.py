@@ -1,23 +1,13 @@
 from __future__ import absolute_import
 
 from django.contrib.contenttypes.models import ContentType
-from django.template import Template, Context, Library
-from django.template.base import libraries
+from django.template import Template, Context
 
 from django_comments.forms import CommentForm
 from django_comments.models import Comment
 
 from testapp.models import Article, Author
 from . import CommentTestCase
-
-register = Library()
-
-
-@register.filter
-def noop(variable, param=None):
-    return variable
-
-libraries['comment_testtags'] = register
 
 
 class CommentTemplateTagTests(CommentTestCase):
