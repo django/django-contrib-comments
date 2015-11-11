@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 from django.conf.urls import patterns, url
+from django.contrib.contenttypes.views import shortcut
 
 from django_comments.feeds import LatestCommentFeed
 
@@ -16,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^flag/(\d+)/$', views.custom_flag_comment),
     url(r'^delete/(\d+)/$', views.custom_delete_comment),
     url(r'^approve/(\d+)/$', views.custom_approve_comment),
-    url(r'^cr/(\d+)/(.+)/$', 'django.contrib.contenttypes.views.shortcut', name='comments-url-redirect'),
+    url(r'^cr/(\d+)/(.+)/$', shortcut, name='comments-url-redirect'),
 )
 
 urlpatterns += patterns('',
