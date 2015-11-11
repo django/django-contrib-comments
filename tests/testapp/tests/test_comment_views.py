@@ -12,7 +12,8 @@ from . import CommentTestCase
 from testapp.models import Article, Book
 
 
-post_redirect_re = re.compile(r'^http://testserver/posted/\?c=(?P<pk>\d+$)')
+# Before Django 1.9, the response contained the scheme/netloc parts
+post_redirect_re = re.compile(r'^(http://testserver)?/posted/\?c=(?P<pk>\d+$)')
 
 
 class CommentViewTests(CommentTestCase):
@@ -252,7 +253,7 @@ class CommentViewTests(CommentTestCase):
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
         location = response["Location"]
-        match = re.search(r"^http://testserver/somewhere/else/\?c=\d+$", location)
+        match = re.search(r"^(http://testserver)?/somewhere/else/\?c=\d+$", location)
         self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
 
         data["next"] = "http://badserver/somewhere/else/"
@@ -284,7 +285,7 @@ class CommentViewTests(CommentTestCase):
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
         location = response["Location"]
-        match = re.search(r"^http://testserver/somewhere/else/\?foo=bar&c=\d+$", location)
+        match = re.search(r"^(http://testserver)?/somewhere/else/\?foo=bar&c=\d+$", location)
         self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
 
     def testCommentPostRedirectWithInvalidIntegerPK(self):
@@ -313,7 +314,7 @@ class CommentViewTests(CommentTestCase):
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
         location = response["Location"]
-        match = re.search(r"^http://testserver/somewhere/else/\?foo=bar&c=\d+#baz$", location)
+        match = re.search(r"^(http://testserver)?/somewhere/else/\?foo=bar&c=\d+#baz$", location)
         self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
 
         # Without a query string
@@ -323,5 +324,5 @@ class CommentViewTests(CommentTestCase):
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
         location = response["Location"]
-        match = re.search(r"^http://testserver/somewhere/else/\?c=\d+#baz$", location)
+        match = re.search(r"^(http://testserver)?/somewhere/else/\?c=\d+#baz$", location)
         self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)

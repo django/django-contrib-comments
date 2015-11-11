@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 
+from django import VERSION
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
@@ -88,3 +89,14 @@ class CommentTestCase(TestCase):
         d = self.getData()
         d.update(f.initial)
         return d
+
+    def assertRedirects(self, response, expected_url, **kwargs):
+        """
+        Wrapper for assertRedirects to handle Django pre-1.7.
+        """
+        if VERSION >= (1, 7):
+            kwargs['fetch_redirect_response'] = False
+            return super(CommentTestCase, self).assertRedirects(
+                response, expected_url, **kwargs)
+        else:
+            self.assertEqual(response["Location"], expected_url)
