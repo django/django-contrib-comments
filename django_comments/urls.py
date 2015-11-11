@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.contrib.contenttypes.views import shortcut
 
 from .views.comments import post_comment, comment_done
@@ -7,7 +7,7 @@ from .views.moderation import (
 )
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^post/$', post_comment, name='comments-post-comment'),
     url(r'^posted/$', comment_done, name='comments-comment-done'),
     url(r'^flag/(\d+)/$', flag, name='comments-flag'),
@@ -16,9 +16,6 @@ urlpatterns = patterns('',
     url(r'^deleted/$', delete_done, name='comments-delete-done'),
     url(r'^approve/(\d+)/$', approve, name='comments-approve'),
     url(r'^approved/$', approve_done, name='comments-approve-done'),
-)
 
-urlpatterns += patterns('',
-    url(r'^cr/(\d+)/(.+)/$', shortcut,
-        name='comments-url-redirect'),
-)
+    url(r'^cr/(\d+)/(.+)/$', shortcut, name='comments-url-redirect'),
+]
