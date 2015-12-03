@@ -40,3 +40,9 @@ follow these steps:
 
         from django.contrib.comments.forms import CommentForm # old
         from django_comments.forms import CommentForm # new
+
+#. If your database schema already contains the tables and data
+   for existing comments and you get an error like
+   ``django.db.utils.ProgrammingError: relation "django_comments" already exists``
+   in your first subsequent migration, run 
+   ``manage.py migrate django_comments --fake-initial``.
