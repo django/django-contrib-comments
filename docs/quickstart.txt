@@ -31,6 +31,9 @@ To get started using the ``comments`` app, follow these steps:
 You might also want to examine :ref:`the available settings
 <settings-comments>`.
 
+To take full advantage of the moderation system, you may want to add some
+comment-enablig fields to specified models. See Comment moderation for details.
+
 Comment template tags
 =====================
 
