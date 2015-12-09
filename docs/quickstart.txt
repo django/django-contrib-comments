@@ -15,13 +15,6 @@ To get started using the ``comments`` app, follow these steps:
 
 #. Run ``manage.py syncdb`` so that Django will create the comment tables.
 
-#. Add the following field to the model you want to add comments to ``models.py``:
-
-   .. code-block:: python
-
-        ...
-        enable_comments = models.BooleanField(default=True)
-
 #. Add the comment app's URLs to your project's ``urls.py``:
 
    .. code-block:: python
@@ -37,6 +30,9 @@ To get started using the ``comments`` app, follow these steps:
 
 You might also want to examine :ref:`the available settings
 <settings-comments>`.
+
+To take full advantage of the moderation system, you may want to add some
+comment-enablig fields to specified models. See Comment moderation for details.
 
 Comment template tags
 =====================
