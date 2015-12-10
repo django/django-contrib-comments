@@ -76,7 +76,7 @@ msgstr "Senaste kommentarer på %(site_name)s"
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #: forms.py:97
 msgid "Email address"
@@ -108,7 +108,7 @@ msgstr "Om du fyller i detta fält kommer din kommentar att betraktas som spam"
 
 #: models.py:23
 msgid "content type"
-msgstr "innehålls typ"
+msgstr "innehållstyp"
 
 #: models.py:25
 msgid "object ID"
@@ -223,7 +223,7 @@ msgstr "Tack för ditt godkännande"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr "Tack för att du tog dig tid att förbättra kvaliteten på denna sites diskussioner"
+msgstr "Tack för att du tog dig tid att förbättra diskussionskvaliteten på webbplatsen."
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -280,8 +280,8 @@ msgstr "Förhandsgranska din kommentar"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vänligen korrigera felet nedan"
+msgstr[1] "Vänligen korrigera felen nedan"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"
