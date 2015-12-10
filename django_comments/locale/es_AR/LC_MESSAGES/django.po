@@ -1,16 +1,17 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Ramiro Morales, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
-"Language-Team: Spanish (Argentina) (http://www.transifex.com/projects/p/"
-"django/language/es_AR/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-11-30 00:33+0000\n"
+"Last-Translator: Ramiro Morales\n"
+"Language-Team: Spanish (Argentina) (http://www.transifex.com/django/django-contrib-comments/language/es_AR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +73,8 @@ msgstr "comentarios en %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Últimos comentarios en %(site_name)s."
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Nombre"
 
@@ -157,9 +159,7 @@ msgstr "se ha eliminado"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Marque este ítem si el comentario es inapropiado. En su lugar se mostrará un "
-"mensaje \"Este comentario ha sido eliminado\"."
+msgstr "Marque este ítem si el comentario es inapropiado. En su lugar se mostrará un mensaje \"Este comentario ha sido eliminado\"."
 
 #: models.py:80
 msgid "comments"
@@ -169,17 +169,13 @@ msgstr "comentarios"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Este comentario ha sido enviado por un usuario identificado, por lo tanto el "
-"nombre no puede modificarse."
+msgstr "Este comentario ha sido enviado por un usuario identificado, por lo tanto el nombre no puede modificarse."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Este comentario ha sido enviado por un usuario identificado, por lo tanto la "
-"dirección de correo electrónico no puede modificarse."
+msgstr "Este comentario ha sido enviado por un usuario identificado, por lo tanto la dirección de correo electrónico no puede modificarse."
 
 #: models.py:160
 #, python-format
@@ -189,12 +185,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Enviado por %(user)s el %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Enviado por %(user)s el %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -232,9 +223,7 @@ msgstr "¡Gracias por aprobar!"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Gracias por tomarse el tiempo de mejorar la calidad de la discusión en "
-"nuestro sitio"
+msgstr "Gracias por tomarse el tiempo de mejorar la calidad de la discusión en nuestro sitio"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -291,8 +280,8 @@ msgstr "Ver una copia previa de su comentario"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Por favor, corrija el siguiente error."
-msgstr[1] "Por favor, corrija los siguientes errores."
+msgstr[0] "Por favor corrija el siguiente error"
+msgstr[1] "Por favor corrija los siguientes errores"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

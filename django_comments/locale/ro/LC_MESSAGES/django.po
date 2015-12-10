@@ -1,24 +1,23 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Daniel Ursache-Dogariu <contact@danniel.net>, 2011.
-# Denis Darii <sinednx@gmail.com>, 2011.
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Translators:
+# Daniel Ursache-Dogariu <contact@danniel.net>, 2011
+# Denis Darii <denis.darii@gmail.com>, 2011
+# Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Daniel Ursache-Dogariu <contact@danniel.net>\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/django/language/"
-"ro/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Romanian (http://www.transifex.com/django/django-contrib-comments/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
-"2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: admin.py:25
 msgid "Content"
@@ -79,9 +78,10 @@ msgstr "Comentariile de la %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Ultimele comentarii la %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Nume"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -110,9 +110,7 @@ msgstr "și"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Dacă introduceți ceva în acest câmp, comentariul dumneavoastră va fi "
-"considerat ca spam"
+msgstr "Dacă introduceți ceva în acest câmp, comentariul dumneavoastră va fi considerat ca spam"
 
 #: models.py:23
 msgid "content type"
@@ -157,8 +155,7 @@ msgstr "este public"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Debifaţi această casetă pentru a face comentariul să dispară de pe site."
+msgstr "Debifaţi această casetă pentru a face comentariul să dispară de pe site."
 
 #: models.py:67
 msgid "is removed"
@@ -168,9 +165,7 @@ msgstr "este șters"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Bifați această casuța dacă acest comentariu nu este adecvat. Un mesaj de "
-"tipul \"Acest comentariu a fost șters\" va fi afișat în schimb."
+msgstr "Bifați această casuța dacă acest comentariu nu este adecvat. Un mesaj de tipul \"Acest comentariu a fost șters\" va fi afișat în schimb."
 
 #: models.py:80
 msgid "comments"
@@ -180,17 +175,13 @@ msgstr "comentarii"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Acest comentariu a fost scris de către un utilizator autentificat, astfel "
-"numele poate fi doar citit."
+msgstr "Acest comentariu a fost scris de către un utilizator autentificat, astfel numele poate fi doar citit."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Acest comentariu a fost scris de către un utilizator autentificat, astfel "
-"adresa e-mail poate fi doar citită."
+msgstr "Acest comentariu a fost scris de către un utilizator autentificat, astfel adresa e-mail poate fi doar citită."
 
 #: models.py:160
 #, python-format
@@ -200,12 +191,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Scris de %(user)s la %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Scris de %(user)s la %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -243,9 +229,7 @@ msgstr "Mulțumiri pentru aprobare"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Vă mulţumim pentru a timpul acordat spre a îmbunătăți calitatea discuțiilor "
-"de pe situl nostru"
+msgstr "Vă mulţumim pentru a timpul acordat spre a îmbunătăți calitatea discuțiilor de pe situl nostru"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -302,9 +286,9 @@ msgstr "Previzualizați-vă comentariul"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Corectați eroarea de mai jos"
-msgstr[1] "Corectați erorile de mai jos"
-msgstr[2] "Corectați erorile de mai jos"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

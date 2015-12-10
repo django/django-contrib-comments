@@ -1,16 +1,16 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Ross Poulton <ross@rossp.org>, 2011.
+# Translators:
+# Ross Poulton <ross@rossp.org>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Ross Poulton <ross@rossp.org>\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/"
-"django/language/en_GB/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/django/django-contrib-comments/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,9 +72,10 @@ msgstr "%(site_name)s comments"
 msgid "Latest comments on %(site_name)s"
 msgstr "Latest comments on %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -102,8 +103,7 @@ msgstr "and"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"If you enter anything in this field your comment will be treated as spam"
+msgstr "If you enter anything in this field your comment will be treated as spam"
 
 #: models.py:23
 msgid "content type"
@@ -148,8 +148,7 @@ msgstr "is public"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Uncheck this box to make the comment effectively disappear from the site."
+msgstr "Uncheck this box to make the comment effectively disappear from the site."
 
 #: models.py:67
 msgid "is removed"
@@ -159,9 +158,7 @@ msgstr "is removed"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Check this box if the comment is inappropriate. A \"This comment has been "
-"removed\" message will be displayed instead."
+msgstr "Check this box if the comment is inappropriate. A \"This comment has been removed\" message will be displayed instead."
 
 #: models.py:80
 msgid "comments"
@@ -171,17 +168,13 @@ msgstr "comments"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"This comment was posted by an authenticated user and thus the name is read-"
-"only."
+msgstr "This comment was posted by an authenticated user and thus the name is read-only."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"This comment was posted by an authenticated user and thus the email is read-"
-"only."
+msgstr "This comment was posted by an authenticated user and thus the email is read-only."
 
 #: models.py:160
 #, python-format
@@ -191,12 +184,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Posted by %(user)s at %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Posted by %(user)s at %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -234,8 +222,7 @@ msgstr "Thanks for approving"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Thanks for taking the time to improve the quality of discussion on our site"
+msgstr "Thanks for taking the time to improve the quality of discussion on our site"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -292,8 +279,8 @@ msgstr "Preview your comment"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Please correct the error below"
-msgstr[1] "Please correct the errors below"
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

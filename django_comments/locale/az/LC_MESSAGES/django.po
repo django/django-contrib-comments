@@ -1,21 +1,21 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Ali Ismayilov <ali@ismailov.info>, 2011.
+# Translators:
+# Ali Ismayilov <ali@ismailov.info>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Ali Ismayilov <ali@ismailov.info>\n"
-"Language-Team: Azerbaijani (http://www.transifex.com/projects/p/django/"
-"language/az/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Azerbaijani (http://www.transifex.com/django/django-contrib-comments/language/az/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: az\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: admin.py:25
 msgid "Content"
@@ -29,8 +29,7 @@ msgstr "Meta-məlumat"
 msgid "flagged"
 msgid_plural "flagged"
 msgstr[0] ""
-"one: işarələndi\n"
-"other: işarələndilər"
+msgstr[1] ""
 
 #: admin.py:56
 msgid "Flag selected comments"
@@ -40,8 +39,7 @@ msgstr "Seçilmiş şərhləri işarələ"
 msgid "approved"
 msgid_plural "approved"
 msgstr[0] ""
-"one: təsdiq olundu\n"
-"other: təsdiq olundular"
+msgstr[1] ""
 
 #: admin.py:61
 msgid "Approve selected comments"
@@ -51,8 +49,7 @@ msgstr "Seçilmiş şərhləri təsdiq et"
 msgid "removed"
 msgid_plural "removed"
 msgstr[0] ""
-"one: silindi\n"
-"other: silindilər"
+msgstr[1] ""
 
 #: admin.py:66
 msgid "Remove selected comments"
@@ -63,8 +60,7 @@ msgstr "Seçilmiş şərhləri sil"
 msgid "1 comment was successfully %(action)s."
 msgid_plural "%(count)s comments were successfully %(action)s."
 msgstr[0] ""
-"one: Şərh uğurla %(action)s.\n"
-"other: %(count)s şərh uğurlar %(action)s."
+msgstr[1] ""
 
 #: feeds.py:14
 #, python-format
@@ -76,9 +72,10 @@ msgstr "%(site_name)s şərhləri"
 msgid "Latest comments on %(site_name)s"
 msgstr "%(site_name)s üzrə son şərhlər"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Ad"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -97,7 +94,7 @@ msgstr "Şərh"
 msgid "Watch your mouth! The word %s is not allowed here."
 msgid_plural "Watch your mouth! The words %s are not allowed here."
 msgstr[0] ""
-"Danışığınıza fikir verin! %s sözünü burda işlətməyə icazə verilmir."
+msgstr[1] ""
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
@@ -161,9 +158,7 @@ msgstr "yığışdırılıb"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Əgər şərh qeyri-uyğundursa, bura quş qoyun və şərhin yerinə \"Bu şərh "
-"yığışdırılıb\" yazısı çıxacaq."
+msgstr "Əgər şərh qeyri-uyğundursa, bura quş qoyun və şərhin yerinə \"Bu şərh yığışdırılıb\" yazısı çıxacaq."
 
 #: models.py:80
 msgid "comments"
@@ -173,17 +168,13 @@ msgstr "şərhlər"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Bu şərh daxil olmuş istifadəçi adından yazılmışdır, buna görə də onun adını "
-"dəyişmək mümkün deyil."
+msgstr "Bu şərh daxil olmuş istifadəçi adından yazılmışdır, buna görə də onun adını dəyişmək mümkün deyil."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Bu şərh daxil olmuş istifadəçi adından yazılmışdır, buna görə də onun e-poçt "
-"ünvanını dəyişmək mümkün deyil."
+msgstr "Bu şərh daxil olmuş istifadəçi adından yazılmışdır, buna görə də onun e-poçt ünvanını dəyişmək mümkün deyil."
 
 #: models.py:160
 #, python-format
@@ -193,12 +184,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"%(user)s %(date)s tarixində yazmışdır.\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "%(user)s %(date)s tarixində yazmışdır.\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -236,9 +222,7 @@ msgstr "Təsdiqlədiniz"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Saytımızda müzakirəni daha keyfiyyətli etmək üçün sərf etdiyiniz vaxta görə "
-"təşəkkür edirik."
+msgstr "Saytımızda müzakirəni daha keyfiyyətli etmək üçün sərf etdiyiniz vaxta görə təşəkkür edirik."
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -296,8 +280,7 @@ msgstr "Şərhin görünüşü"
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
 msgstr[0] ""
-"one: Aşağıdakı səhvi düzəldin.\n"
-"other: Aşağıdakı səhvləri düzəldin."
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

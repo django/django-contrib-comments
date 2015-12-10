@@ -1,23 +1,22 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Ossama Khayat <okhayat@gmail.com>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Ossama Khayat <okhayat@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Ossama Khayat <okhayat@gmail.com>\n"
-"Language-Team: Arabic (http://www.transifex.com/projects/p/django/language/"
-"ar/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Arabic (http://www.transifex.com/django/django-contrib-comments/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: admin.py:25
 msgid "Content"
@@ -90,9 +89,10 @@ msgstr "تعليقات %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "آخر التعليقات على %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "الاسم"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -179,9 +179,7 @@ msgstr "محذوف"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"انتق هذا المربع إذا كان التعليق غير لائق، سيتم عرض الرسالة \"تم حذف هذا "
-"التعليق\" بدلا منه."
+msgstr "انتق هذا المربع إذا كان التعليق غير لائق، سيتم عرض الرسالة \"تم حذف هذا التعليق\" بدلا منه."
 
 #: models.py:80
 msgid "comments"
@@ -197,8 +195,7 @@ msgstr "كتب هذا التعليق مستخدم مُسجّل ولذا كان �
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"كتب هذا التعليق مستخدم مُسجّل ولذا كان عنوان بريده الالكتروني للقراءة فقط."
+msgstr "كتب هذا التعليق مستخدم مُسجّل ولذا كان عنوان بريده الالكتروني للقراءة فقط."
 
 #: models.py:160
 #, python-format
@@ -208,12 +205,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"كتبه %(user)s في %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "كتبه %(user)s في %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -308,12 +300,12 @@ msgstr "عاين تعليقك"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "لا يوجد أخطاء"
-msgstr[1] "رجاءً صحح الخطأ أدناه"
-msgstr[2] "رجاءً صحح الخطأين أدناه"
-msgstr[3] "رجاءً صحح الأخطاء أدناه"
-msgstr[4] "رجاءً صحح الأخطاء أدناه"
-msgstr[5] "رجاءً صحح الأخطاء أدناه"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

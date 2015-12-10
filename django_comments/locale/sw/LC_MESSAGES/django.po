@@ -1,15 +1,15 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
+# Translators:
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-07-06 16:44+0000\n"
-"Last-Translator: machaku <bmachaku@gmail.com>\n"
-"Language-Team: Swahili (http://www.transifex.com/projects/p/django/language/"
-"sw/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Swahili (http://www.transifex.com/django/django-contrib-comments/language/sw/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,9 +71,10 @@ msgstr "maoni ya %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Maoni ya karibuni ya %(site_name)s."
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Jina"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -101,8 +102,7 @@ msgstr "na"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Ikiwa utaingiza chochote katika uga huu maoni yako yatachukuliwa kama taka"
+msgstr "Ikiwa utaingiza chochote katika uga huu maoni yako yatachukuliwa kama taka"
 
 #: models.py:23
 msgid "content type"
@@ -147,9 +147,7 @@ msgstr "kwa umma"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Toa tiki katika kisanduku hiki na maoni yako yatatolewa kikamilifu kutoka "
-"tovuti hii."
+msgstr "Toa tiki katika kisanduku hiki na maoni yako yatatolewa kikamilifu kutoka tovuti hii."
 
 #: models.py:67
 msgid "is removed"
@@ -169,17 +167,13 @@ msgstr "maoni"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Maoni haya yametumwa na mtumiaji aliyethibitishwa na hivyo jina ni la kusoma "
-"tu."
+msgstr "Maoni haya yametumwa na mtumiaji aliyethibitishwa na hivyo jina ni la kusoma tu."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Maoni haya yametumwa na mtumiaji aliyethibitishwa na hivyo anuani ya "
-"baruapepe ni ya kusoma tu."
+msgstr "Maoni haya yametumwa na mtumiaji aliyethibitishwa na hivyo anuani ya baruapepe ni ya kusoma tu."
 
 #: models.py:160
 #, python-format
@@ -189,12 +183,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Yametumwa na %(user)s %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Yametumwa na %(user)s %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -232,8 +221,7 @@ msgstr "Ahsante kwa kupitisha"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Asante kwa kutumia muda ili kuboresha ubora wa mjadala katika tovuti yetu"
+msgstr "Asante kwa kutumia muda ili kuboresha ubora wa mjadala katika tovuti yetu"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -290,8 +278,8 @@ msgstr "Hakikisha maoni haya"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Tafadhali sahihisha kosa lifuatalo"
-msgstr[1] "Tafadhali sahihisha makosa yafuatayo"
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

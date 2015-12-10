@@ -1,18 +1,18 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-#   <admin@go2people.nl>, 2011.
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Tino de Bruijn <tinodb@gmail.com>, 2011.
+# Translators:
+# go2people <admin@go2people.nl>, 2011
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Tino de Bruijn <tinodb@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: go2people <admin@go2people.nl>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/django/language/"
-"nl/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Dutch (http://www.transifex.com/django/django-contrib-comments/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,9 +74,10 @@ msgstr "%(site_name)s opmerkingen"
 msgid "Latest comments on %(site_name)s"
 msgstr "Laatste opmerkingen op %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Naam"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -95,8 +96,7 @@ msgstr "Opmerking"
 msgid "Watch your mouth! The word %s is not allowed here."
 msgid_plural "Watch your mouth! The words %s are not allowed here."
 msgstr[0] "Pas op uw taalgebruik! Gebruik van %s niet toegestaan."
-msgstr[1] ""
-"Pas op uw taalgebruik! Gebruik van de woorden %s is niet toegestaan."
+msgstr[1] "Pas op uw taalgebruik! Gebruik van de woorden %s is niet toegestaan."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
@@ -150,8 +150,7 @@ msgstr "is openbaar"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Vink dit vakje uit zodat de opmerking niet meer zichtbaar is op de site."
+msgstr "Vink dit vakje uit zodat de opmerking niet meer zichtbaar is op de site."
 
 #: models.py:67
 msgid "is removed"
@@ -161,9 +160,7 @@ msgstr "is verwijderd"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Vink dit vak aan indien de opmerking niet gepast is. Een \"Dit commentaar is "
-"verwijderd\" bericht wordt dan getoond."
+msgstr "Vink dit vak aan indien de opmerking niet gepast is. Een \"Dit commentaar is verwijderd\" bericht wordt dan getoond."
 
 #: models.py:80
 msgid "comments"
@@ -173,17 +170,13 @@ msgstr "opmerkingen"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Deze opmerking is gepost door een ingelogde gebruiker en daardoor is de naam "
-"niet aan te passen."
+msgstr "Deze opmerking is gepost door een ingelogde gebruiker en daardoor is de naam niet aan te passen."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Deze opmerking is gepost door een ingelogde gebruiker en daardoor is het e-"
-"mailadres niet aan te passen."
+msgstr "Deze opmerking is gepost door een ingelogde gebruiker en daardoor is het e-mailadres niet aan te passen."
 
 #: models.py:160
 #, python-format
@@ -193,12 +186,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Geplaatst door %(user)s op %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Geplaatst door %(user)s op %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -236,9 +224,7 @@ msgstr "Bedankt voor het goedkeuren"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Bedankt dat u de tijd heeft genomen om de kwaliteit van de discussie op onze "
-"site te verbeteren"
+msgstr "Bedankt dat u de tijd heeft genomen om de kwaliteit van de discussie op onze site te verbeteren"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -295,8 +281,8 @@ msgstr "Toon voorbeeld van uw opmerking"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Herstel de fout hieronder"
-msgstr[1] "Herstel de fouten hieronder"
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

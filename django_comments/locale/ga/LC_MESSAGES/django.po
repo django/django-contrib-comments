@@ -1,23 +1,22 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Michael Thornhill <michael@maithu.com>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Michael Thornhill <michael@maithu.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Michael Thornhill <michael@maithu.com>\n"
-"Language-Team: Irish (http://www.transifex.com/projects/p/django/language/"
-"ga/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Irish (http://www.transifex.com/django/django-contrib-comments/language/ga/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ga\n"
-"Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
-"4);\n"
+"Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);\n"
 
 #: admin.py:25
 msgid "Content"
@@ -86,9 +85,10 @@ msgstr "%(site_name)s nótaí"
 msgid "Latest comments on %(site_name)s"
 msgstr "Nótaí tráchtaí is déanaí ar %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Ainm"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -119,8 +119,7 @@ msgstr "agus"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Má cuireann tú aon rud sa réimse seo, beidh do nóta déileálfar mar spam"
+msgstr "Má cuireann tú aon rud sa réimse seo, beidh do nóta déileálfar mar spam"
 
 #: models.py:23
 msgid "content type"
@@ -175,9 +174,7 @@ msgstr "Scrioste"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Seic an bosca seo dá bbéadh an nóta tráchta seo míchuí. Taispeantar \"Bhí an "
-"nóta tráchta scrioste\" in áit an nóta tráchta seo."
+msgstr "Seic an bosca seo dá bbéadh an nóta tráchta seo míchuí. Taispeantar \"Bhí an nóta tráchta scrioste\" in áit an nóta tráchta seo."
 
 #: models.py:80
 msgid "comments"
@@ -187,17 +184,13 @@ msgstr "nótaí tráchta"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Bhí an nóta tráchta póstailte trí uaire trí úsáideoir fíordheimhnithe mar "
-"sin tá an ainm léamh-amhain."
+msgstr "Bhí an nóta tráchta póstailte trí uaire trí úsáideoir fíordheimhnithe mar sin tá an ainm léamh-amhain."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Bhí an nóta tráchta póstailte trí úsáideoir fíordeimhnite mar sin tá an r-"
-"phost léamh amháin."
+msgstr "Bhí an nóta tráchta póstailte trí úsáideoir fíordeimhnite mar sin tá an r-phost léamh amháin."
 
 #: models.py:160
 #, python-format
@@ -207,12 +200,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Postáilte trí %(user)s ar %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Postáilte trí %(user)s ar %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -250,9 +238,7 @@ msgstr "Go raibh maith agait le hadhaigh to formheas"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Go raibh maith agat as an am chun feabhas a chur ar chaighdeán na "
-"díospóireachta ar ár suíomh"
+msgstr "Go raibh maith agat as an am chun feabhas a chur ar chaighdeán na díospóireachta ar ár suíomh"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -309,11 +295,11 @@ msgstr "Nóta tráchta réamhamharc"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Le do thoil, ceartaigh an botún thíos."
-msgstr[1] "Le do thoil, ceartaigh na botúin thíos."
-msgstr[2] "Le do thoil, ceartaigh na botúin thíos."
-msgstr[3] "Le do thoil, ceartaigh na botúin thíos."
-msgstr[4] "Le do thoil, ceartaigh na botúin thíos."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

@@ -1,17 +1,18 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Marc Garcia <garcia.marc@gmail.com>, 2011.
+# Translators:
+# Ernesto Avilés Vázquez <whippiii@gmail.com>, 2015
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Marc Garcia <garcia.marc@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Marc Garcia <garcia.marc@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/django/language/"
-"es/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-09-07 14:38+0000\n"
+"Last-Translator: Ernesto Avilés Vázquez <whippiii@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/django/django-contrib-comments/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +74,8 @@ msgstr "comentarios de %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Últimos comentarios en %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Nombre"
 
@@ -148,9 +150,7 @@ msgstr "es público"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Desmarque esta casilla para hacer desaparecer el comentario del sitio web de "
-"forma efectiva."
+msgstr "Desmarque esta casilla para hacer desaparecer el comentario del sitio web de forma efectiva."
 
 #: models.py:67
 msgid "is removed"
@@ -160,9 +160,7 @@ msgstr "está eliminado"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Marque esta opción si el comentario es inapropiado. En su lugar se mostrará "
-"el mensaje \"Este comentario ha sido eliminado\"."
+msgstr "Marque esta opción si el comentario es inapropiado. En su lugar se mostrará el mensaje \"Este comentario ha sido eliminado\"."
 
 #: models.py:80
 msgid "comments"
@@ -172,17 +170,13 @@ msgstr "comentarios"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Este comentario ha sido enviado por un usuario autentificado: de modo que su "
-"nombre no es modificable."
+msgstr "Este comentario ha sido enviado por un usuario autentificado: de modo que su nombre no es modificable."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Este comentario ha sido colocado por un usuario autentificado: de modo que "
-"su dirección de correo electrónico no es modificable."
+msgstr "Este comentario ha sido colocado por un usuario autentificado: de modo que su dirección de correo electrónico no es modificable."
 
 #: models.py:160
 #, python-format
@@ -192,12 +186,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Enviado por %(user)s en %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Enviado por %(user)s en %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -235,9 +224,7 @@ msgstr "Gracias por aprobar"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Gracias por tomarse el tiempo para mejorar la calidad del debate en nuestro "
-"sitio"
+msgstr "Gracias por tomarse el tiempo para mejorar la calidad del debate en nuestro sitio"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -294,8 +281,8 @@ msgstr "Previsualizar su comentario"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Por favor, corrija el siguiente error."
-msgstr[1] "Por favor, corrija los siguientes errores."
+msgstr[0] "Por favor, corrija el siguiente error"
+msgstr[1] "Por favor, corrija los siguientes errores"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

@@ -1,22 +1,21 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-10-31 20:17+0000\n"
-"Last-Translator: mateju <>\n"
-"Language-Team: Slovenian (http://www.transifex.com/projects/p/django/"
-"language/sl/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Slovenian (http://www.transifex.com/django/django-contrib-comments/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: admin.py:25
 msgid "Content"
@@ -81,9 +80,10 @@ msgstr "Komentarji %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Zadnji komentarji na %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Ime"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -113,9 +113,7 @@ msgstr "in"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Če v to polje vnesete kakršnokoli besedilo, bo vaš komentar označen kot "
-"neželen komentar."
+msgstr "Če v to polje vnesete kakršnokoli besedilo, bo vaš komentar označen kot neželen komentar."
 
 #: models.py:23
 msgid "content type"
@@ -170,9 +168,7 @@ msgstr "je odstranjen"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Odkljukajte, če je komentarj neprimeren. Namesto komentarja bo prikazano "
-"obvestilo \"Komentar je bil odstranjen\"."
+msgstr "Odkljukajte, če je komentarj neprimeren. Namesto komentarja bo prikazano obvestilo \"Komentar je bil odstranjen\"."
 
 #: models.py:80
 msgid "comments"
@@ -182,16 +178,13 @@ msgstr "komentarji"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Komentar je objavil prijavljen uporabnik, zato je ime na voljo le za branje."
+msgstr "Komentar je objavil prijavljen uporabnik, zato je ime na voljo le za branje."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Komentar je objavil prijavljen uporabnik, zato je elektronski naslov na "
-"voljo le za branje."
+msgstr "Komentar je objavil prijavljen uporabnik, zato je elektronski naslov na voljo le za branje."
 
 #: models.py:160
 #, python-format
@@ -201,12 +194,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Objavljeno z računa %(user)s ob %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Objavljeno z računa %(user)s ob %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -244,9 +232,7 @@ msgstr "Hvala za odobritev"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Hvala, da ste si vzeli čas in pomagali izboljšati kakovost pogovorov na naši "
-"strani."
+msgstr "Hvala, da ste si vzeli čas in pomagali izboljšati kakovost pogovorov na naši strani."
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -303,10 +289,10 @@ msgstr "Predogled komentarja"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Odpravite naslednje napake"
-msgstr[1] "Odpravite naslednjo napako"
-msgstr[2] "Odpravite naslednji napaki"
-msgstr[3] "Odpravite naslednje napake"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

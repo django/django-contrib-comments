@@ -1,22 +1,22 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Translators:
+# Adrian Antończyk <linkedin@antonczyk.it>, 2015
+# Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/django/language/"
-"pl/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-09-03 23:57+0000\n"
+"Last-Translator: Adrian Antończyk <linkedin@antonczyk.it>\n"
+"Language-Team: Polish (http://www.transifex.com/django/django-contrib-comments/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: admin.py:25
 msgid "Content"
@@ -77,7 +77,8 @@ msgstr "komentarze na %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Ostatnie komentarze na %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Nazwa"
 
@@ -108,8 +109,7 @@ msgstr "i"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Jeżeli wpiszesz cokolwiek w to pole, Twój komentarz zostanie uznany za spam"
+msgstr "Jeżeli wpiszesz cokolwiek w to pole, Twój komentarz zostanie uznany za spam"
 
 #: models.py:23
 msgid "content type"
@@ -164,9 +164,7 @@ msgstr "usunięty"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Zaznacz to pole jeżeli komentarz jest nieodpowiedni. Wyświetlony zostanie "
-"tekst \"Ten komentarz został usunięty\"."
+msgstr "Zaznacz to pole jeżeli komentarz jest nieodpowiedni. Wyświetlony zostanie tekst \"Ten komentarz został usunięty\"."
 
 #: models.py:80
 msgid "comments"
@@ -176,17 +174,13 @@ msgstr "komentarze"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Ten komentarz został dodany przez zalogowanego użytkownika i dlatego nazwa "
-"jest tylko do odczytu."
+msgstr "Ten komentarz został dodany przez zalogowanego użytkownika i dlatego nazwa jest tylko do odczytu."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Ten komentarz został dodany przez zalogowanego użytkownika i dlatego adres e-"
-"mail jest tylko do odczytu."
+msgstr "Ten komentarz został dodany przez zalogowanego użytkownika i dlatego adres e-mail jest tylko do odczytu."
 
 #: models.py:160
 #, python-format
@@ -196,12 +190,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Dodane przez %(user)s dnia %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Dodane przez %(user)s dnia %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -239,9 +228,7 @@ msgstr "Dziękujemy za zaakceptowanie"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Dziękujemy za poświęcenie czasu na podniesienie jakości dyskusji w naszym "
-"serwisie"
+msgstr "Dziękujemy za poświęcenie czasu na podniesienie jakości dyskusji w naszym serwisie"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -298,9 +285,9 @@ msgstr "Podgląd komentarza"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Proszę popraw poniższy błąd."
-msgstr[1] "Proszę popraw poniższe błędy."
-msgstr[2] "Proszę popraw poniższe błędy."
+msgstr[0] "Proszę poprawić poniższy błąd."
+msgstr[1] "Proszę poprawić poniższe błędy."
+msgstr[2] "Proszę poprawić poniższe błędy."
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

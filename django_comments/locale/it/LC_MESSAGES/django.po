@@ -1,17 +1,18 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Nicola Larosa <transifex@teknico.net>, 2011.
+# Translators:
+# C8E <C8E@miron.it>, 2015
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Nicola Larosa <transifex@teknico.net>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Nicola Larosa <transifex@teknico.net>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/django/language/"
-"it/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-08-19 10:38+0000\n"
+"Last-Translator: C8E <C8E@miron.it>\n"
+"Language-Team: Italian (http://www.transifex.com/django/django-contrib-comments/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,8 +62,7 @@ msgstr "Elimina i commenti selezionati"
 msgid "1 comment was successfully %(action)s."
 msgid_plural "%(count)s comments were successfully %(action)s."
 msgstr[0] "Ad 1 commento è stata applicata con successo l'azione %(action)s."
-msgstr[1] ""
-"A %(count)s commenti è stata applicata con successo l'azione %(action)s."
+msgstr[1] "A %(count)s commenti è stata applicata con successo l'azione %(action)s."
 
 #: feeds.py:14
 #, python-format
@@ -74,7 +74,8 @@ msgstr "commenti su %(site_name)s "
 msgid "Latest comments on %(site_name)s"
 msgstr "Commenti più recenti su %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Nome"
 
@@ -104,8 +105,7 @@ msgstr "e"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Se inserisci qualcosa in questo campo, il tuo commento verrà considerato spam"
+msgstr "Se inserisci qualcosa in questo campo, il tuo commento verrà considerato spam"
 
 #: models.py:23
 msgid "content type"
@@ -150,8 +150,7 @@ msgstr "è pubblico"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Deseleziona questa casella per far sparire del tutto il commento dal sito."
+msgstr "Deseleziona questa casella per far sparire del tutto il commento dal sito."
 
 #: models.py:67
 msgid "is removed"
@@ -161,9 +160,7 @@ msgstr "è eliminato"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Seleziona la casella se il commento è inappropriato. Verrà sostituito dal "
-"messaggio \"Questo commento è stato rimosso\"."
+msgstr "Seleziona la casella se il commento è inappropriato. Verrà sostituito dal messaggio \"Questo commento è stato rimosso\"."
 
 #: models.py:80
 msgid "comments"
@@ -173,17 +170,13 @@ msgstr "commenti"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Questo commento è stato inserito da un utente autenticato e quindi il nome "
-"non è modificabile."
+msgstr "Questo commento è stato inserito da un utente autenticato e quindi il nome non è modificabile."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Questo commento è stato inserito da un utente autenticato e quindi l'email "
-"non è modificabile."
+msgstr "Questo commento è stato inserito da un utente autenticato e quindi l'email non è modificabile."
 
 #: models.py:160
 #, python-format
@@ -193,12 +186,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Inserito da %(user)s il %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Inserito da %(user)s il %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -236,9 +224,7 @@ msgstr "Grazie per aver approvato"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Grazie per aver speso tempo a migliorare la qualità della discussione sul "
-"nostro sito"
+msgstr "Grazie per aver speso tempo a migliorare la qualità della discussione sul nostro sito"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"

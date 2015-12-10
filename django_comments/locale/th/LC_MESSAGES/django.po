@@ -1,19 +1,19 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Kowit Charoenratchatabhan <kowito@gmail.com>, 2012.
-# Suteepat Damrongyingsupab <monkeycrew_topza@hotmail.com>, 2012.
-# Vichai Vongvorakul <vongvichai@gmail.com>, 2012.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Kowit Charoenratchatabhan <kowito@gmail.com>, 2012
+# Suteepat Damrongyingsupab <monkeycrew_topza@hotmail.com>, 2012
+# Vichai Vongvorakul <vongvichai@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-03-12 06:23+0000\n"
-"Last-Translator: Suteepat Damrongyingsupab <monkeycrew_topza@hotmail.com>\n"
-"Language-Team: Thai (http://www.transifex.com/projects/p/django/language/"
-"th/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Thai (http://www.transifex.com/django/django-contrib-comments/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,9 +71,10 @@ msgstr "ความเห็นของ %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "ความเห็นล่าสุดเมื่อ %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "ชื่อ"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -155,8 +156,7 @@ msgstr "ถอดออกแล้ว"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"เลือกเมื่อเห็นว่าข้อคิดเห็นไหนไม่เหมาะสม เมื่อข้อคิดเห็นนี้ได้ถูกลบแล้ว ข้อมูลอื่นจะถูกแสดงขึ้นแทน"
+msgstr "เลือกเมื่อเห็นว่าข้อคิดเห็นไหนไม่เหมาะสม เมื่อข้อคิดเห็นนี้ได้ถูกลบแล้ว ข้อมูลอื่นจะถูกแสดงขึ้นแทน"
 
 #: models.py:80
 msgid "comments"
@@ -182,12 +182,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"โพสต์โดย %(user)s ที่ %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "โพสต์โดย %(user)s ที่ %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -282,7 +277,7 @@ msgstr "แสดงตัวอย่างความคิดเห็นข
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "กรุณาแก้ไขข้อผิดพลาดด้านล่าง"
+msgstr[0] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

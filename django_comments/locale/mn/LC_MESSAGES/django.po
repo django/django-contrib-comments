@@ -1,17 +1,18 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Анхбаяр Анхаа <l.ankhbayar@gmail.com>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Анхбаяр Анхаа <l.ankhbayar@gmail.com>, 2011
+# Баясгалан Цэвлээ <bayasaa_7672@yahoo.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Анхбаяр Анхаа <l.ankhbayar@gmail.com>\n"
-"Language-Team: Mongolian (http://www.transifex.com/projects/p/django/"
-"language/mn/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-07-21 13:48+0000\n"
+"Last-Translator: Баясгалан Цэвлээ <bayasaa_7672@yahoo.com>\n"
+"Language-Team: Mongolian (http://www.transifex.com/django/django-contrib-comments/language/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +74,8 @@ msgstr "%(site_name)s сэтгэгдэлүүд"
 msgid "Latest comments on %(site_name)s"
 msgstr " %(site_name)s сүүлийн сэтгэгдэлүүд"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Нэр"
 
@@ -103,8 +105,7 @@ msgstr "ба"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Та энэ хэсэгт ямар нэг зүйл оруулбал таний сэтгэгдэлийг  спам гэж үзэх болно."
+msgstr "Та энэ хэсэгт ямар нэг зүйл оруулбал таний сэтгэгдэлийг  спам гэж үзэх болно."
 
 #: models.py:23
 msgid "content type"
@@ -149,9 +150,7 @@ msgstr "нийтийн"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Сайтаас санал сэтгэгдлийг байнга устгахын тулд энэ хайрцагны өмнөх чагтыг "
-"авна уу."
+msgstr "Сайтаас санал сэтгэгдлийг байнга устгахын тулд энэ хайрцагны өмнөх чагтыг авна уу."
 
 #: models.py:67
 msgid "is removed"
@@ -161,10 +160,7 @@ msgstr "устлаа"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Ирсэн санал сэтгэгдэл зүй зохисгүй бол энэ хайрцгийг чагтла. Ингэснээр "
-"тухайн санал сэтгэгдлийн оронд \"Энэ санал сэтгэгдлийг устгалаа\" гэсэн "
-"бичиг гарч ирнэ."
+msgstr "Ирсэн санал сэтгэгдэл зүй зохисгүй бол энэ хайрцгийг чагтла. Ингэснээр тухайн санал сэтгэгдлийн оронд \"Энэ санал сэтгэгдлийг устгалаа\" гэсэн бичиг гарч ирнэ."
 
 #: models.py:80
 msgid "comments"
@@ -174,17 +170,13 @@ msgstr "сэтгэгдэлүүд"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Энэ санал сэтгэгдлийг баталгаажсан хэрэглэгч оруулсан учир зөвхөн нэрийг нь "
-"харж болно."
+msgstr "Энэ санал сэтгэгдлийг баталгаажсан хэрэглэгч оруулсан учир зөвхөн нэрийг нь харж болно."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Энэ санал сэтгэгдлийг баталгаажсан хэрэглэгч оруулсан учир зөвхөн цахим "
-"шууданг нь харж болно."
+msgstr "Энэ санал сэтгэгдлийг баталгаажсан хэрэглэгч оруулсан учир зөвхөн цахим шууданг нь харж болно."
 
 #: models.py:160
 #, python-format
@@ -194,12 +186,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"%(date)s-д %(user)s дараах санал сэтгэгдлийг үлдээжээ\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "%(date)s-д %(user)s дараах санал сэтгэгдлийг үлдээжээ\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -237,8 +224,7 @@ msgstr "Зөвшөөрсөнд баяраллаа"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Манай сайтанд цаг гаргаж хэлэлцүүлэгийг сонирхолтой болгосонд баяраллаа."
+msgstr "Манай сайтанд цаг гаргаж хэлэлцүүлэгийг сонирхолтой болгосонд баяраллаа."
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -295,8 +281,8 @@ msgstr "Өөрийн сэтгэгдэлээ урьдчилан харах"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Доорх алдааг засна у"
-msgstr[1] "Доорх алдаануудыг засна у"
+msgstr[0] "Доорх алдааг залруулна уу!"
+msgstr[1] "Доорх алдаануудыг залруулна уу!"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

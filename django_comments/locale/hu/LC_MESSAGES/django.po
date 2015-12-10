@@ -1,17 +1,17 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Szilveszter Farkas <szilveszter.farkas@gmail.com>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Szilveszter Farkas <szilveszter.farkas@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Szilveszter Farkas <szilveszter.farkas@gmail.com>\n"
-"Language-Team: Hungarian (http://www.transifex.com/projects/p/django/"
-"language/hu/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Hungarian (http://www.transifex.com/django/django-contrib-comments/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,9 +73,10 @@ msgstr "%(site_name)s hozzászólások"
 msgid "Latest comments on %(site_name)s"
 msgstr "%(site_name)s legfrissebb hozzászólásai"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Név"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -103,9 +104,7 @@ msgstr "és"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Ha bármit begépel ebbe a mezőbe, akkor azt szemétként fogja kezelni a "
-"rendszer"
+msgstr "Ha bármit begépel ebbe a mezőbe, akkor azt szemétként fogja kezelni a rendszer"
 
 #: models.py:23
 msgid "content type"
@@ -150,9 +149,7 @@ msgstr "publikus"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Vegye ki a pipát a jelölőnégyzetből, hogy eltűntesse a hozzászólást az "
-"oldalról."
+msgstr "Vegye ki a pipát a jelölőnégyzetből, hogy eltűntesse a hozzászólást az oldalról."
 
 #: models.py:67
 msgid "is removed"
@@ -162,9 +159,7 @@ msgstr "eltávolítva"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Jelöld be a négyzetet, ha a megjegyzés nem megfelelő. Az \"Ezt a megjegyzést "
-"törölték\" üzenet fog megjelenni helyette."
+msgstr "Jelöld be a négyzetet, ha a megjegyzés nem megfelelő. Az \"Ezt a megjegyzést törölték\" üzenet fog megjelenni helyette."
 
 #: models.py:80
 msgid "comments"
@@ -174,17 +169,13 @@ msgstr "hozzászólások"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Ezt a hozzászólást egy hitelesített felhasználó küldte be, ezért a név csak "
-"olvasható."
+msgstr "Ezt a hozzászólást egy hitelesített felhasználó küldte be, ezért a név csak olvasható."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Ezt a hozzászólást egy hitelesített felhasználó küldte be, ezért az e-mail "
-"csak olvasható."
+msgstr "Ezt a hozzászólást egy hitelesített felhasználó küldte be, ezért az e-mail csak olvasható."
 
 #: models.py:160
 #, python-format
@@ -194,12 +185,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Beküldte %(user)s ekkor: %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Beküldte %(user)s ekkor: %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -237,9 +223,7 @@ msgstr "Köszönjük a jóváhagyást"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Köszönjük, hogy időt szánt az oldalunkon zajló beszélgetések minőségének "
-"javítására"
+msgstr "Köszönjük, hogy időt szánt az oldalunkon zajló beszélgetések minőségének javítására"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -296,8 +280,8 @@ msgstr "Hozzászólás előnézetének megtekintése"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Javítsa ki az alábbi hibát"
-msgstr[1] "Javítsa ki az alábbi hibákat"
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

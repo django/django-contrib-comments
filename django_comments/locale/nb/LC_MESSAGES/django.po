@@ -1,18 +1,19 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-#   <jonklo@gmail.com>, 2012.
-#   <sigurdga-transifex@sigurdga.no>, 2012.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Jon <jon@funkbit.no>, 2015
+#   <jonklo@gmail.com>, 2012
+# Sigurd Gartmann <sigurdga-transifex@sigurdga.no>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-03-12 21:43+0000\n"
-"Last-Translator: Sigurd Gartmann <sigurdga-transifex@sigurdga.no>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/django/"
-"language/nb/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-09-14 08:36+0000\n"
+"Last-Translator: Jon <jon@funkbit.no>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/django/django-contrib-comments/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,7 +75,8 @@ msgstr "%(site_name)s kommentarer"
 msgid "Latest comments on %(site_name)s"
 msgstr "Siste kommentarer fra %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Navn"
 
@@ -104,8 +106,7 @@ msgstr "og"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Hvis du oppgir noe i dette feltet, vil kommentaren bli behandlet som spam"
+msgstr "Hvis du oppgir noe i dette feltet, vil kommentaren bli behandlet som spam"
 
 #: models.py:23
 msgid "content type"
@@ -160,9 +161,7 @@ msgstr "er fjernet"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Huk av denne hvis kommentaren er upassende. Meldingen «Denne kommentaren har "
-"blitt fjernet» vil bli vist i stedet."
+msgstr "Huk av denne hvis kommentaren er upassende. Meldingen «Denne kommentaren har blitt fjernet» vil bli vist i stedet."
 
 #: models.py:80
 msgid "comments"
@@ -172,17 +171,13 @@ msgstr "kommentarer"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Denne kommentaren er skrevet av en innlogget bruker og navnet kan derfor "
-"ikke endres."
+msgstr "Denne kommentaren er skrevet av en innlogget bruker og navnet kan derfor ikke endres."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Denne kommentaren er skrevet av en innlogget bruker og e-postadressen kan "
-"derfor ikke endres."
+msgstr "Denne kommentaren er skrevet av en innlogget bruker og e-postadressen kan derfor ikke endres."
 
 #: models.py:160
 #, python-format
@@ -192,12 +187,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Skrevet av %(user)s, %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Skrevet av %(user)s, %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -235,9 +225,7 @@ msgstr "Takk for godkjennelse"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Takk for at du tok deg tid til å forbedre kvaliteten på diskusjonen på siden "
-"vår"
+msgstr "Takk for at du tok deg tid til å forbedre kvaliteten på diskusjonen på siden vår"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"

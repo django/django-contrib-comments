@@ -1,17 +1,18 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-#   <claude@2xlibre.net>, 2011.
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Translators:
+# Claude Paroz <claude@2xlibre.net>, 2011
+# Claude Paroz <claude@2xlibre.net>, 2015
+# Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: claudep <claude@2xlibre.net>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/django/language/"
-"fr/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:44+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: French (http://www.transifex.com/django/django-contrib-comments/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +74,8 @@ msgstr "Commentaires sur %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Derniers commentaires sur %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Nom"
 
@@ -94,8 +96,7 @@ msgstr "Commentaire"
 msgid "Watch your mouth! The word %s is not allowed here."
 msgid_plural "Watch your mouth! The words %s are not allowed here."
 msgstr[0] "Attention à votre langage ! Le terme %s n'est pas autorisé ici."
-msgstr[1] ""
-"Attention à votre langage ! Les termes %s ne sont pas autorisés ici."
+msgstr[1] "Attention à votre langage ! Les termes %s ne sont pas autorisés ici."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
@@ -104,9 +105,7 @@ msgstr "et"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Si vous saisissez quelque chose dans ce champ, votre commentaire sera "
-"considéré comme étant indésirable"
+msgstr "Si vous saisissez quelque chose dans ce champ, votre commentaire sera considéré comme étant indésirable"
 
 #: models.py:23
 msgid "content type"
@@ -151,8 +150,7 @@ msgstr "est public"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Décochez cette case pour faire vraiment disparaître ce commentaire du site."
+msgstr "Décochez cette case pour faire vraiment disparaître ce commentaire du site."
 
 #: models.py:67
 msgid "is removed"
@@ -162,9 +160,7 @@ msgstr "est masqué"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Cochez cette case si le commentaire est inadéquat. Un message type « Ce "
-"commentaire a été supprimé » sera affiché en lieu et place de celui-ci."
+msgstr "Cochez cette case si le commentaire est inadéquat. Un message type « Ce commentaire a été supprimé » sera affiché en lieu et place de celui-ci."
 
 #: models.py:80
 msgid "comments"
@@ -174,17 +170,13 @@ msgstr "commentaires"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Ce commentaire a été posté par un utilisateur authentifié, le nom est donc "
-"en lecture seule."
+msgstr "Ce commentaire a été posté par un utilisateur authentifié, le nom est donc en lecture seule."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Ce commentaire a été posté par un utilisateur authentifié et le courriel est "
-"donc en lecture seule"
+msgstr "Ce commentaire a été posté par un utilisateur authentifié et le courriel est donc en lecture seule"
 
 #: models.py:160
 #, python-format
@@ -194,12 +186,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Posté par %(user)s le %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Posté par %(user)s le %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -237,9 +224,7 @@ msgstr "Merci pour cette validation"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Merci d'avoir pris le temps d'améliorer la qualité de la discussion sur "
-"notre site"
+msgstr "Merci d'avoir pris le temps d'améliorer la qualité de la discussion sur notre site"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"

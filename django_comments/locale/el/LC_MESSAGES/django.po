@@ -1,18 +1,18 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Dimitris Glezos <glezos@indifex.com>, 2011.
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# Yorgos Pagles <y.pagles@gmail.com>, 2011.
+# Translators:
+# Dimitris Glezos <glezos@indifex.com>, 2011
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Yorgos Pagles <y.pagles@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Yorgos Pagles <y.pagles@gmail.com>\n"
-"Language-Team: Greek (http://www.transifex.com/projects/p/django/language/"
-"el/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Greek (http://www.transifex.com/django/django-contrib-comments/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,9 +74,10 @@ msgstr "Σχόλια στο %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Τελευταία σχόλια στο %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Όνομα"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -104,9 +105,7 @@ msgstr "και"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Αφήστε αυτό το πεδίο κενό. Αν εισάγετε κάτι τότε το σχόλιο θα θεωρηθεί spam "
-"και δεν θα εμφανιστεί."
+msgstr "Αφήστε αυτό το πεδίο κενό. Αν εισάγετε κάτι τότε το σχόλιο θα θεωρηθεί spam και δεν θα εμφανιστεί."
 
 #: models.py:23
 msgid "content type"
@@ -151,8 +150,7 @@ msgstr "είναι δημόσιο"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Απεπιλέξτε αυτή την επιλογή για να κάνετε το σχόλιο να μην εμφανίζεται."
+msgstr "Απεπιλέξτε αυτή την επιλογή για να κάνετε το σχόλιο να μην εμφανίζεται."
 
 #: models.py:67
 msgid "is removed"
@@ -162,9 +160,7 @@ msgstr "είναι διαγραμμένο"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Επιλέξτε αυτή την επιλογή εάν το σχόλιο είναι ανάρμοστο. Ένα μήνυμα \"Αυτό "
-"το σχόλιο διαγράφηκε\" θα εμφανιστεί στη θέση του."
+msgstr "Επιλέξτε αυτή την επιλογή εάν το σχόλιο είναι ανάρμοστο. Ένα μήνυμα \"Αυτό το σχόλιο διαγράφηκε\" θα εμφανιστεί στη θέση του."
 
 #: models.py:80
 msgid "comments"
@@ -174,18 +170,13 @@ msgstr "σχόλια"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Αυτό το σχόλιο πραγματοποιήθκε από πιστοποιημένο χρήστη και για τον λόγο "
-"αυτό δεν είναι είναι δυνατή η επεξεργασία του ονόματός του."
+msgstr "Αυτό το σχόλιο πραγματοποιήθκε από πιστοποιημένο χρήστη και για τον λόγο αυτό δεν είναι είναι δυνατή η επεξεργασία του ονόματός του."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Αυτό το σχόλιο πραγματοποιήθκε από πιστοποιημένο χρήστη και για τον λόγο "
-"αυτό δεν είναι είναι δυνατή η επεξεργασία της διεύθυνσης του ηλεκτρονικού "
-"του ταχυδρομείου."
+msgstr "Αυτό το σχόλιο πραγματοποιήθκε από πιστοποιημένο χρήστη και για τον λόγο αυτό δεν είναι είναι δυνατή η επεξεργασία της διεύθυνσης του ηλεκτρονικού του ταχυδρομείου."
 
 #: models.py:160
 #, python-format
@@ -195,12 +186,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Σχόλιο από %(user)s στις %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Σχόλιο από %(user)s στις %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -238,9 +224,7 @@ msgstr "Ευχαριστούμε για την έγκριση."
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Ευχαριστούμε για τον χρόνο που διαθέσατε για την βελτίωση της ποιότητας των "
-"σχολίων στον ιστότοπό μας."
+msgstr "Ευχαριστούμε για τον χρόνο που διαθέσατε για την βελτίωση της ποιότητας των σχολίων στον ιστότοπό μας."
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -297,8 +281,8 @@ msgstr "Προβολή του σχολίου σας"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Παρακαλούμε διορθώστε το παρακάτω σφάλμα:"
-msgstr[1] "Παρακαλούμε διορθώστε τα παρακάτω σφάλματα:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

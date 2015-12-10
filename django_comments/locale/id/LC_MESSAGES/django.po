@@ -1,17 +1,17 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
-# rodin <romihardiyanto@gmail.com>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# rodin <romihardiyanto@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: rodin <romihardiyanto@gmail.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/django/"
-"language/id/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Indonesian (http://www.transifex.com/django/django-contrib-comments/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,9 +69,10 @@ msgstr "komentar pada %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Komentar terbaru pada %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Nama"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -143,8 +144,7 @@ msgstr "untuk umum"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Hapus centang pada kotak ini agar komentar tidak ditampilkan pada situs."
+msgstr "Hapus centang pada kotak ini agar komentar tidak ditampilkan pada situs."
 
 #: models.py:67
 msgid "is removed"
@@ -154,9 +154,7 @@ msgstr "telah dihapus"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Centang kotak ini jika komentar tidak pantas. Pesan \"Komentar ini telah "
-"dihapus\" akan ditampilkan sebagai penggantinya."
+msgstr "Centang kotak ini jika komentar tidak pantas. Pesan \"Komentar ini telah dihapus\" akan ditampilkan sebagai penggantinya."
 
 #: models.py:80
 msgid "comments"
@@ -166,17 +164,13 @@ msgstr "komentar"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Komentar ini dikirim oleh seorang pengguna terautentikasi sehingga nama "
-"pengguna tidak dapat diubah."
+msgstr "Komentar ini dikirim oleh seorang pengguna terautentikasi sehingga nama pengguna tidak dapat diubah."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Komentar ini dikirim oleh seorang pengguna terautentikasi sehingga alamat "
-"email tidak dapat diubah."
+msgstr "Komentar ini dikirim oleh seorang pengguna terautentikasi sehingga alamat email tidak dapat diubah."
 
 #: models.py:160
 #, python-format
@@ -186,12 +180,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Dikirim oleh %(user)s pada %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Dikirim oleh %(user)s pada %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -229,8 +218,7 @@ msgstr "Terima kasih telah menyetujui komentar"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Terima kasih telah membantu meningkatkan kualitas diskusi pada situs kami"
+msgstr "Terima kasih telah membantu meningkatkan kualitas diskusi pada situs kami"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -287,7 +275,7 @@ msgstr "Pratinjau komentar Anda"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Mohon perbaiki kesalahan di bawah ini"
+msgstr[0] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

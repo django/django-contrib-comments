@@ -1,21 +1,20 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
+# Translators:
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-08-01 10:41+0000\n"
-"Last-Translator: Павал Клёк <yehekim@gmail.com>\n"
-"Language-Team: Belarusian (http://www.transifex.com/projects/p/django/"
-"language/be/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Belarusian (http://www.transifex.com/django/django-contrib-comments/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: admin.py:25
 msgid "Content"
@@ -80,9 +79,10 @@ msgstr "Выказваньні на %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Найноўшыя выказваньні на %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "Імя"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -112,8 +112,7 @@ msgstr "і"
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr ""
-"Калі напісаць нешта ў гэтым полі, выказваньне будзе лічыцца лухтою (спамам)."
+msgstr "Калі напісаць нешта ў гэтым полі, выказваньне будзе лічыцца лухтою (спамам)."
 
 #: models.py:23
 msgid "content type"
@@ -168,9 +167,7 @@ msgstr "прыбралі"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Абярыце, калі выказваньне не да месца або не адпавядае правілам. Замест яго "
-"будзе надпіс «Выказваньне прыбралі»."
+msgstr "Абярыце, калі выказваньне не да месца або не адпавядае правілам. Замест яго будзе надпіс «Выказваньне прыбралі»."
 
 #: models.py:80
 msgid "comments"
@@ -180,17 +177,13 @@ msgstr "выказваньні"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Выказваньне пакінуў карыстальнік, які апазнаўся, таму ягонае імя нельга "
-"зьмяняць."
+msgstr "Выказваньне пакінуў карыстальнік, які апазнаўся, таму ягонае імя нельга зьмяняць."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Выказваньне пакінуў карыстальнік, які апазнаўся, таму ягоны адрас эл. пошты "
-"нельга зьмяняць."
+msgstr "Выказваньне пакінуў карыстальнік, які апазнаўся, таму ягоны адрас эл. пошты нельга зьмяняць."
 
 #: models.py:160
 #, python-format
@@ -200,12 +193,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"%(date)s, аўтар — %(user)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "%(date)s, аўтар — %(user)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -243,8 +231,7 @@ msgstr "Дзякуем, што ўхвалілі"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Мы ўдзячныя, што вы дапамагаеце палепшыць якасьць размовы на нашай пляцоўцы"
+msgstr "Мы ўдзячныя, што вы дапамагаеце палепшыць якасьць размовы на нашай пляцоўцы"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -301,10 +288,10 @@ msgstr "Прагледзець выказваньне"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Выпраўце памылку ніжэй"
-msgstr[1] "Выпраўце памылкі ніжэй"
-msgstr[2] "Выпраўце памылкі ніжэй"
-msgstr[3] "Выпраўце памылкі ніжэй"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

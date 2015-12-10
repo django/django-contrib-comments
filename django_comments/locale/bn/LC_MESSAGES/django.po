@@ -1,18 +1,17 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
 # Translators:
-#  <anubhab91@gmail.com>, 2013.
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Anubhab Baksi, 2013
+# Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2013-02-20 15:10+0000\n"
-"Last-Translator: anubhab91 <anubhab91@gmail.com>\n"
-"Language-Team: Bengali (http://www.transifex.com/projects/p/django/language/"
-"bn/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Bengali (http://www.transifex.com/django/django-contrib-comments/language/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,9 +73,10 @@ msgstr ""
 msgid "Latest comments on %(site_name)s"
 msgstr ""
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "নাম"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -159,9 +159,7 @@ msgstr "মোছা হয়েছে"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"এই বাক্সে চেক করুন যদি মন্তব্যটি যথাযথ না হয়। মন্তব্যের পরিবর্তে \"মন্তব্যদি মুছে ফেলা "
-"হয়েছে\" দেখানো হবে।"
+msgstr "এই বাক্সে চেক করুন যদি মন্তব্যটি যথাযথ না হয়। মন্তব্যের পরিবর্তে \"মন্তব্যদি মুছে ফেলা হয়েছে\" দেখানো হবে।"
 
 #: models.py:80
 msgid "comments"
@@ -177,8 +175,7 @@ msgstr "এই মন্তব্যটি একজন নিবন্ধনক
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"এই মন্তব্যটি একজন নিবন্ধনকৃত সদস্য করেছেন, সেজন্যই ইমেইল ঠিকানা শুধুমাত্র পড়ার যোগ্য।"
+msgstr "এই মন্তব্যটি একজন নিবন্ধনকৃত সদস্য করেছেন, সেজন্যই ইমেইল ঠিকানা শুধুমাত্র পড়ার যোগ্য।"
 
 #: models.py:160
 #, python-format
@@ -188,12 +185,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"লিখেছেন %(user)s - %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "লিখেছেন %(user)s - %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"

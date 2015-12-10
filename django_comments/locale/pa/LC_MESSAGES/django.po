@@ -1,16 +1,16 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/django/"
-"language/pa/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/django/django-contrib-comments/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,9 +72,10 @@ msgstr "%(site_name)s ਟਿੱਪਣੀਆਂ"
 msgid "Latest comments on %(site_name)s"
 msgstr "%(site_name)s ਉੱਤੇ ਤਾਜ਼ਾ ਟਿੱਪਣੀਆਂ"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
-msgstr "ਨਾਂ"
+msgstr ""
 
 #: forms.py:97
 msgid "Email address"
@@ -183,12 +184,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"%(user)s ਵਲੋਂ %(date)s ਨੂੰ ਪੋਸਟ ਕੀਤੀ\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "%(user)s ਵਲੋਂ %(date)s ਨੂੰ ਪੋਸਟ ਕੀਤੀ\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -283,8 +279,8 @@ msgstr "ਆਪਣੀ ਟਿੱਪਣੀ ਦੀ ਝਲਕ ਵੇਖੋ"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "ਹੇਠਾਂ ਦਿੱਤੀ ਗਲਤੀ ਠੀਕ ਕਰੋ ਜੀ।"
-msgstr[1] "ਹੇਠ ਦਿੱਤੀਆਂ ਗਲਤੀਆਂ ਠੀਕ ਕਰੋ ਜੀ।"
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

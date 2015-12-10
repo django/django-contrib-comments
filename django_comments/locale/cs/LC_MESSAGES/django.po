@@ -1,16 +1,17 @@
 # This file is distributed under the same license as the Django package.
-#
+# 
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011.
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Vláďa Macek <macek@sandbox.cz>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Django\n"
+"Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 10:56+0200\n"
-"PO-Revision-Date: 2012-02-14 13:24+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/django/language/"
-"cs/)\n"
+"POT-Creation-Date: 2015-06-22 17:28+0200\n"
+"PO-Revision-Date: 2015-06-25 16:33+0000\n"
+"Last-Translator: Vláďa Macek <macek@sandbox.cz>\n"
+"Language-Team: Czech (http://www.transifex.com/django/django-contrib-comments/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -76,7 +77,8 @@ msgstr "Komentáře z webu %(site_name)s"
 msgid "Latest comments on %(site_name)s"
 msgstr "Poslední komentáře na webu %(site_name)s"
 
-#: forms.py:96
+#: forms.py:105
+msgctxt "Person name"
 msgid "Name"
 msgstr "Jméno"
 
@@ -152,8 +154,7 @@ msgstr "je veřejný"
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr ""
-"Pokud zrušíte zaškrtnutí tohoto políčka, komentář se na stránce nezobrazí."
+msgstr "Pokud zrušíte zaškrtnutí tohoto políčka, komentář se na stránce nezobrazí."
 
 #: models.py:67
 msgid "is removed"
@@ -163,9 +164,7 @@ msgstr "je odebrán"
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr ""
-"Zaškrtněte, pokud je komentář nevhodný. Místo něj bude zobrazena zpráva "
-"\"Tento komentář byl odebrán\"."
+msgstr "Zaškrtněte, pokud je komentář nevhodný. Místo něj bude zobrazena zpráva \"Tento komentář byl odebrán\"."
 
 #: models.py:80
 msgid "comments"
@@ -175,15 +174,13 @@ msgstr "komentář"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr ""
-"Tento komentář zaslal přihlášený uživatel, jméno tedy není možné změnit."
+msgstr "Tento komentář zaslal přihlášený uživatel, jméno tedy není možné změnit."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr ""
-"Tento komentář zaslal přihlášený uživatel, e-mail tedy není možné změnit."
+msgstr "Tento komentář zaslal přihlášený uživatel, e-mail tedy není možné změnit."
 
 #: models.py:160
 #, python-format
@@ -193,12 +190,7 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr ""
-"Zadal uživatel %(user)s dne %(date)s\n"
-"\n"
-"%(comment)s\n"
-"\n"
-"http://%(domain)s%(url)s"
+msgstr "Zadal uživatel %(user)s dne %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
@@ -236,8 +228,7 @@ msgstr "Děkujeme za schválení"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr ""
-"Děkujeme za váš čas věnovaný zlepšení kvality diskuze na našich stránkách"
+msgstr "Děkujeme za váš čas věnovaný zlepšení kvality diskuze na našich stránkách"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -294,9 +285,9 @@ msgstr "Zobrazit náhled komentáře"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Opravte níže uvedenou chybu."
-msgstr[1] "Opravte níže uvedené chyby."
-msgstr[2] "Opravte níže uvedené chyby."
+msgstr[0] "Opravte níže uvedenou chybu"
+msgstr[1] "Opravte níže uvedené chyby"
+msgstr[2] "Opravte níže uvedené chyby"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"
