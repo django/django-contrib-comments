@@ -178,10 +178,7 @@ class RenderCommentFormNode(CommentFormNode):
                 "comments/%s/form.html" % ctype.app_label,
                 "comments/form.html"
             ]
-            # Django 1.6 does not have context.flatten().
-            context_dict = {}
-            for d in context.dicts:
-                context_dict.update(d)
+            context_dict = context.flatten()
             context_dict['form'] = self.get_form(context)
             formstr = render_to_string(template_search_list, context_dict)
             return formstr
@@ -219,10 +216,7 @@ class RenderCommentListNode(CommentListNode):
                 "comments/list.html"
             ]
             qs = self.get_queryset(context)
-            # Django 1.6 does not have context.flatten().
-            context_dict = {}
-            for d in context.dicts:
-                context_dict.update(d)
+            context_dict = context.flatten()
             context_dict['comment_list'] = self.get_context_value_from_queryset(context, qs)
             liststr = render_to_string(template_search_list, context_dict)
             return liststr
