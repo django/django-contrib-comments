@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 from django import http
+from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import models
@@ -9,11 +10,6 @@ from django.template.loader import render_to_string
 from django.utils.html import escape
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
-
-try:
-    from django.apps import apps
-except ImportError:
-    from django.db import models as apps
 
 import django_comments
 from django_comments import signals

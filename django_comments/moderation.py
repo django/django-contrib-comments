@@ -58,6 +58,7 @@ import datetime
 
 from django import VERSION
 from django.conf import settings
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.db.models.base import ModelBase
 from django.template import Context, loader
@@ -65,8 +66,6 @@ from django.utils import timezone
 
 import django_comments
 from django_comments import signals
-
-from .compat import get_current_site
 
 
 class AlreadyModerated(Exception):

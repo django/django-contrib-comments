@@ -1,14 +1,9 @@
 import time
 
 from django import forms
-
-try:
-    from django.forms.utils import ErrorDict
-except ImportError:
-    from django.forms.util import ErrorDict
-
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
+from django.forms.utils import ErrorDict
 from django.utils.crypto import salted_hmac, constant_time_compare
 from django.utils.encoding import force_text
 from django.utils.text import get_text_list
