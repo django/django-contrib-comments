@@ -10,8 +10,8 @@ except IOError:
 
 setup(
     name='django-contrib-comments',
-    version='1.6.1',
-    url="http://github.com/django/django-contrib-comments",
+    version='1.6.2',
+    url="https://github.com/django/django-contrib-comments",
     description='The code formerly known as django.contrib.comments.',
     long_description=long_description,
     author='Django Software Foundation',
@@ -33,6 +33,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
     ],
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
