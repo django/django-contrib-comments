@@ -154,11 +154,11 @@ class CommentTemplateTagTests(CommentTestCase):
 
         # Clear CT cache
         ContentType.objects.clear_cache()
-        with self.assertNumQueries(4):
+        with self.assertNumQueries(3):
             self.testRenderCommentListFromObject()
 
         # CT's should be cached
-        with self.assertNumQueries(3):
+        with self.assertNumQueries(2):
             self.testRenderCommentListFromObject()
 
         # {% get_comment_list %} --------------------

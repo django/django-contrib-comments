@@ -91,7 +91,8 @@ class BaseCommentNode(template.Node):
             qs = qs.filter(is_public=True)
         if getattr(settings, 'COMMENTS_HIDE_REMOVED', True) and 'is_removed' in field_names:
             qs = qs.filter(is_removed=False)
-
+        if 'user' in field_names:
+            qs = qs.select_related('user')
         return qs
 
     def get_target_ctype_pk(self, context):
