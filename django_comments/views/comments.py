@@ -3,8 +3,8 @@ from __future__ import absolute_import
 from django import http
 from django.apps import apps
 from django.conf import settings
+from django.contrib.sites.models import Site
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
-from django.db import models
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils.html import escape
@@ -105,6 +105,7 @@ def post_comment(request, next=None, using=None):
     comment.ip_address = request.META.get("REMOTE_ADDR", None)
     if request.user.is_authenticated():
         comment.user = request.user
+    comment.site_id = Site.objects.get_current(request).pk
 
     # Signal that the comment is about to be saved
     responses = signals.comment_will_be_posted.send(
