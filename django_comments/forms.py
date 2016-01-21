@@ -9,7 +9,8 @@ from django.utils.encoding import force_text
 from django.utils.text import get_text_list
 from django.utils import timezone
 from django.utils.translation import pgettext_lazy, ungettext, ugettext, ugettext_lazy as _
-from django_comments.models import Comment
+
+from . import get_model
 
 COMMENT_MAX_LENGTH = getattr(settings, 'COMMENT_MAX_LENGTH', 3000)
 DEFAULT_COMMENTS_TIMEOUT = getattr(settings, 'COMMENTS_TIMEOUT', (2 * 60 * 60))  # 2h
@@ -127,7 +128,7 @@ class CommentDetailsForm(CommentSecurityForm):
         comment apps should override this, get_comment_create_data, and perhaps
         check_for_duplicate_comment to provide custom comment models.
         """
-        return Comment
+        return get_model()
 
     def get_comment_create_data(self):
         """
