@@ -43,7 +43,7 @@ class BaseCommentAbstractModel(models.Model):
 
 
 @python_2_unicode_compatible
-class Comment(BaseCommentAbstractModel):
+class CommentAbstractModel(BaseCommentAbstractModel):
     """
     A user comment about some object.
     """
@@ -76,7 +76,7 @@ class Comment(BaseCommentAbstractModel):
     objects = CommentManager()
 
     class Meta:
-        db_table = "django_comments"
+        abstract = True
         ordering = ('submit_date',)
         permissions = [("can_moderate", "Can moderate comments")]
         verbose_name = _('comment')
@@ -88,7 +88,7 @@ class Comment(BaseCommentAbstractModel):
     def save(self, *args, **kwargs):
         if self.submit_date is None:
             self.submit_date = timezone.now()
-        super(Comment, self).save(*args, **kwargs)
+        super(CommentAbstractModel, self).save(*args, **kwargs)
 
     def _get_userinfo(self):
         """
@@ -165,6 +165,11 @@ class Comment(BaseCommentAbstractModel):
             'url': self.get_absolute_url()
         }
         return _('Posted by %(user)s at %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s') % d
+
+
+class Comment(CommentAbstractModel):
+    class Meta(CommentAbstractModel.Meta):
+        db_table = "django_comments"
 
 
 @python_2_unicode_compatible

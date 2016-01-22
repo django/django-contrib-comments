@@ -61,21 +61,20 @@ the ``my_comment_app`` directory::
 In the ``models.py`` we'll define a ``CommentWithTitle`` model::
 
     from django.db import models
-    from django_comments.models import Comment
+    from django_comments.models import CommentAbstractModel
 
-    class CommentWithTitle(Comment):
+    class CommentWithTitle(CommentAbstractModel):
         title = models.CharField(max_length=300)
 
 Most custom comment models will subclass the
-:class:`~django_comments.models.Comment` model. However,
+:class:`~django_comments.models.CommentAbstractModel` model. However,
 if you want to substantially remove or change the fields available in the
-:class:`~django_comments.models.Comment` model, but don't want to
+:class:`~django_comments.models.CommentAbstractModel` model, but don't want to
 rewrite the templates, you could try subclassing from
 ``BaseCommentAbstractModel``.
 
 Next, we'll define a custom comment form in ``forms.py``. This is a little more
 tricky: we have to both create a form and override
-``CommentForm.get_comment_model()`` and
 ``CommentForm.get_comment_create_data()`` to return deal with our custom title
 field::
 
@@ -85,10 +84,6 @@ field::
 
     class CommentFormWithTitle(CommentForm):
         title = forms.CharField(max_length=300)
-
-        def get_comment_model(self):
-            # Use our custom comment model instead of the default one.
-            return CommentWithTitle
 
         def get_comment_create_data(self):
             # Use the data of the superclass, and add in the title field

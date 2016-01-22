@@ -1,5 +1,6 @@
 from importlib import import_module
 
+from django.apps import apps
 from django.conf import settings
 from django.core import urlresolvers
 from django.core.exceptions import ImproperlyConfigured
@@ -14,9 +15,9 @@ def get_comment_app():
     """
     # Make sure the app's in INSTALLED_APPS
     comments_app = get_comment_app_name()
-    if comments_app not in settings.INSTALLED_APPS:
+    if not apps.is_installed(comments_app):
         raise ImproperlyConfigured(
-            "The COMMENTS_APP (%r) must be in INSTALLED_APPS" % settings.COMMENTS_APP
+            "The COMMENTS_APP (%r) must be in INSTALLED_APPS" % comments_app
         )
 
     # Try to import the package
