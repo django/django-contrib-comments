@@ -63,6 +63,7 @@ from django.core.mail import send_mail
 from django.db.models.base import ModelBase
 from django.template import Context, loader
 from django.utils import timezone
+from django.utils.translation import ugettext as _
 
 import django_comments
 from django_comments import signals
@@ -249,8 +250,10 @@ class CommentModerator(object):
             'comment': comment,
             'content_object': content_object,
         }
-        subject = '[%s] New comment posted on "%s"' % (get_current_site(request).name,
-                                                       content_object)
+        subject = _('[%(site)s] New comment posted on "%(object)s"') % {
+            'site': get_current_site(request).name,
+            'object': content_object,
+        }
         message = t.render(Context(c) if VERSION < (1, 8) else c)
         send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list, fail_silently=True)
 
