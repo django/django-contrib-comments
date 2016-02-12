@@ -98,15 +98,16 @@ more.
 Finally, we'll define a couple of methods in ``my_comment_app/__init__.py`` to
 point Django at these classes we've created::
 
-    from my_comment_app.models import CommentWithTitle
-    from my_comment_app.forms import CommentFormWithTitle
-
     def get_model():
+        from my_comment_app.models import CommentWithTitle
         return CommentWithTitle
 
     def get_form():
+        from my_comment_app.forms import CommentFormWithTitle
         return CommentFormWithTitle
 
+The class imports have to be inside functions, as recent Django versions do not
+allow importing models in the application root ``__init__.py`` file.
 
 .. warning::
 
