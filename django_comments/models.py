@@ -62,7 +62,7 @@ class CommentAbstractModel(BaseCommentAbstractModel):
     comment = models.TextField(_('comment'), max_length=COMMENT_MAX_LENGTH)
 
     # Metadata about the comment
-    submit_date = models.DateTimeField(_('date/time submitted'), default=None)
+    submit_date = models.DateTimeField(_('date/time submitted'), default=None, db_index=True)
     ip_address = models.GenericIPAddressField(_('IP address'), unpack_ipv4=True, blank=True, null=True)
     is_public = models.BooleanField(_('is public'), default=True,
                                     help_text=_('Uncheck this box to make the comment effectively '
