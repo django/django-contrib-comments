@@ -3,14 +3,15 @@
 # Translators:
 # Translators:
 # Andreas Pelme <andreas@pelme.se>, 2011
+# Emil Björklund <emil.bjorklund@inuse.se>, 2016
 # Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:43+0000\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"PO-Revision-Date: 2016-03-03 10:21+0000\n"
+"Last-Translator: Emil Björklund <emil.bjorklund@inuse.se>\n"
 "Language-Team: Swedish (http://www.transifex.com/django/django-contrib-comments/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,7 +77,7 @@ msgstr "Senaste kommentarer på %(site_name)s"
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #: forms.py:97
 msgid "Email address"
@@ -108,7 +109,7 @@ msgstr "Om du fyller i detta fält kommer din kommentar att betraktas som spam"
 
 #: models.py:23
 msgid "content type"
-msgstr "innehålls typ"
+msgstr "innehållstyp"
 
 #: models.py:25
 msgid "object ID"
@@ -223,7 +224,7 @@ msgstr "Tack för ditt godkännande"
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr "Tack för att du tog dig tid att förbättra kvaliteten på denna sites diskussioner"
+msgstr "Tack för att du tog dig tid att förbättra diskussionskvaliteten på vår webbplats."
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
@@ -280,8 +281,8 @@ msgstr "Förhandsgranska din kommentar"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vänligen korrigera felet nedan"
+msgstr[1] "Vänligen korrigera felen nedan"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"
