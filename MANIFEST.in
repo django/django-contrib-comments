@@ -3,5 +3,6 @@ include LICENSE.txt
 recursive-include docs *
 recursive-include tests *
 recursive-include django_comments/templates *
+recursive-include django_comments/locale *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
