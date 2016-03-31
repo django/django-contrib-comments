@@ -5,6 +5,7 @@ from xml.etree import ElementTree as ET
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
+from django.test.utils import override_settings
 
 from django_comments.models import Comment
 
@@ -12,8 +13,8 @@ from . import CommentTestCase
 from testapp.models import Article
 
 
+@override_settings(ROOT_URLCONF='testapp.urls')
 class CommentFeedTests(CommentTestCase):
-    urls = 'testapp.urls'
     feed_url = '/rss/comments/'
 
     def setUp(self):

@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 from django.contrib.auth.models import User, Permission
 from django.contrib.contenttypes.models import ContentType
+from django.test.utils import override_settings
 from django.utils import translation
 
 from django_comments import signals
@@ -259,8 +260,8 @@ class ApproveViewTests(CommentTestCase):
         self.assertTemplateUsed(response, "comments/approved.html")
 
 
+@override_settings(ROOT_URLCONF='testapp.urls_admin')
 class AdminActionsTests(CommentTestCase):
-    urls = "testapp.urls_admin"
 
     def setUp(self):
         super(AdminActionsTests, self).setUp()
