@@ -50,10 +50,9 @@ class CommentAppAPITests(CommentTestCase):
 
 
 @override_settings(
-    COMMENTS_APP='custom_comments',
+    COMMENTS_APP='custom_comments', ROOT_URLCONF='testapp.urls',
 )
 class CustomCommentTest(CommentTestCase):
-    urls = 'testapp.urls'
 
     def testGetCommentApp(self):
         import custom_comments

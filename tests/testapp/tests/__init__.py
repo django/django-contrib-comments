@@ -16,13 +16,15 @@ from testapp.models import Article, Author
 CT = ContentType.objects.get_for_model
 
 
-@override_settings(PASSWORD_HASHERS=('django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',))
+@override_settings(
+    PASSWORD_HASHERS=('django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',),
+    ROOT_URLCONF='testapp.urls_default',
+)
 class CommentTestCase(TestCase):
     """
     Helper base class for comment tests that need data.
     """
     fixtures = ["comment_tests"]
-    urls = 'testapp.urls_default'
 
     def createSomeComments(self):
         # Two anonymous comments on two different objects
