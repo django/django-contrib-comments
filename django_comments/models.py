@@ -22,12 +22,13 @@ class BaseCommentAbstractModel(models.Model):
     # Content-object field
     content_type = models.ForeignKey(ContentType,
                                      verbose_name=_('content type'),
-                                     related_name="content_type_set_for_%(class)s")
+                                     related_name="content_type_set_for_%(class)s",
+                                     on_delete=models.CASCADE)
     object_pk = models.TextField(_('object ID'))
     content_object = GenericForeignKey(ct_field="content_type", fk_field="object_pk")
 
     # Metadata about the comment
-    site = models.ForeignKey(Site)
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
 
     class Meta:
         abstract = True
@@ -52,7 +53,8 @@ class CommentAbstractModel(BaseCommentAbstractModel):
     # user; otherwise at least user_name should have been set and the comment
     # was posted by a non-authenticated user.
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('user'),
-                             blank=True, null=True, related_name="%(class)s_comments")
+                             blank=True, null=True, related_name="%(class)s_comments",
+                             on_delete=models.SET_NULL)
     user_name = models.CharField(_("user's name"), max_length=50, blank=True)
     # Explicit `max_length` to apply both to Django 1.7 and 1.8+.
     user_email = models.EmailField(_("user's email address"), max_length=254,
@@ -186,8 +188,13 @@ class CommentFlag(models.Model):
     design users are only allowed to flag a comment with a given flag once;
     if you want rating look elsewhere.
     """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('user'), related_name="comment_flags")
-    comment = models.ForeignKey(Comment, verbose_name=_('comment'), related_name="flags")
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, verbose_name=_('user'), related_name="comment_flags",
+        on_delete=models.CASCADE,
+    )
+    comment = models.ForeignKey(
+        Comment, verbose_name=_('comment'), related_name="flags", on_delete=models.CASCADE,
+    )
     flag = models.CharField(_('flag'), max_length=30, db_index=True)
     flag_date = models.DateTimeField(_('date'), default=None)
 
