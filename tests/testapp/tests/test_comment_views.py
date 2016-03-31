@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 
 from django_comments import signals
-from django_comments.models import Comment
+from django_comments.models import COMMENT_MAX_LENGTH, Comment
 
 from . import CommentTestCase
 from testapp.models import Article, Book
@@ -68,6 +68,15 @@ class CommentViewTests(CommentTestCase):
         data["object_pk"] = 'cookies'
         response = self.client.post("/post/", data)
         self.assertEqual(response.status_code, 400)
+
+    def testPostTooLongComment(self):
+        a = Article.objects.get(pk=1)
+        data = self.getValidData(a)
+        data["comment"] = "X" * (COMMENT_MAX_LENGTH + 1)
+        response = self.client.post("/post/", data)
+        self.assertContains(
+            response, "Ensure this value has at most %d characters" % COMMENT_MAX_LENGTH
+        )
 
     def testCommentPreview(self):
         a = Article.objects.get(pk=1)
