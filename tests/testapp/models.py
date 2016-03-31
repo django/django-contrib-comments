@@ -20,7 +20,7 @@ class Author(models.Model):
 
 @python_2_unicode_compatible
 class Article(models.Model):
-    author = models.ForeignKey(Author)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     headline = models.CharField(max_length=100)
 
     def __str__(self):
