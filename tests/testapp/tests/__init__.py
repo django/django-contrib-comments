@@ -94,11 +94,9 @@ class CommentTestCase(TestCase):
 
     def assertRedirects(self, response, expected_url, **kwargs):
         """
-        Wrapper for assertRedirects to handle Django pre-1.7.
+        Wrapper for assertRedirects to handle Django pre-1.9.
         """
-        if VERSION >= (1, 7):
-            kwargs['fetch_redirect_response'] = False
-            return super(CommentTestCase, self).assertRedirects(
-                response, expected_url, **kwargs)
-        else:
-            self.assertEqual(response["Location"], expected_url)
+        if VERSION >= (1, 9) and expected_url.startswith('http://testserver'):
+            expected_url = expected_url[len('http://testserver'):]
+        return super(CommentTestCase, self).assertRedirects(
+            response, expected_url, **kwargs)

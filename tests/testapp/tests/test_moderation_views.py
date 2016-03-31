@@ -41,7 +41,7 @@ class FlagViewTests(CommentTestCase):
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/flag/%d/" % pk, {'next': "/go/here/"})
         self.assertRedirects(response,
-            "http://testserver/go/here/?c=%d" % pk)
+            "http://testserver/go/here/?c=%d" % pk, fetch_redirect_response=False)
 
     def testFlagPostUnsafeNext(self):
         """
@@ -68,9 +68,13 @@ class FlagViewTests(CommentTestCase):
         comments = self.createSomeComments()
         pk = comments[0].pk
         response = self.client.get("/flag/%d/" % pk)
-        self.assertRedirects(response, "http://testserver/accounts/login/?next=/flag/%d/" % pk)
+        self.assertRedirects(response,
+            "http://testserver/accounts/login/?next=/flag/%d/" % pk,
+            fetch_redirect_response=False)
         response = self.client.post("/flag/%d/" % pk)
-        self.assertRedirects(response, "http://testserver/accounts/login/?next=/flag/%d/" % pk)
+        self.assertRedirects(response,
+            "http://testserver/accounts/login/?next=/flag/%d/" % pk,
+            fetch_redirect_response=False)
 
     def testFlaggedView(self):
         comments = self.createSomeComments()
@@ -113,7 +117,9 @@ class DeleteViewTests(CommentTestCase):
         pk = comments[0].pk
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.get("/delete/%d/" % pk)
-        self.assertRedirects(response, "http://testserver/accounts/login/?next=/delete/%d/" % pk)
+        self.assertRedirects(response,
+            "http://testserver/accounts/login/?next=/delete/%d/" % pk,
+            fetch_redirect_response=False)
 
         makeModerator("normaluser")
         response = self.client.get("/delete/%d/" % pk)
@@ -142,7 +148,7 @@ class DeleteViewTests(CommentTestCase):
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/delete/%d/" % pk, {'next': "/go/here/"})
         self.assertRedirects(response,
-            "http://testserver/go/here/?c=%d" % pk)
+            "http://testserver/go/here/?c=%d" % pk, fetch_redirect_response=False)
 
     def testDeletePostUnsafeNext(self):
         """
@@ -187,7 +193,11 @@ class ApproveViewTests(CommentTestCase):
         pk = comments[0].pk
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.get("/approve/%d/" % pk)
-        self.assertRedirects(response, "http://testserver/accounts/login/?next=/approve/%d/" % pk)
+        self.assertRedirects(
+            response,
+            "http://testserver/accounts/login/?next=/approve/%d/" % pk,
+            fetch_redirect_response=False
+        )
 
         makeModerator("normaluser")
         response = self.client.get("/approve/%d/" % pk)
@@ -221,7 +231,8 @@ class ApproveViewTests(CommentTestCase):
         response = self.client.post("/approve/%d/" % c1.pk,
             {'next': "/go/here/"})
         self.assertRedirects(response,
-            "http://testserver/go/here/?c=%d" % c1.pk)
+            "http://testserver/go/here/?c=%d" % c1.pk,
+            fetch_redirect_response=False)
 
     def testApprovePostUnsafeNext(self):
         """
