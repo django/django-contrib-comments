@@ -16,4 +16,4 @@ for comments on blog entries, photos, book chapters, or anything else.
 
 For details, `consult the documentation`__.
 
-__ http://django-contrib-comments.readthedocs.org/
+__ https://django-contrib-comments.readthedocs.io/
