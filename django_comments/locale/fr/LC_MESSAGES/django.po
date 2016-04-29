@@ -3,14 +3,14 @@
 # Translators:
 # Translators:
 # Claude Paroz <claude@2xlibre.net>, 2011
-# Claude Paroz <claude@2xlibre.net>, 2015
+# Claude Paroz <claude@2xlibre.net>, 2015-2016
 # Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:44+0000\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-03-29 19:22+0000\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: French (http://www.transifex.com/django/django-contrib-comments/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -203,6 +203,11 @@ msgstr "indicateur de commentaire"
 #: models.py:191
 msgid "comment flags"
 msgstr "indicateurs de commentaire"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Nouveau commentaire envoyé pour « %(object)s »"
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

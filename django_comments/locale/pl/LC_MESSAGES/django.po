@@ -4,13 +4,14 @@
 # Translators:
 # Adrian Antończyk <linkedin@antonczyk.it>, 2015
 # Jannis Leidel <jannis@leidel.info>, 2011
+# m_aciek <maciej.olko@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-09-03 23:57+0000\n"
-"Last-Translator: Adrian Antończyk <linkedin@antonczyk.it>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-04-17 23:17+0000\n"
+"Last-Translator: m_aciek <maciej.olko@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/django/django-contrib-comments/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -207,6 +208,11 @@ msgstr "flaga dla komentarza"
 #: models.py:191
 msgid "comment flags"
 msgstr "flagi dla komentarzy"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Dodany komentarz do „%(object)s”"
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

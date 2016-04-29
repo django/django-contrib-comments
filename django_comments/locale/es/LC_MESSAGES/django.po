@@ -2,6 +2,7 @@
 # 
 # Translators:
 # Translators:
+# David Martinez <davy.martinez@gmail.com>, 2016
 # Ernesto Avilés Vázquez <whippiii@gmail.com>, 2015
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Marc Garcia <garcia.marc@gmail.com>, 2011
@@ -9,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-09-07 14:38+0000\n"
-"Last-Translator: Ernesto Avilés Vázquez <whippiii@gmail.com>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-04-01 14:06+0000\n"
+"Last-Translator: David Martinez <davy.martinez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/django/django-contrib-comments/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -203,6 +204,11 @@ msgstr "marca de comentario"
 #: models.py:191
 msgid "comment flags"
 msgstr "marcas de comentario"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Nuevo comentario publicado en \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
