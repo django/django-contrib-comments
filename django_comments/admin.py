@@ -4,7 +4,6 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _, ungettext
 
-from django_comments.models import Comment
 from django_comments import get_model
 from django_comments.views.moderation import perform_flag, perform_approve, perform_delete
 
@@ -90,5 +89,6 @@ class CommentsAdmin(admin.ModelAdmin):
 
 # Only register the default admin if the model is the built-in comment model
 # (this won't be true if there's a custom comment app).
-if get_model() is Comment:
-    admin.site.register(Comment, CommentsAdmin)
+Klass = get_model()
+if Klass._meta.app_label is "django_comments":
+    admin.site.register(Klass, CommentsAdmin)

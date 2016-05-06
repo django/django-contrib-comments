@@ -40,13 +40,13 @@ def get_comment_app_name():
 
 
 def get_model():
-    from django_comments.models import Comment
     """
     Returns the comment model class.
     """
     if get_comment_app_name() != DEFAULT_COMMENTS_APP and hasattr(get_comment_app(), "get_model"):
         return get_comment_app().get_model()
     else:
+        from django_comments.models import Comment
         return Comment
 
 
