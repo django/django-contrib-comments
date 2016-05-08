@@ -1,12 +1,12 @@
-import os
 from setuptools import setup, find_packages
 
-try:
-    f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
-    long_description = f.read().strip()
-    f.close()
-except IOError:
-    long_description = None
+with open('README.rst') as readme_file:
+    readme = readme_file.read()
+
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
+
+long_description = readme + history
 
 setup(
     name='django-contrib-comments',

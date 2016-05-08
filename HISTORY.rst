@@ -1,0 +1,58 @@
+.. :changelog:
+
+History
+=======
+
+Pending
+-------
+
+* New release notes here
+
+
+1.7.1 (2016-05-03)
+------------------
+
+* ``get_comment_list`` now returns a ``QuerySet`` instead of a ``list``.
+* Isolated abstract models outside of models.py so they can be imported without
+  triggering Django's deprecation warning about models living outside of a
+  'models' module.
+* Updated translations.
+
+1.7.0 (2016-03-29)
+------------------
+
+* Dropped Django 1.6 and Python 2.6 support
+* Improved usage of ``AppConfig`` functionality for custom models.
+* Added ``CommentAbstractModel`` as another abstract model layer for easier
+  customization.
+* Avoided N+1 query problem for users on comments.
+* Made the moderation email subject translatable.
+* Added a database index to ``Comment.submit_date``, since it is used for the
+  default ordering.
+* Fixed packaging so locale files are distributed.
+* Updated translations.
+
+1.6.2 (2016-12-10)
+------------------
+
+* Fixed some Django deprecation warnings.
+* Setup translation system using Transifex.
+* Added missing South migration for the email length.
+* Updated translations.
+
+1.6.1 (2016-05-08)
+------------------
+
+* Fixed migrations not working when installed as an egg.
+
+
+1.6.0 (2016-04-29)
+------------------
+
+* Made ``CommentSecurityForm`` pass keyword arguments to its parent class.
+* Added ``COMMENTS_TIMEOUT`` setting to configure the timeout for
+  ``CommentSecurityForm``.
+* Migrated ``Comment.user_email`` to 254 characters.
+* Moved South migrations to ``south_migrations`` folder so they can exist with
+  Django 1.7 migrations.
+* Added Django 1.9 compatibility, dropped support for Django 1.5.
