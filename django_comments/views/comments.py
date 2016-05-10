@@ -15,6 +15,9 @@ import django_comments
 from django_comments import signals
 from django_comments.views.utils import next_redirect, confirmation_view
 
+UNVALID_FORM_HTTP_CODE = getattr(settings, 'COMMENT_UNVALID_FORM_HTTP_CODE',
+                                 200)
+
 
 class CommentPostBadRequest(http.HttpResponseBadRequest):
     """
@@ -97,7 +100,7 @@ def post_comment(request, next=None, using=None):
                 "comment": form.data.get("comment", ""),
                 "form": form,
                 "next": data.get("next", next),
-            },
+            }, status=UNVALID_FORM_HTTP_CODE
         )
 
     # Otherwise create the comment
