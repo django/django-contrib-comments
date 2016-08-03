@@ -23,7 +23,7 @@ class CommentSecurityForm(forms.Form):
     content_type = forms.CharField(widget=forms.HiddenInput)
     object_pk = forms.CharField(widget=forms.HiddenInput)
     timestamp = forms.IntegerField(widget=forms.HiddenInput)
-    security_hash = forms.CharField(min_length=40, max_length=40, widget=forms.HiddenInput)
+    security_hash = forms.CharField(widget=forms.HiddenInput)
 
     def __init__(self, target_object, data=None, initial=None, **kwargs):
         self.target_object = target_object
