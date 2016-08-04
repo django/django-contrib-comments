@@ -8,11 +8,17 @@ Pending
 
 * New release notes here
 
+1.7.2 (2016-08-04)
+------------------
+
+* ``get_comment_list`` now returns a ``QuerySet`` instead of a ``list``.
+* Fixed a Django 1.9+ compatibility issue with a customized comment app in
+  ``INSTALLED_APPS`` (#87).
+* Confirmed support for Django 1.10.
 
 1.7.1 (2016-05-03)
 ------------------
 
-* ``get_comment_list`` now returns a ``QuerySet`` instead of a ``list``.
 * Isolated abstract models outside of models.py so they can be imported without
   triggering Django's deprecation warning about models living outside of a
   'models' module.
