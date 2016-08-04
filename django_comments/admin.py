@@ -90,5 +90,5 @@ class CommentsAdmin(admin.ModelAdmin):
 # Only register the default admin if the model is the built-in comment model
 # (this won't be true if there's a custom comment app).
 Klass = get_model()
-if Klass._meta.app_label is "django_comments":
+if Klass._meta.app_label == "django_comments":
     admin.site.register(Klass, CommentsAdmin)
