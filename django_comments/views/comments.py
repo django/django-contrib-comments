@@ -4,7 +4,6 @@ from django import http
 from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
-from django.db import models
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils.html import escape
