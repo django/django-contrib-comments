@@ -4,7 +4,6 @@ from django import http
 from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
-from django.db import models
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils.html import escape
@@ -26,7 +25,8 @@ class CommentPostBadRequest(http.HttpResponseBadRequest):
     def __init__(self, why):
         super(CommentPostBadRequest, self).__init__()
         if settings.DEBUG:
-            self.content = render_to_string("comments/400-debug.html", {"why": why})
+            self.content = render_to_string(
+                "comments/400-debug.html", {"why": why})
 
 
 @csrf_protect
@@ -42,7 +42,8 @@ def post_comment(request, next=None, using=None):
     data = request.POST.copy()
     if request.user.is_authenticated():
         if not data.get('name', ''):
-            data["name"] = request.user.get_full_name() or request.user.get_username()
+            data["name"] = request.user.get_full_name(
+            ) or request.user.get_username()
         if not data.get('email', ''):
             data["email"] = request.user.email
 
@@ -86,23 +87,28 @@ def post_comment(request, next=None, using=None):
             # These first two exist for purely historical reasons.
             # Django v1.0 and v1.1 allowed the underscore format for
             # preview templates, so we have to preserve that format.
-            "comments/%s_%s_preview.html" % (model._meta.app_label, model._meta.model_name),
+            "comments/%s_%s_preview.html" % (model._meta.app_label,
+                                             model._meta.model_name),
             "comments/%s_preview.html" % model._meta.app_label,
             # Now the usual directory based template hierarchy.
-            "comments/%s/%s/preview.html" % (model._meta.app_label, model._meta.model_name),
+            "comments/%s/%s/preview.html" % (model._meta.app_label,
+                                             model._meta.model_name),
             "comments/%s/preview.html" % model._meta.app_label,
             "comments/preview.html",
         ]
         return render(request, template_list, {
-                "comment": form.data.get("comment", ""),
-                "form": form,
-                "next": data.get("next", next),
-            },
+            "comment": form.data.get("comment", ""),
+            "form": form,
+            "next": data.get("next", next),
+        },
         )
 
     # Otherwise create the comment
     comment = form.get_comment_object()
-    comment.ip_address = request.META.get("REMOTE_ADDR", None)
+    if request.META.get("HTTP_X_REAL_IP", None):
+        comment.ip_address = request.META.get("HTTP_X_REAL_IP")
+    else:
+        comment.ip_address = request.META.get("REMOTE_ADDR", None)
     if request.user.is_authenticated():
         comment.user = request.user
 
