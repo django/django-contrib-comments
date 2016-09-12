@@ -3,13 +3,13 @@
 # Translators:
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
-# Vláďa Macek <macek@sandbox.cz>, 2015
+# Vláďa Macek <macek@sandbox.cz>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-25 16:33+0000\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-07-24 18:06+0000\n"
 "Last-Translator: Vláďa Macek <macek@sandbox.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/django/django-contrib-comments/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -207,6 +207,11 @@ msgstr "značka komentáře"
 #: models.py:191
 msgid "comment flags"
 msgstr "značky komentáře"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] K položce \"%(object)s\" byl přidán komentář"
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

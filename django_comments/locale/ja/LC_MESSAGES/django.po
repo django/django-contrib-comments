@@ -2,14 +2,14 @@
 # 
 # Translators:
 # Translators:
-# xiu1 <d84ea@hotmail.co.jp>, 2015
+# xiu1 <d84ea@hotmail.co.jp>, 2015-2016
 # Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-08-07 15:43+0000\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-06-25 14:42+0000\n"
 "Last-Translator: xiu1 <d84ea@hotmail.co.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/django/django-contrib-comments/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -197,6 +197,11 @@ msgstr "コメントフラグ"
 #: models.py:191
 msgid "comment flags"
 msgstr "コメントフラグ"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] 新しいコメントを \"%(object)s\" に投稿しました"
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

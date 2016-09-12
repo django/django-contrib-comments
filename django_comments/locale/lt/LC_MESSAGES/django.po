@@ -4,14 +4,14 @@
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
 # lauris <lauris@runbox.com>, 2011
-# Matas Dailyda <matas@dailyda.com>, 2015
+# Matas Dailyda <matas@dailyda.com>, 2015-2016
 # Simonas Kazlauskas <simonas@kazlauskas.me>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-10-06 11:01+0000\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-05-23 12:11+0000\n"
 "Last-Translator: Matas Dailyda <matas@dailyda.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/django/django-contrib-comments/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -209,6 +209,11 @@ msgstr "Komentaro žymė"
 #: models.py:191
 msgid "comment flags"
 msgstr "Komentaro žymės"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Nauji komentarai įvesti \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

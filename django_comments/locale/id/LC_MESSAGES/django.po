@@ -2,15 +2,15 @@
 # 
 # Translators:
 # Translators:
-# Fery Setiawan <gembelweb@gmail.com>, 2015
+# Fery Setiawan <gembelweb@gmail.com>, 2015-2016
 # Jannis Leidel <jannis@leidel.info>, 2011
 # rodin <romihardiyanto@gmail.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-12-21 02:35+0000\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-08-23 04:31+0000\n"
 "Last-Translator: Fery Setiawan <gembelweb@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/django/django-contrib-comments/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -198,6 +198,11 @@ msgstr "tanda komentar"
 #: models.py:191
 msgid "comment flags"
 msgstr "tanda komentar"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Komentar baru ditempatkan pada \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
