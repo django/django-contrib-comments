@@ -6,11 +6,12 @@ History
 Pending
 -------
 
-1.7.3 (unreleased)
+1.7.3 (2016-09-13)
 ------------------
 
 * Fixed a regression which prevented the ``Comment`` model
   from registering with the admin.
+* Updated translations.
 
 1.7.2 (2016-08-04)
 ------------------
