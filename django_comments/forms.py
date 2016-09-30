@@ -101,6 +101,7 @@ class CommentDetailsForm(CommentSecurityForm):
     name = forms.CharField(label=pgettext_lazy("Person name", "Name"), max_length=50)
     email = forms.EmailField(label=_("Email address"))
     url = forms.URLField(label=_("URL"), required=False)
+    # Translators: 'Comment' is a noun here.
     comment = forms.CharField(label=_('Comment'), widget=forms.Textarea,
                               max_length=COMMENT_MAX_LENGTH)
 

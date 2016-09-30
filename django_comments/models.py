@@ -33,8 +33,10 @@ class CommentFlag(models.Model):
         on_delete=models.CASCADE,
     )
     comment = models.ForeignKey(
+        # Translators: 'comment' is a noun here.
         Comment, verbose_name=_('comment'), related_name="flags", on_delete=models.CASCADE,
     )
+    # Translators: 'flag' is a noun here.
     flag = models.CharField(_('flag'), max_length=30, db_index=True)
     flag_date = models.DateTimeField(_('date'), default=None)
 

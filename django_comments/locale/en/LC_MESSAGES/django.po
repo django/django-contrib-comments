@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-29 16:05+0200\n"
+"POT-Creation-Date: 2016-09-30 19:54+0200\n"
 "PO-Revision-Date: 2012-02-14 13:24+0000\n"
 "Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
 "Language-Team: English <en@li.org>\n"
@@ -40,8 +40,9 @@ msgstr "user's email address"
 msgid "user's URL"
 msgstr "user's URL"
 
+#. Translators: 'comment' is a noun here.
 #: django_comments/abstracts.py:66 django_comments/abstracts.py:86
-#: django_comments/models.py:36
+#: django_comments/models.py:37
 msgid "comment"
 msgstr "comment"
 
@@ -180,7 +181,8 @@ msgstr "Email address"
 msgid "URL"
 msgstr "URL"
 
-#: django_comments/forms.py:104
+#. Translators: 'Comment' is a noun here.
+#: django_comments/forms.py:105
 msgid "Comment"
 msgstr "Comment"
 
@@ -202,7 +204,8 @@ msgid ""
 msgstr ""
 "If you enter anything in this field your comment will be treated as spam"
 
-#: django_comments/models.py:38
+#. Translators: 'flag' is a noun here.
+#: django_comments/models.py:40
 msgid "flag"
 msgstr "flag"
 
@@ -312,6 +315,7 @@ msgstr[1] "Please correct the errors below"
 msgid "Post your comment"
 msgstr "Post your comment"
 
-#: django_comments/templates/comments/preview.html:18
+#. Translators: This string follows the 'Post your comment' submit button.
+#: django_comments/templates/comments/preview.html:20
 msgid "or make changes"
 msgstr "or make changes"
