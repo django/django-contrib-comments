@@ -78,9 +78,13 @@ class BaseCommentNode(template.Node):
 
         qs = self.comment_model.objects.filter(
             content_type=ctype,
-            object_pk=smart_text(object_pk),
-            site__pk=settings.SITE_ID,
-        )
+            object_pk=smart_text(object_pk))
+        try:
+            site_id = settings.SITE_ID
+        except AttributeError:
+            pass
+        else:
+            qs = qs.filter(site__pk=site_id)
 
         # The is_public and is_removed fields are implementation details of the
         # built-in comment model's spam filtering system, so they might not
