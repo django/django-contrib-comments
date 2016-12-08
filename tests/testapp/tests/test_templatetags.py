@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 
+from django import get_version
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
@@ -105,6 +106,11 @@ class CommentTemplateTagTests(CommentTestCase):
         self.verifyGetCommentList("{% get_comment_list for a as cl %}")
 
     def testGetCommentListUsingRequest(self, tag=None):
+        # Retrieving a site from the request is not available in Django 1.7,
+        # our minimum supported version.
+        if get_version().startswith("1.7"):
+            return
+
         # A request lookup should return site_2
         with override_settings(SITE_ID=self.site_2.id):
             c1, c2, c3, c4 = self.createSomeComments()
