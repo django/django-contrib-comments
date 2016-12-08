@@ -8,6 +8,7 @@ Pending
 
 * Fixed a packaging error which caused sub-packages of the tests to be
   distributed.
+* Use ``get_current_site`` to look up the site instead of ``settings.SITE_ID``.
 
 1.7.3 (2016-09-13)
 ------------------

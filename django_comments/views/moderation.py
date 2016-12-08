@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import csrf_protect
 
@@ -21,7 +22,9 @@ def flag(request, comment_id, next=None):
         comment
             the flagged `comments.comment` object
     """
-    comment = get_object_or_404(django_comments.get_model(), pk=comment_id, site__pk=settings.SITE_ID)
+    comment = get_object_or_404(django_comments.get_model(),
+                                pk=comment_id,
+                                site__pk=get_current_site(request).pk)
 
     # Flag on POST
     if request.method == 'POST':
@@ -46,7 +49,9 @@ def delete(request, comment_id, next=None):
         comment
             the flagged `comments.comment` object
     """
-    comment = get_object_or_404(django_comments.get_model(), pk=comment_id, site__pk=settings.SITE_ID)
+    comment = get_object_or_404(django_comments.get_model(),
+                                pk=comment_id,
+                                site__pk=get_current_site(request).pk)
 
     # Delete on POST
     if request.method == 'POST':
@@ -72,7 +77,9 @@ def approve(request, comment_id, next=None):
         comment
             the `comments.comment` object for approval
     """
-    comment = get_object_or_404(django_comments.get_model(), pk=comment_id, site__pk=settings.SITE_ID)
+    comment = get_object_or_404(django_comments.get_model(),
+                                pk=comment_id,
+                                site__pk=get_current_site(request).pk)
 
     # Delete on POST
     if request.method == 'POST':

@@ -2,6 +2,7 @@ from django import template
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
+from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import smart_text
 
 import django_comments
@@ -76,10 +77,13 @@ class BaseCommentNode(template.Node):
         if not object_pk:
             return self.comment_model.objects.none()
 
+        site_id = settings.SITE_ID
+        if 'request' in context:
+            site_id = get_current_site(context['request']).pk
         qs = self.comment_model.objects.filter(
             content_type=ctype,
             object_pk=smart_text(object_pk),
-            site__pk=settings.SITE_ID,
+            site__pk=site_id,
         )
 
         # The is_public and is_removed fields are implementation details of the
