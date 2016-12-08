@@ -1,7 +1,14 @@
 from __future__ import absolute_import
 
+import unittest
+
+from django import get_version
+from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
+from django.contrib.sites.models import Site
 from django.template import Template, Context
+from django.test.client import RequestFactory
+from django.test.utils import override_settings
 
 from django_comments.forms import CommentForm
 from django_comments.models import Comment
@@ -11,6 +18,11 @@ from . import CommentTestCase
 
 
 class CommentTemplateTagTests(CommentTestCase):
+
+    def setUp(self):
+        super(CommentTemplateTagTests, self).setUp()
+        self.site_2 = Site.objects.create(id=settings.SITE_ID + 1,
+            domain="testserver", name="testserver")
 
     def render(self, t, **c):
         ctx = Context(c)
@@ -94,6 +106,21 @@ class CommentTemplateTagTests(CommentTestCase):
     def testGetCommentListFromObject(self):
         self.createSomeComments()
         self.verifyGetCommentList("{% get_comment_list for a as cl %}")
+
+    @unittest.skipIf(get_version().startswith("1.7"),
+                    "Retrieving a site from the request is not available in Django 1.7")
+    def testGetCommentListUsingRequest(self, tag=None):
+        # A request lookup should return site_2
+        with override_settings(SITE_ID=self.site_2.id):
+            c1, c2, c3, c4 = self.createSomeComments()
+
+        # Effectively unset SITE_ID which forces a site lookup from the
+        # request. Create a new comment for the second site.
+        with override_settings(SITE_ID=None):
+            t = "{% load comments %}" + (tag or "{% get_comment_list for testapp.author a.id as cl %}")
+            request = RequestFactory().get("/")
+            ctx, out = self.render(t, a=Author.objects.get(pk=1), request=request)
+            self.assertEqual(list(ctx["cl"]), [c2])
 
     def testWhitespaceInGetCommentListTag(self):
         self.createSomeComments()

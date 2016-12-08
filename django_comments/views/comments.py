@@ -3,6 +3,7 @@ from __future__ import absolute_import
 from django import http
 from django.apps import apps
 from django.conf import settings
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.shortcuts import render
 from django.template.loader import render_to_string
@@ -100,7 +101,7 @@ def post_comment(request, next=None, using=None):
         )
 
     # Otherwise create the comment
-    comment = form.get_comment_object()
+    comment = form.get_comment_object(site_id=get_current_site(request).id)
     comment.ip_address = request.META.get("REMOTE_ADDR", None)
     if request.user.is_authenticated():
         comment.user = request.user

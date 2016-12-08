@@ -3,6 +3,7 @@ from __future__ import absolute_import
 import time
 
 from django.conf import settings
+from django.contrib.sites.models import Site
 
 from django_comments.forms import CommentForm
 from django_comments.models import Comment
@@ -12,6 +13,12 @@ from testapp.models import Article
 
 
 class CommentFormTests(CommentTestCase):
+
+    def setUp(self):
+        super(CommentFormTests, self).setUp()
+        self.site_2 = Site.objects.create(id=settings.SITE_ID + 1,
+            domain="testserver", name="testserver")
+
     def testInit(self):
         f = CommentForm(Article.objects.get(pk=1))
         self.assertEqual(f.initial['content_type'], str(Article._meta))
@@ -60,6 +67,15 @@ class CommentFormTests(CommentTestCase):
         self.assertEqual(c.comment, "This is my comment")
         c.save()
         self.assertEqual(Comment.objects.count(), 1)
+
+        # Create a comment for the second site. We only test for site_id, not
+        # what has already been tested above.
+        a = Article.objects.get(pk=1)
+        d = self.getValidData(a)
+        d["comment"] = "testGetCommentObject with a site"
+        f = CommentForm(Article.objects.get(pk=1), data=d)
+        c = f.get_comment_object(site_id=self.site_2.id)
+        self.assertEqual(c.site_id, self.site_2.id)
 
     def testProfanities(self):
         """Test COMMENTS_ALLOW_PROFANITIES and PROFANITIES_LIST settings"""
