@@ -108,8 +108,7 @@ class CommentTemplateTagTests(CommentTestCase):
         self.verifyGetCommentList("{% get_comment_list for a as cl %}")
 
     @unittest.skipIf(get_version().startswith("1.7"),
-                    "Retrieving a site from the request is not available in \
-                    Django 1.7")
+                    "Retrieving a site from the request is not available in Django 1.7")
     def testGetCommentListUsingRequest(self, tag=None):
         # A request lookup should return site_2
         with override_settings(SITE_ID=self.site_2.id):
