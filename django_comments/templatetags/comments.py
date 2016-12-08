@@ -77,9 +77,12 @@ class BaseCommentNode(template.Node):
         if not object_pk:
             return self.comment_model.objects.none()
 
-        site_id = settings.SITE_ID
-        if 'request' in context:
+        # Explicit SITE_ID takes precedence over request. This is also how
+        # get_current_site operates.
+        site_id = getattr(settings, "SITE_ID", None)
+        if not site_id and ('request' in context):
             site_id = get_current_site(context['request']).pk
+
         qs = self.comment_model.objects.filter(
             content_type=ctype,
             object_pk=smart_text(object_pk),

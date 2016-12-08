@@ -145,7 +145,7 @@ class CommentDetailsForm(CommentSecurityForm):
             user_url=self.cleaned_data["url"],
             comment=self.cleaned_data["comment"],
             submit_date=timezone.now(),
-            site_id=site_id or settings.SITE_ID,
+            site_id=site_id or getattr(settings, "SITE_ID", None),
             is_public=True,
             is_removed=False,
         )
