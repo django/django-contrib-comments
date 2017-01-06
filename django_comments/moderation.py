@@ -56,12 +56,11 @@ class.
 
 import datetime
 
-from django import VERSION
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.db.models.base import ModelBase
-from django.template import Context, loader
+from django.template import loader
 from django.utils import timezone
 from django.utils.translation import ugettext as _
 
@@ -254,7 +253,7 @@ class CommentModerator(object):
             'site': get_current_site(request).name,
             'object': content_object,
         }
-        message = t.render(Context(c) if VERSION < (1, 8) else c)
+        message = t.render(c)
         send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list, fail_silently=True)
 
 

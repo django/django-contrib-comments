@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
-from django.test.utils import override_settings
+from django.core.exceptions import ImproperlyConfigured
+from django.test.utils import modify_settings, override_settings
 
 import django_comments
 from django_comments.models import Comment
@@ -14,6 +15,12 @@ class CommentAppAPITests(CommentTestCase):
 
     def testGetCommentApp(self):
         self.assertEqual(django_comments.get_comment_app(), django_comments)
+
+    @modify_settings(INSTALLED_APPS={'remove': 'django_comments'})
+    def testGetMissingCommentApp(self):
+        msg = "The COMMENTS_APP ('django_comments') must be in INSTALLED_APPS"
+        with self.assertRaisesMessage(ImproperlyConfigured, msg):
+            django_comments.get_comment_app()
 
     def testGetForm(self):
         self.assertEqual(django_comments.get_form(), CommentForm)
