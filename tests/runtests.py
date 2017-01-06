@@ -37,6 +37,7 @@ settings.configure(
             'APP_DIRS': True,
             'OPTIONS': {
                 'context_processors': [
+                    'django.contrib.auth.context_processors.auth',
                     'django.contrib.messages.context_processors.messages',
                 ]
             },
