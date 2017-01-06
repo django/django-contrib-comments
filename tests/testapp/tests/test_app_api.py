@@ -1,12 +1,6 @@
 from __future__ import absolute_import
 
-import unittest
-
-import django
-from django.conf import settings
-from django.core.exceptions import ImproperlyConfigured
 from django.test.utils import override_settings
-from django.utils import six
 
 import django_comments
 from django_comments.models import Comment
@@ -20,15 +14,6 @@ class CommentAppAPITests(CommentTestCase):
 
     def testGetCommentApp(self):
         self.assertEqual(django_comments.get_comment_app(), django_comments)
-
-    @unittest.skipIf(django.VERSION >= (1, 7), "Missing apps raise ImportError with django 1.7")
-    @override_settings(
-        COMMENTS_APP='missing_app',
-        INSTALLED_APPS=list(settings.INSTALLED_APPS) + ['missing_app'],
-    )
-    def testGetMissingCommentApp(self):
-        with six.assertRaisesRegex(self, ImproperlyConfigured, 'missing_app'):
-            django_comments.get_comment_app()
 
     def testGetForm(self):
         self.assertEqual(django_comments.get_form(), CommentForm)
