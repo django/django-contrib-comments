@@ -9,9 +9,12 @@ env:
 - TOXENV=py27-django110
 - TOXENV=py34-django110
 - TOXENV=py35-django110
-- TOXENV=py27-django-master
 - TOXENV=py34-django-master
 - TOXENV=py35-django-master
+matrix:
+  allow_failures:
+    - env: TOXENV=py34-django-master
+    - env: TOXENV=py35-django-master
 install:
 - pip install tox
 script:
