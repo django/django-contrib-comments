@@ -9,7 +9,8 @@ Pending
 * Fixed a packaging error which caused sub-packages of the tests to be
   distributed.
 * Use ``get_current_site`` to look up the site instead of ``settings.SITE_ID``.
-* Dropped Django 1.7 and Python 3.2 support.
+* Dropped Django 1.7 and Python 3.2/3.3 support.
+* Added testing for Python 3.5.
 
 1.7.3 (2016-09-13)
 ------------------
