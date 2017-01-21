@@ -2,8 +2,11 @@ from importlib import import_module
 
 from django.apps import apps
 from django.conf import settings
-from django.core import urlresolvers
 from django.core.exceptions import ImproperlyConfigured
+try:
+    from django.urls import reverse
+except ImportError:
+    from django.core.urlresolvers import reverse  # Django < 1.10
 
 
 DEFAULT_COMMENTS_APP = 'django_comments'
@@ -68,7 +71,7 @@ def get_form_target():
     if get_comment_app_name() != DEFAULT_COMMENTS_APP and hasattr(get_comment_app(), "get_form_target"):
         return get_comment_app().get_form_target()
     else:
-        return urlresolvers.reverse("comments-post-comment")
+        return reverse("comments-post-comment")
 
 
 def get_flag_url(comment):
@@ -78,7 +81,7 @@ def get_flag_url(comment):
     if get_comment_app_name() != DEFAULT_COMMENTS_APP and hasattr(get_comment_app(), "get_flag_url"):
         return get_comment_app().get_flag_url(comment)
     else:
-        return urlresolvers.reverse("comments-flag", args=(comment.id,))
+        return reverse("comments-flag", args=(comment.id,))
 
 
 def get_delete_url(comment):
@@ -88,7 +91,7 @@ def get_delete_url(comment):
     if get_comment_app_name() != DEFAULT_COMMENTS_APP and hasattr(get_comment_app(), "get_delete_url"):
         return get_comment_app().get_delete_url(comment)
     else:
-        return urlresolvers.reverse("comments-delete", args=(comment.id,))
+        return reverse("comments-delete", args=(comment.id,))
 
 
 def get_approve_url(comment):
@@ -98,4 +101,4 @@ def get_approve_url(comment):
     if get_comment_app_name() != DEFAULT_COMMENTS_APP and hasattr(get_comment_app(), "get_approve_url"):
         return get_comment_app().get_approve_url(comment)
     else:
-        return urlresolvers.reverse("comments-approve", args=(comment.id,))
+        return reverse("comments-approve", args=(comment.id,))

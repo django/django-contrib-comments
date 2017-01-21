@@ -1,4 +1,7 @@
-from django.core import urlresolvers
+try:
+    from django.urls import reverse
+except ImportError:
+    from django.core.urlresolvers import reverse  # Django < 1.10
 
 from . import views
 from .forms import CustomCommentForm
@@ -14,16 +17,16 @@ def get_form():
 
 
 def get_form_target():
-    return urlresolvers.reverse(views.custom_submit_comment)
+    return reverse(views.custom_submit_comment)
 
 
 def get_flag_url(c):
-    return urlresolvers.reverse(views.custom_flag_comment, args=(c.id,))
+    return reverse(views.custom_flag_comment, args=(c.id,))
 
 
 def get_delete_url(c):
-    return urlresolvers.reverse(views.custom_delete_comment, args=(c.id,))
+    return reverse(views.custom_delete_comment, args=(c.id,))
 
 
 def get_approve_url(c):
-    return urlresolvers.reverse(views.custom_approve_comment, args=(c.id,))
+    return reverse(views.custom_approve_comment, args=(c.id,))

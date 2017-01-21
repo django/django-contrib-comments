@@ -4,11 +4,14 @@ from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
-from django.core import urlresolvers
 from django.db import models
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
+try:
+    from django.urls import reverse
+except ImportError:
+    from django.core.urlresolvers import reverse  # Django < 1.10
 
 from .managers import CommentManager
 
@@ -39,7 +42,7 @@ class BaseCommentAbstractModel(models.Model):
         """
         Get a URL suitable for redirecting to the content object.
         """
-        return urlresolvers.reverse(
+        return reverse(
             "comments-url-redirect",
             args=(self.content_type_id, self.object_pk)
         )
