@@ -77,7 +77,7 @@ msgstr "Laatste opmerkingen op %(site_name)s"
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: forms.py:97
 msgid "Email address"
