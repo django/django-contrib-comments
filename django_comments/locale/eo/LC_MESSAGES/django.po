@@ -2,13 +2,14 @@
 # 
 # Translators:
 # Translators:
+# Nikolay Korotkiy <sikmir@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:43+0000\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-11-11 12:09+0000\n"
+"Last-Translator: Nikolay Korotkiy <sikmir@gmail.com>\n"
 "Language-Team: Esperanto (http://www.transifex.com/django/django-contrib-comments/language/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +75,7 @@ msgstr "Lastaj komentoj ĉe %(site_name)s"
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Nomo"
 
 #: forms.py:97
 msgid "Email address"
@@ -200,6 +201,11 @@ msgstr "komenta marko"
 #: models.py:191
 msgid "comment flags"
 msgstr "komentaj markoj"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Nova komento afiŝita \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

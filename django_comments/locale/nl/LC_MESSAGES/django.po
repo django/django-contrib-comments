@@ -3,15 +3,16 @@
 # Translators:
 # Translators:
 # go2people <admin@go2people.nl>, 2011
+# Evelijn Saaltink <evelijnsaaltink@gmail.com>, 2016
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Tino de Bruijn <tinodb@gmail.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:43+0000\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2016-10-12 18:03+0000\n"
+"Last-Translator: Evelijn Saaltink <evelijnsaaltink@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/django/django-contrib-comments/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,7 +78,7 @@ msgstr "Laatste opmerkingen op %(site_name)s"
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: forms.py:97
 msgid "Email address"
@@ -204,6 +205,11 @@ msgstr "opmerking vlag"
 msgid "comment flags"
 msgstr "opmerking vlaggen"
 
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Nieuwe opmerking geplaatst op \"%(object)s\""
+
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
 msgstr "Een opmerking toestaan"
@@ -281,8 +287,8 @@ msgstr "Toon voorbeeld van uw opmerking"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Please correct the error below"
+msgstr[1] "Herstel de fouten hieronder"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"
