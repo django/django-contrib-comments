@@ -35,7 +35,13 @@ must also be listed in :setting:`INSTALLED_APPS`.
 .. setting:: COMMENTS_TIMEOUT
 
 COMMENT_TIMEOUT
-------------------
+---------------
 
 The maximum comment form timeout in seconds. The default value is
 ``2 * 60 * 60`` (2 hours).
+
+COMMENT_UNVALID_FORM_HTTP_CODE
+------------------------------
+
+The HTTP response code sent when unvalid form is submitted. The default value
+is ``200`` (OK).
