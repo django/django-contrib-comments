@@ -3,6 +3,11 @@
 History
 =======
 
+Pending
+-------
+
+* 'sites' framework continues to be supported but is no longer required.
+
 1.8.0 (2017-02-03)
 ------------------
 
