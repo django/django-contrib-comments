@@ -33,7 +33,7 @@ class BaseCommentAbstractModel(models.Model):
     content_object = GenericForeignKey(ct_field="content_type", fk_field="object_pk")
 
     # Metadata about the comment
-    site = models.ForeignKey(Site, on_delete=models.CASCADE)
+    site = models.ForeignKey(Site, on_delete=models.CASCADE, null=True)
 
     class Meta:
         abstract = True
@@ -168,7 +168,10 @@ class CommentAbstractModel(BaseCommentAbstractModel):
             'user': self.user or self.name,
             'date': self.submit_date,
             'comment': self.comment,
-            'domain': self.site.domain,
+            'domain': self.site.domain if self.site else '',
             'url': self.get_absolute_url()
         }
-        return _('Posted by %(user)s at %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s') % d
+        if self.site:
+            return _('Posted by %(user)s at %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s') % d
+        else:
+            return _('Posted by %(user)s at %(date)s\n\n%(comment)s') % d
