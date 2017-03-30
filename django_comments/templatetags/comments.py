@@ -81,7 +81,7 @@ class BaseCommentNode(template.Node):
         # get_current_site operates.
         site_id = getattr(settings, "SITE_ID", None)
         if not site_id and ('request' in context):
-            site_id = get_current_site(context['request']).pk
+            site_id = getattr(get_current_site(context['request']), 'pk', None)
 
         qs = self.comment_model.objects.filter(
             content_type=ctype,

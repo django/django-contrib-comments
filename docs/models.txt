@@ -35,7 +35,7 @@ The comment models
 
         A :class:`~django.db.models.ForeignKey` to the
         :class:`~django.contrib.sites.models.Site` on which the comment was
-        posted.
+        posted.  Will be `None` if not using the 'sites' framework.
 
     .. attribute:: user
 

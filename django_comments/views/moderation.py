@@ -1,6 +1,5 @@
 from __future__ import absolute_import
 
-from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import get_object_or_404, render
@@ -24,7 +23,7 @@ def flag(request, comment_id, next=None):
     """
     comment = get_object_or_404(django_comments.get_model(),
                                 pk=comment_id,
-                                site__pk=get_current_site(request).pk)
+                                site__pk=getattr(get_current_site(request), 'pk', None))
 
     # Flag on POST
     if request.method == 'POST':
@@ -51,7 +50,7 @@ def delete(request, comment_id, next=None):
     """
     comment = get_object_or_404(django_comments.get_model(),
                                 pk=comment_id,
-                                site__pk=get_current_site(request).pk)
+                                site__pk=getattr(get_current_site(request), 'pk', None))
 
     # Delete on POST
     if request.method == 'POST':
@@ -79,7 +78,7 @@ def approve(request, comment_id, next=None):
     """
     comment = get_object_or_404(django_comments.get_model(),
                                 pk=comment_id,
-                                site__pk=get_current_site(request).pk)
+                                site__pk=getattr(get_current_site(request), 'pk', None))
 
     # Delete on POST
     if request.method == 'POST':

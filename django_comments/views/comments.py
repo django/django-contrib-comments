@@ -105,7 +105,7 @@ def post_comment(request, next=None, using=None):
         )
 
     # Otherwise create the comment
-    comment = form.get_comment_object(site_id=get_current_site(request).id)
+    comment = form.get_comment_object(site_id=getattr(get_current_site(request), 'id', None))
     comment.ip_address = request.META.get("REMOTE_ADDR", None)
     if user_is_authenticated:
         comment.user = request.user
