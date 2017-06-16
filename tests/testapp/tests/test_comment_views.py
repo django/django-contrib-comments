@@ -119,7 +119,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data, REMOTE_ADDR=address)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
-        c = Comment.objects.all()[0]
+        c = Comment.objects.first()
         self.assertEqual(c.ip_address, address)
         self.assertEqual(c.comment, "This is my comment")
 
@@ -136,7 +136,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data, REMOTE_ADDR=address)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
-        c = Comment.objects.all()[0]
+        c = Comment.objects.first()
         self.assertEqual(c.ip_address, address)
         self.assertEqual(c.comment, "This is my comment")
 
@@ -156,7 +156,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data, REMOTE_ADDR=address)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
-        c = Comment.objects.all()[0]
+        c = Comment.objects.first()
         # We trim the '::ffff:' bit off because it is an IPv4 addr
         self.assertEqual(c.ip_address, address[7:])
         self.assertEqual(c.comment, "This is my comment")
@@ -169,7 +169,7 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data, REMOTE_ADDR="1.2.3.4")
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
-        c = Comment.objects.all()[0]
+        c = Comment.objects.first()
         self.assertEqual(c.ip_address, "1.2.3.4")
         u = User.objects.get(username='normaluser')
         self.assertEqual(c.user, u)
@@ -255,7 +255,7 @@ class CommentViewTests(CommentTestCase):
 
         signals.comment_will_be_posted.connect(receive)
         self.testCreateValidComment()
-        c = Comment.objects.all()[0]
+        c = Comment.objects.first()
         self.assertFalse(c.is_public)
 
     def testCommentNext(self):
@@ -291,7 +291,7 @@ class CommentViewTests(CommentTestCase):
         pk = int(match.group('pk'))
         response = self.client.get(location)
         self.assertTemplateUsed(response, "comments/posted.html")
-        self.assertEqual(response.context[0]["comment"], Comment.objects.get(pk=pk))
+        self.assertEqual(response.context["comment"], Comment.objects.get(pk=pk))
 
     def testCommentNextWithQueryString(self):
         """
