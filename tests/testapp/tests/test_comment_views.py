@@ -116,8 +116,8 @@ class CommentViewTests(CommentTestCase):
         address = "1.2.3.4"
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
-        self.response = self.client.post("/post/", data, REMOTE_ADDR=address)
-        self.assertEqual(self.response.status_code, 302)
+        response = self.client.post("/post/", data, REMOTE_ADDR=address)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
         c = Comment.objects.all()[0]
         self.assertEqual(c.ip_address, address)
@@ -133,8 +133,8 @@ class CommentViewTests(CommentTestCase):
         address = "2a02::223:6cff:fe8a:2e8a"
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
-        self.response = self.client.post("/post/", data, REMOTE_ADDR=address)
-        self.assertEqual(self.response.status_code, 302)
+        response = self.client.post("/post/", data, REMOTE_ADDR=address)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
         c = Comment.objects.all()[0]
         self.assertEqual(c.ip_address, address)
@@ -153,8 +153,8 @@ class CommentViewTests(CommentTestCase):
         address = "::ffff:18.52.18.52"
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
-        self.response = self.client.post("/post/", data, REMOTE_ADDR=address)
-        self.assertEqual(self.response.status_code, 302)
+        response = self.client.post("/post/", data, REMOTE_ADDR=address)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
         c = Comment.objects.all()[0]
         # We trim the '::ffff:' bit off because it is an IPv4 addr
@@ -166,8 +166,8 @@ class CommentViewTests(CommentTestCase):
         data = self.getValidData(a)
         data['name'] = data['email'] = ''
         self.client.login(username="normaluser", password="normaluser")
-        self.response = self.client.post("/post/", data, REMOTE_ADDR="1.2.3.4")
-        self.assertEqual(self.response.status_code, 302)
+        response = self.client.post("/post/", data, REMOTE_ADDR="1.2.3.4")
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
         c = Comment.objects.all()[0]
         self.assertEqual(c.ip_address, "1.2.3.4")
@@ -187,7 +187,7 @@ class CommentViewTests(CommentTestCase):
         data = self.getValidData(a)
         data['name'] = data['email'] = ''
         self.client.login(username="jane_other", password="jane_other")
-        self.response = self.client.post("/post/", data, REMOTE_ADDR="1.2.3.4")
+        self.client.post("/post/", data, REMOTE_ADDR="1.2.3.4")
         c = Comment.objects.get(user=user)
         self.assertEqual(c.ip_address, "1.2.3.4")
         self.assertEqual(c.user_name, 'jane_other')
