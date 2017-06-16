@@ -140,6 +140,15 @@ class CommentViewTests(CommentTestCase):
         self.assertEqual(c.ip_address, address)
         self.assertEqual(c.comment, "This is my comment")
 
+    def testCreateValidCommentNoIP(self):
+        """Empty REMOTE_ADDR value should always set a null ip_address value."""
+        a = Article.objects.get(pk=1)
+        data = self.getValidData(a)
+        for address in ('', None, b''):
+            self.client.post("/post/", data, REMOTE_ADDR=address)
+            c = Comment.objects.last()
+            self.assertEqual(c.ip_address, None)
+
     def testCreateValidCommentIPv6Unpack(self):
         address = "::ffff:18.52.18.52"
         a = Article.objects.get(pk=1)
