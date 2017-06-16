@@ -1,6 +1,5 @@
 from __future__ import absolute_import
 
-from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import get_object_or_404, render
