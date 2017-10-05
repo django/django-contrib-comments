@@ -8,6 +8,7 @@ env:
 - TOXENV=py34-django110
 - TOXENV=py27-django111
 - TOXENV=py34-django111
+- TOXENV=py34-django20
 matrix:
   include:
     - python: 3.5
@@ -19,9 +20,13 @@ matrix:
     - python: 3.5
       env: TOXENV=py35-django-111
     - python: 3.5
+      env: TOXENV=py35-django-20
+    - python: 3.5
       env: TOXENV=py35-django-master
     - python: 3.6
       env: TOXENV=py36-django-111
+    - python: 3.6
+      env: TOXENV=py36-django-20
     - python: 3.6
       env: TOXENV=py36-django-master
   allow_failures:
