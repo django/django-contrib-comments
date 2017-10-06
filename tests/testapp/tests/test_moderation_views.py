@@ -27,7 +27,7 @@ class FlagViewTests(CommentTestCase):
         pk = comments[0].pk
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/flag/%d/" % pk)
-        self.assertRedirects(response, "http://testserver/flagged/?c=%d" % pk)
+        self.assertRedirects(response, "/flagged/?c=%d" % pk)
         c = Comment.objects.get(pk=pk)
         self.assertEqual(c.flags.filter(flag=CommentFlag.SUGGEST_REMOVAL).count(), 1)
         return c
@@ -40,8 +40,7 @@ class FlagViewTests(CommentTestCase):
         pk = comments[0].pk
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/flag/%d/" % pk, {'next': "/go/here/"})
-        self.assertRedirects(response,
-            "http://testserver/go/here/?c=%d" % pk, fetch_redirect_response=False)
+        self.assertRedirects(response, "/go/here/?c=%d" % pk, fetch_redirect_response=False)
 
     def testFlagPostUnsafeNext(self):
         """
@@ -53,8 +52,7 @@ class FlagViewTests(CommentTestCase):
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/flag/%d/" % pk,
             {'next': "http://elsewhere/bad"})
-        self.assertRedirects(response,
-            "http://testserver/flagged/?c=%d" % pk)
+        self.assertRedirects(response, "/flagged/?c=%d" % pk)
 
     def testFlagPostTwice(self):
         """Users don't get to flag comments more than once."""
@@ -69,11 +67,11 @@ class FlagViewTests(CommentTestCase):
         pk = comments[0].pk
         response = self.client.get("/flag/%d/" % pk)
         self.assertRedirects(response,
-            "http://testserver/accounts/login/?next=/flag/%d/" % pk,
+            "/accounts/login/?next=/flag/%d/" % pk,
             fetch_redirect_response=False)
         response = self.client.post("/flag/%d/" % pk)
         self.assertRedirects(response,
-            "http://testserver/accounts/login/?next=/flag/%d/" % pk,
+            "/accounts/login/?next=/flag/%d/" % pk,
             fetch_redirect_response=False)
 
     def testFlaggedView(self):
@@ -118,7 +116,7 @@ class DeleteViewTests(CommentTestCase):
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.get("/delete/%d/" % pk)
         self.assertRedirects(response,
-            "http://testserver/accounts/login/?next=/delete/%d/" % pk,
+            "/accounts/login/?next=/delete/%d/" % pk,
             fetch_redirect_response=False)
 
         makeModerator("normaluser")
@@ -132,7 +130,7 @@ class DeleteViewTests(CommentTestCase):
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/delete/%d/" % pk)
-        self.assertRedirects(response, "http://testserver/deleted/?c=%d" % pk)
+        self.assertRedirects(response, "/deleted/?c=%d" % pk)
         c = Comment.objects.get(pk=pk)
         self.assertTrue(c.is_removed)
         self.assertEqual(c.flags.filter(flag=CommentFlag.MODERATOR_DELETION, user__username="normaluser").count(), 1)
@@ -147,8 +145,7 @@ class DeleteViewTests(CommentTestCase):
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/delete/%d/" % pk, {'next': "/go/here/"})
-        self.assertRedirects(response,
-            "http://testserver/go/here/?c=%d" % pk, fetch_redirect_response=False)
+        self.assertRedirects(response, "/go/here/?c=%d" % pk, fetch_redirect_response=False)
 
     def testDeletePostUnsafeNext(self):
         """
@@ -161,8 +158,7 @@ class DeleteViewTests(CommentTestCase):
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/delete/%d/" % pk,
             {'next': "http://elsewhere/bad"})
-        self.assertRedirects(response,
-            "http://testserver/deleted/?c=%d" % pk)
+        self.assertRedirects(response, "/deleted/?c=%d" % pk)
 
     def testDeleteSignals(self):
         def receive(sender, **kwargs):
@@ -195,7 +191,7 @@ class ApproveViewTests(CommentTestCase):
         response = self.client.get("/approve/%d/" % pk)
         self.assertRedirects(
             response,
-            "http://testserver/accounts/login/?next=/approve/%d/" % pk,
+            "/accounts/login/?next=/approve/%d/" % pk,
             fetch_redirect_response=False
         )
 
@@ -212,7 +208,7 @@ class ApproveViewTests(CommentTestCase):
         makeModerator("normaluser")
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/approve/%d/" % c1.pk)
-        self.assertRedirects(response, "http://testserver/approved/?c=%d" % c1.pk)
+        self.assertRedirects(response, "/approved/?c=%d" % c1.pk)
         c = Comment.objects.get(pk=c1.pk)
         self.assertTrue(c.is_public)
         self.assertEqual(c.flags.filter(flag=CommentFlag.MODERATOR_APPROVAL, user__username="normaluser").count(), 1)
@@ -230,9 +226,7 @@ class ApproveViewTests(CommentTestCase):
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/approve/%d/" % c1.pk,
             {'next': "/go/here/"})
-        self.assertRedirects(response,
-            "http://testserver/go/here/?c=%d" % c1.pk,
-            fetch_redirect_response=False)
+        self.assertRedirects(response, "/go/here/?c=%d" % c1.pk, fetch_redirect_response=False)
 
     def testApprovePostUnsafeNext(self):
         """
@@ -247,8 +241,7 @@ class ApproveViewTests(CommentTestCase):
         self.client.login(username="normaluser", password="normaluser")
         response = self.client.post("/approve/%d/" % c1.pk,
             {'next': "http://elsewhere/bad"})
-        self.assertRedirects(response,
-            "http://testserver/approved/?c=%d" % c1.pk)
+        self.assertRedirects(response, "/approved/?c=%d" % c1.pk)
 
     def testApproveSignals(self):
         def receive(sender, **kwargs):

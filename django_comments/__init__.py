@@ -3,10 +3,7 @@ from importlib import import_module
 from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
-try:
-    from django.urls import reverse
-except ImportError:
-    from django.core.urlresolvers import reverse  # Django < 1.10
+from django.urls import reverse
 
 
 DEFAULT_COMMENTS_APP = 'django_comments'

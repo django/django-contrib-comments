@@ -1,7 +1,5 @@
 from __future__ import absolute_import, unicode_literals
 
-import re
-
 from django.conf import settings
 from django.contrib.auth.models import User
 
@@ -10,10 +8,6 @@ from django_comments.models import COMMENT_MAX_LENGTH, Comment
 
 from . import CommentTestCase
 from testapp.models import Article, Book
-
-
-# Before Django 1.9, the response contained the scheme/netloc parts
-post_redirect_re = re.compile(r'^(http://testserver)?/posted/\?c=(?P<pk>\d+$)')
 
 
 class CommentViewTests(CommentTestCase):
@@ -263,35 +257,38 @@ class CommentViewTests(CommentTestCase):
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
         response = self.client.post("/post/", data)
-        location = response["Location"]
-        match = post_redirect_re.match(location)
-        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
-
+        self.assertRedirects(
+            response,
+            '/posted/?c=%s' % Comment.objects.latest('id').pk,
+            fetch_redirect_response=False,
+        )
         data["next"] = "/somewhere/else/"
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
-        location = response["Location"]
-        match = re.search(r"^(http://testserver)?/somewhere/else/\?c=\d+$", location)
-        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
-
+        self.assertRedirects(
+            response,
+            '/somewhere/else/?c=%s' % Comment.objects.latest('id').pk,
+            fetch_redirect_response=False,
+        )
         data["next"] = "http://badserver/somewhere/else/"
         data["comment"] = "This is another comment with an unsafe next url"
         response = self.client.post("/post/", data)
-        location = response["Location"]
-        match = post_redirect_re.match(location)
-        self.assertIsNotNone(match, "Unsafe redirection to: %s" % location)
+        self.assertRedirects(
+            response,
+            '/posted/?c=%s' % Comment.objects.latest('id').pk,
+            fetch_redirect_response=False,
+        )
 
     def testCommentDoneView(self):
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
         response = self.client.post("/post/", data)
-        location = response["Location"]
-        match = post_redirect_re.match(location)
-        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
-        pk = int(match.group('pk'))
+        comment = Comment.objects.latest('id')
+        location = '/posted/?c=%s' % comment.pk
+        self.assertRedirects(response, location, fetch_redirect_response=False)
         response = self.client.get(location)
         self.assertTemplateUsed(response, "comments/posted.html")
-        self.assertEqual(response.context["comment"], Comment.objects.get(pk=pk))
+        self.assertEqual(response.context["comment"], comment)
 
     def testCommentNextWithQueryString(self):
         """
@@ -302,9 +299,11 @@ class CommentViewTests(CommentTestCase):
         data["next"] = "/somewhere/else/?foo=bar"
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
-        location = response["Location"]
-        match = re.search(r"^(http://testserver)?/somewhere/else/\?foo=bar&c=\d+$", location)
-        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
+        self.assertRedirects(
+            response,
+            '/somewhere/else/?foo=bar&c=%s' % Comment.objects.latest('id').pk,
+            fetch_redirect_response=False,
+        )
 
     def testCommentPostRedirectWithInvalidIntegerPK(self):
         """
@@ -331,9 +330,11 @@ class CommentViewTests(CommentTestCase):
         data["next"] = "/somewhere/else/?foo=bar#baz"
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
-        location = response["Location"]
-        match = re.search(r"^(http://testserver)?/somewhere/else/\?foo=bar&c=\d+#baz$", location)
-        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
+        self.assertRedirects(
+            response,
+            '/somewhere/else/?foo=bar&c=%s#baz' % Comment.objects.latest('id').pk,
+            fetch_redirect_response=False,
+        )
 
         # Without a query string
         a = Article.objects.get(pk=1)
@@ -341,6 +342,8 @@ class CommentViewTests(CommentTestCase):
         data["next"] = "/somewhere/else/#baz"
         data["comment"] = "This is another comment"
         response = self.client.post("/post/", data)
-        location = response["Location"]
-        match = re.search(r"^(http://testserver)?/somewhere/else/\?c=\d+#baz$", location)
-        self.assertIsNotNone(match, "Unexpected redirect location: %s" % location)
+        self.assertRedirects(
+            response,
+            '/somewhere/else/?c=%s#baz' % Comment.objects.latest('id').pk,
+            fetch_redirect_response=False,
+        )

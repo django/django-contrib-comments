@@ -40,11 +40,7 @@ def post_comment(request, next=None, using=None):
     """
     # Fill out some initial data fields from an authenticated user, if present
     data = request.POST.copy()
-    try:
-        user_is_authenticated = request.user.is_authenticated()
-    except TypeError:  # Django >= 1.11
-        user_is_authenticated = request.user.is_authenticated
-    if user_is_authenticated:
+    if request.user.is_authenticated:
         if not data.get('name', ''):
             data["name"] = request.user.get_full_name() or request.user.get_username()
         if not data.get('email', ''):
@@ -107,7 +103,7 @@ def post_comment(request, next=None, using=None):
     # Otherwise create the comment
     comment = form.get_comment_object(site_id=get_current_site(request).id)
     comment.ip_address = request.META.get("REMOTE_ADDR", None) or None
-    if user_is_authenticated:
+    if request.user.is_authenticated:
         comment.user = request.user
 
     # Signal that the comment is about to be saved

@@ -1,22 +1,10 @@
 language: python
 env:
-- TOXENV=py27-django18
-- TOXENV=py34-django18
-- TOXENV=py27-django19
-- TOXENV=py34-django19
-- TOXENV=py27-django110
-- TOXENV=py34-django110
 - TOXENV=py27-django111
 - TOXENV=py34-django111
 - TOXENV=py34-django20
 matrix:
   include:
-    - python: 3.5
-      env: TOXENV=py35-django-18
-    - python: 3.5
-      env: TOXENV=py35-django-19
-    - python: 3.5
-      env: TOXENV=py35-django-110
     - python: 3.5
       env: TOXENV=py35-django-111
     - python: 3.5

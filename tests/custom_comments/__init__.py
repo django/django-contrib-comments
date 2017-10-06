@@ -1,7 +1,4 @@
-try:
-    from django.urls import reverse
-except ImportError:
-    from django.core.urlresolvers import reverse  # Django < 1.10
+from django.urls import reverse
 
 from . import views
 from .forms import CustomCommentForm

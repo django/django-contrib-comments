@@ -1,6 +1,5 @@
 from __future__ import absolute_import
 
-from django import VERSION
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
@@ -91,12 +90,3 @@ class CommentTestCase(TestCase):
         d = self.getData()
         d.update(f.initial)
         return d
-
-    def assertRedirects(self, response, expected_url, **kwargs):
-        """
-        Wrapper for assertRedirects to handle Django pre-1.9.
-        """
-        if VERSION >= (1, 9) and expected_url.startswith('http://testserver'):
-            expected_url = expected_url[len('http://testserver'):]
-        return super(CommentTestCase, self).assertRedirects(
-            response, expected_url, **kwargs)

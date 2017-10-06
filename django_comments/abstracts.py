@@ -5,13 +5,10 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
-try:
-    from django.urls import reverse
-except ImportError:
-    from django.core.urlresolvers import reverse  # Django < 1.10
 
 from .managers import CommentManager
 
@@ -61,9 +58,7 @@ class CommentAbstractModel(BaseCommentAbstractModel):
                              blank=True, null=True, related_name="%(class)s_comments",
                              on_delete=models.SET_NULL)
     user_name = models.CharField(_("user's name"), max_length=50, blank=True)
-    # Explicit `max_length` to apply both to Django 1.7 and 1.8+.
-    user_email = models.EmailField(_("user's email address"), max_length=254,
-                                   blank=True)
+    user_email = models.EmailField(_("user's email address"), blank=True)
     user_url = models.URLField(_("user's URL"), blank=True)
 
     comment = models.TextField(_('comment'), max_length=COMMENT_MAX_LENGTH)
