@@ -3,10 +3,11 @@ A few bits of helper functions for comment views.
 """
 
 import textwrap
+import six
 
-try:
+if six.PY3:
     from urllib.parse import urlencode
-except ImportError:  # Python 2
+else:  # Python 2
     from urllib import urlencode
 
 from django.http import HttpResponseRedirect
