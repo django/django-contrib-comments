@@ -3,12 +3,13 @@
 History
 =======
 
-X.Y.Z (YYYY-MM-DD)
+1.9.0 (2018-08-04)
 ------------------
 
 * Added testing for Python 3.6.
 * Confirmed support for Django 2.0 and 2.1.
 * Dropped support for Django < 1.11.
+* ``ip_address`` is set to None when ``REMOTE_ADDR`` is empty (#93).
 
 1.8.0 (2017-02-03)
 ------------------
