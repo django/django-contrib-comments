@@ -76,7 +76,8 @@ to rewrite the templates, you could try subclassing from
 Next, we'll define a custom comment form in ``forms.py``. This is a little more
 tricky: we have to both create a form and override
 ``CommentForm.get_comment_create_data()`` to return deal with our custom title
-field::
+field please take note of the ``**kwargs`` in both ``get_comment_create_data`` calls
+as it is needed::
 
     from django import forms
     from django_comments.forms import CommentForm
@@ -85,9 +86,9 @@ field::
     class CommentFormWithTitle(CommentForm):
         title = forms.CharField(max_length=300)
 
-        def get_comment_create_data(self):
+        def get_comment_create_data(self, **kwargs):
             # Use the data of the superclass, and add in the title field
-            data = super(CommentFormWithTitle, self).get_comment_create_data()
+            data = super(CommentFormWithTitle, self).get_comment_create_data(**kwargs)
             data['title'] = self.cleaned_data['title']
             return data
 
