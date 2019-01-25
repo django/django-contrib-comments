@@ -24,9 +24,18 @@ matrix:
       env: TOXENV=py36-django-21
     - python: 3.6
       env: TOXENV=py36-django-master
+    - python: 3.7
+      env: TOXENV=py37-django-111
+    - python: 3.7
+      env: TOXENV=py37-django-20
+    - python: 3.7
+      env: TOXENV=py37-django-21
+    - python: 3.7
+      env: TOXENV=py37-django-master
   allow_failures:
     - env: TOXENV=py35-django-master
     - env: TOXENV=py36-django-master
+    - env: TOXENV=py37-django-master
 install:
 - pip install tox
 script:

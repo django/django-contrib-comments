@@ -3,6 +3,11 @@
 History
 =======
 
+X.Y.Z (YYYY-MM-DD)
+------------------
+
+* Added testing for Python 3.7.
+
 1.9.0 (2018-08-04)
 ------------------
 
