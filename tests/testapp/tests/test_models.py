@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 from django_comments.models import Comment
 
 from . import CommentTestCase

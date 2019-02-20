@@ -86,7 +86,7 @@ class NotModerated(Exception):
     pass
 
 
-class CommentModerator(object):
+class CommentModerator:
     """
     Encapsulates comment-moderation options for a given model.
 
@@ -257,7 +257,7 @@ class CommentModerator(object):
         send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list, fail_silently=True)
 
 
-class Moderator(object):
+class Moderator:
     """
     Handles moderation of a set of models.
 

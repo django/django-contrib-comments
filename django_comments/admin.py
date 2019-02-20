@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _, ngettext
@@ -8,7 +6,7 @@ from django_comments import get_model
 from django_comments.views.moderation import perform_flag, perform_approve, perform_delete
 
 
-class UsernameSearch(object):
+class UsernameSearch:
     """The User object may not be auth.User, so we need to provide
     a mechanism for issuing the equivalent of a .filter(user__username=...)
     search in CommentAdmin.
@@ -43,7 +41,7 @@ class CommentsAdmin(admin.ModelAdmin):
     actions = ["flag_comments", "approve_comments", "remove_comments"]
 
     def get_actions(self, request):
-        actions = super(CommentsAdmin, self).get_actions(request)
+        actions = super().get_actions(request)
         # Only superusers should be able to delete the comments from the DB.
         if not request.user.is_superuser and 'delete_selected' in actions:
             actions.pop('delete_selected')

@@ -10,7 +10,7 @@ class LatestCommentFeed(Feed):
 
     def __call__(self, request, *args, **kwargs):
         self.site = get_current_site(request)
-        return super(LatestCommentFeed, self).__call__(request, *args, **kwargs)
+        return super().__call__(request, *args, **kwargs)
 
     def title(self):
         return _("%(site_name)s comments") % dict(site_name=self.site.name)

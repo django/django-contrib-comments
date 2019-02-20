@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 import time
 
 from django.conf import settings
@@ -15,7 +13,7 @@ from testapp.models import Article
 class CommentFormTests(CommentTestCase):
 
     def setUp(self):
-        super(CommentFormTests, self).setUp()
+        super().setUp()
         self.site_2 = Site.objects.create(id=settings.SITE_ID + 1,
             domain="testserver", name="testserver")
 

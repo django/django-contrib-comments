@@ -87,7 +87,7 @@ field::
 
         def get_comment_create_data(self, **kwargs):
             # Use the data of the superclass, and add in the title field
-            data = super(CommentFormWithTitle, self).get_comment_create_data(**kwargs)
+            data = super().get_comment_create_data(**kwargs)
             data['title'] = self.cleaned_data['title']
             return data
 

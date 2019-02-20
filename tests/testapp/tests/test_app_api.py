@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 from django.core.exceptions import ImproperlyConfigured
 from django.test.utils import modify_settings, override_settings
 
