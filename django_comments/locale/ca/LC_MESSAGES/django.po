@@ -2,14 +2,15 @@
 # 
 # Translators:
 # Translators:
+# Gil Obradors Via <gil.obradors@gmail.com>, 2019
 # Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:43+0000\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2019-01-28 21:19+0000\n"
+"Last-Translator: Gil Obradors Via <gil.obradors@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/django/django-contrib-comments/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +76,7 @@ msgstr "Últims comentaris a %(site_name)s."
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: forms.py:97
 msgid "Email address"
@@ -202,6 +203,11 @@ msgstr "marca del comentari"
 msgid "comment flags"
 msgstr "marques del comentari"
 
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Nous comentaris publicats a \"%(object)s\""
+
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
 msgstr "Aprovar un comentari"
@@ -279,8 +285,8 @@ msgstr "Previsualitzar el vostre comentari"
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Si us plau, corregiu els errors mostrats a sota."
+msgstr[1] "Si us plau, corregiu els errors mostrats a sota."
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

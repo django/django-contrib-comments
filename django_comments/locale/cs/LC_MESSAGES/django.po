@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-10 09:06+0100\n"
-"PO-Revision-Date: 2016-07-24 18:06+0000\n"
+"PO-Revision-Date: 2017-09-22 10:39+0000\n"
 "Last-Translator: Vláďa Macek <macek@sandbox.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/django/django-contrib-comments/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: admin.py:25
 msgid "Content"
@@ -32,6 +32,7 @@ msgid_plural "flagged"
 msgstr[0] "označen"
 msgstr[1] "označeny"
 msgstr[2] "označeno"
+msgstr[3] "označeno"
 
 #: admin.py:56
 msgid "Flag selected comments"
@@ -43,6 +44,7 @@ msgid_plural "approved"
 msgstr[0] "schválen"
 msgstr[1] "schváleny"
 msgstr[2] "schváleno"
+msgstr[3] "schváleno"
 
 #: admin.py:61
 msgid "Approve selected comments"
@@ -54,6 +56,7 @@ msgid_plural "removed"
 msgstr[0] "odebrán"
 msgstr[1] "odebrány"
 msgstr[2] "odebráno"
+msgstr[3] "odebráno"
 
 #: admin.py:66
 msgid "Remove selected comments"
@@ -66,6 +69,7 @@ msgid_plural "%(count)s comments were successfully %(action)s."
 msgstr[0] "1 komentář byl úspěšně %(action)s."
 msgstr[1] "%(count)s komentáře byly úspěšně %(action)s."
 msgstr[2] "%(count)s komentářů bylo úspěšně %(action)s."
+msgstr[3] "%(count)s komentářů bylo úspěšně %(action)s."
 
 #: feeds.py:14
 #, python-format
@@ -101,6 +105,7 @@ msgid_plural "Watch your mouth! The words %s are not allowed here."
 msgstr[0] "Mluvte slušně! Slovo %s je zde nepřípustné."
 msgstr[1] "Mluvte slušně! Slova %s jsou zde nepřípustná."
 msgstr[2] "Mluvte slušně! Slova %s jsou zde nepřípustná."
+msgstr[3] "Mluvte slušně! Slova %s jsou zde nepřípustná."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
@@ -293,6 +298,7 @@ msgid_plural "Please correct the errors below"
 msgstr[0] "Opravte níže uvedenou chybu"
 msgstr[1] "Opravte níže uvedené chyby"
 msgstr[2] "Opravte níže uvedené chyby"
+msgstr[3] "Opravte níže uvedené chyby"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

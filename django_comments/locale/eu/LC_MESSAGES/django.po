@@ -3,14 +3,15 @@
 # Translators:
 # Translators:
 # Aitzol Naberan <anaberan@codesyntax.com>, 2011
+# Eneko Illarramendi <eneko@illarra.com>, 2017
 # Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:43+0000\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2017-09-22 10:39+0000\n"
+"Last-Translator: Eneko Illarramendi <eneko@illarra.com>\n"
 "Language-Team: Basque (http://www.transifex.com/django/django-contrib-comments/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr "Edukia"
 
 #: admin.py:28
 msgid "Metadata"
-msgstr "Metada"
+msgstr "Metadata"
 
 #: admin.py:55
 msgid "flagged"
@@ -76,11 +77,11 @@ msgstr "%(site_name)s guneko azken iruzkinak"
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Izena"
 
 #: forms.py:97
 msgid "Email address"
-msgstr "Eposta helbidea"
+msgstr "Emaila"
 
 #: forms.py:98
 msgid "URL"
@@ -202,6 +203,11 @@ msgstr "iruzkin marka"
 #: models.py:191
 msgid "comment flags"
 msgstr "iruzkin markak"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr ""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

@@ -2,87 +2,84 @@
 # 
 # Translators:
 # Translators:
-# Jannis Leidel <jannis@leidel.info>, 2011
-# madisvain <madisvain@gmail.com>, 2011
-# Martin Pajuste <martinpajuste@gmail.com>, 2016
-# Martin Pajuste <martinpajuste@gmail.com>, 2017
+# F Wolff <friedel@translate.org.za>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-10 09:06+0100\n"
-"PO-Revision-Date: 2017-09-22 10:39+0000\n"
-"Last-Translator: Martin Pajuste <martinpajuste@gmail.com>\n"
-"Language-Team: Estonian (http://www.transifex.com/django/django-contrib-comments/language/et/)\n"
+"PO-Revision-Date: 2019-01-04 17:54+0000\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"Language-Team: Afrikaans (http://www.transifex.com/django/django-contrib-comments/language/af/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: et\n"
+"Language: af\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: admin.py:25
 msgid "Content"
-msgstr "Sisu"
+msgstr "Inhoud"
 
 #: admin.py:28
 msgid "Metadata"
-msgstr "Meta-andmed"
+msgstr "Metadata"
 
 #: admin.py:55
 msgid "flagged"
 msgid_plural "flagged"
-msgstr[0] "märgistatud"
-msgstr[1] "märgistatud"
+msgstr[0] "gerapporteer"
+msgstr[1] "gerapporteer"
 
 #: admin.py:56
 msgid "Flag selected comments"
-msgstr "Märgista valitud kommentaarid"
+msgstr "Rapporteer gekose opmerkings"
 
 #: admin.py:60
 msgid "approved"
 msgid_plural "approved"
-msgstr[0] "heaks kiidetud"
-msgstr[1] "heaks kiidetud"
+msgstr[0] "goedgekeur"
+msgstr[1] "goedgekeur"
 
 #: admin.py:61
 msgid "Approve selected comments"
-msgstr "Kiida heaks valitud kommentaarid"
+msgstr "Keur gekose opmerkings goed"
 
 #: admin.py:65
 msgid "removed"
 msgid_plural "removed"
-msgstr[0] "eemaldatud"
-msgstr[1] "eemaldatud"
+msgstr[0] "geskrap"
+msgstr[1] "geskrap"
 
 #: admin.py:66
 msgid "Remove selected comments"
-msgstr "Eemalda valitud kommentaarid"
+msgstr "Skrap gekose opmerkings"
 
 #: admin.py:78
 #, python-format
 msgid "1 comment was successfully %(action)s."
 msgid_plural "%(count)s comments were successfully %(action)s."
-msgstr[0] "1 kommentaar edukalt %(action)s."
-msgstr[1] "%(count)s kommentaari edukalt %(action)s."
+msgstr[0] "1 opmerking is suksesvol %(action)s."
+msgstr[1] "%(count)s opmerkings is suksesvol %(action)s."
 
 #: feeds.py:14
 #, python-format
 msgid "%(site_name)s comments"
-msgstr "Saidi %(site_name)s kommentaarid"
+msgstr "%(site_name)s-opmerkings"
 
 #: feeds.py:20
 #, python-format
 msgid "Latest comments on %(site_name)s"
-msgstr "Viimased kommentaarid saidil %(site_name)s"
+msgstr "Jongste kommentaar op %(site_name)s"
 
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr "Nimi"
+msgstr "Naam"
 
 #: forms.py:97
 msgid "Email address"
-msgstr "E-posti aadress"
+msgstr "E-posadres"
 
 #: forms.py:98
 msgid "URL"
@@ -90,94 +87,94 @@ msgstr "URL"
 
 #: forms.py:99
 msgid "Comment"
-msgstr "Kommentaar"
+msgstr "Opmerking"
 
 #: forms.py:177
 #, python-format
 msgid "Watch your mouth! The word %s is not allowed here."
 msgid_plural "Watch your mouth! The words %s are not allowed here."
-msgstr[0] "Jälgige oma keelekasutust. Sõna %s ei ole lubatud."
-msgstr[1] "Jälgige oma keelekasutust. Sõnad %s ei ole lubatud."
+msgstr[0] "Taal! Die woord %s word nie hier toegelaat nie."
+msgstr[1] "Taal! Die woorde %s word nie hier toegelaat nie."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
-msgstr "ja"
+msgstr "en"
 
 #: forms.py:186
 msgid ""
 "If you enter anything in this field your comment will be treated as spam"
-msgstr "Kui sisestate sellesse lahtrisse midagi, loetakse kommentaar rämpsuks"
+msgstr "As mens iets in dié veld intik, word die opmerking as gemors beskou"
 
 #: models.py:23
 msgid "content type"
-msgstr "sisutüüp"
+msgstr "inhoudtipe"
 
 #: models.py:25
 msgid "object ID"
-msgstr "objekti ID"
+msgstr "objek-ID"
 
 #: models.py:53 models.py:177
 msgid "user"
-msgstr "kasutaja"
+msgstr "gebruiker"
 
 #: models.py:55
 msgid "user's name"
-msgstr "kasutaja pärisnimi"
+msgstr "gebruiker se naam"
 
 #: models.py:56
 msgid "user's email address"
-msgstr "kasutaja e-posti aadress"
+msgstr "gebruiker se e-posadres"
 
 #: models.py:57
 msgid "user's URL"
-msgstr "kasutaja URL"
+msgstr "gebruiker se URL"
 
 #: models.py:59 models.py:79 models.py:178
 msgid "comment"
-msgstr "kommentaar"
+msgstr "opmerking"
 
 #: models.py:62
 msgid "date/time submitted"
-msgstr "loomise kuupäev/kellaaeg"
+msgstr "datum/tyd ingedien"
 
 #: models.py:63
 msgid "IP address"
-msgstr "IP aadress"
+msgstr "IP-adres"
 
 #: models.py:64
 msgid "is public"
-msgstr "on avalik"
+msgstr "is openbaar"
 
 #: models.py:65
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr "Eemaldage siit linnuke, et varjata kommentaar saidilt."
+msgstr "Sonder 'n merk in dié boksie verdwyn 'n opmerking effektiewelik vanaf die werf."
 
 #: models.py:67
 msgid "is removed"
-msgstr "on eemaldatud"
+msgstr "is verwyder"
 
 #: models.py:68
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr "Märkige siia linnuke, kui see kommentaar on ebasobiv. Kommentaari asemel kuvatakse kirja \"Kommentaar on kustutatud\"."
+msgstr "Merk dié boksie as die opmerking onvanpas is. 'n Boodskap \"Dié opmerking is verwyder\" sal in sy plek vertoon."
 
 #: models.py:80
 msgid "comments"
-msgstr "kommentaarid"
+msgstr "opmerkings"
 
 #: models.py:124
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr "Selle kommentaari postitas sisselogitud kasutaja, mistõttu ei ole nimetus muudetav."
+msgstr "Dié opmerking is deur 'n aangemelde gebruiker ingedien en die naam is dus leesaleen."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr "Selle kommentaari postitas sisselogitud kasutaja, mistõttu ei ole e-posti aadress muudetav."
+msgstr "Dié opmerking is deur 'n aangemelde gebruiker ingedien en die e-posadres is dus leesaleen."
 
 #: models.py:160
 #, python-format
@@ -187,113 +184,113 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr "Postitatud kasutaja %(user)s poolt %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
+msgstr "Ingedien deur %(user)s op %(date)s\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
 
 #: models.py:179
 msgid "flag"
-msgstr "märge"
+msgstr "vlagnaam"
 
 #: models.py:180
 msgid "date"
-msgstr "kuupäev"
+msgstr "datum"
 
 #: models.py:190
 msgid "comment flag"
-msgstr "kommentaari märge"
+msgstr "opmerkingvlaggie"
 
 #: models.py:191
 msgid "comment flags"
-msgstr "kommentaari märked"
+msgstr "opmerkingvlaggies"
 
 #: moderation.py:253
 #, python-format
 msgid "[%(site)s] New comment posted on \"%(object)s\""
-msgstr "[%(site)s] Uus kommentaar postitatud \"%(object)s\""
+msgstr "[%(site)s] Nuwe opmerking oor \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
-msgstr "Märgi kommentaar sobivaks"
+msgstr "Keur 'n opmerking goed"
 
 #: templates/comments/approve.html:7
 msgid "Really make this comment public?"
-msgstr "Oled kindel, et soovid teha selle kommentaari avalikuks?"
+msgstr "Maak dié opmerking openbaar?"
 
 #: templates/comments/approve.html:12
 msgid "Approve"
-msgstr "Sobib"
+msgstr "Keur goed"
 
 #: templates/comments/approved.html:4
 msgid "Thanks for approving"
-msgstr "Aitäh, et märkisid kommentaari sobivaks"
+msgstr "Dankie vir die goedkeuring"
 
 #: templates/comments/approved.html:7 templates/comments/deleted.html:7
 #: templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
-msgstr "Aitäh, et leidsid aega parandamaks arutelude kvaliteeti meie lehel"
+msgstr "Dankie vir die moeite om die gesprekkwaliteit van ons werf te verbeter"
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
-msgstr "Eemalda kommentaar"
+msgstr "Verwyder 'n opmerking"
 
 #: templates/comments/delete.html:7
 msgid "Really remove this comment?"
-msgstr "Oled kindel, et soovid selle kommentaari eemaldada?"
+msgstr "Verwyder dié opmerking?"
 
 #: templates/comments/delete.html:12
 msgid "Remove"
-msgstr "Eemalda"
+msgstr "Verwyder"
 
 #: templates/comments/deleted.html:4
 msgid "Thanks for removing"
-msgstr "Aitäh, et eemaldasid kommentaari"
+msgstr "Dankie vir die verwydering"
 
 #: templates/comments/flag.html:4
 msgid "Flag this comment"
-msgstr "Märgi see kommentaar"
+msgstr "Rapporteer dié opmerking"
 
 #: templates/comments/flag.html:7
 msgid "Really flag this comment?"
-msgstr "Oled kindel, et soovid selle kommentaari märkida?"
+msgstr "Wil u definitief dié opmerking rapporteer?"
 
 #: templates/comments/flag.html:12
 msgid "Flag"
-msgstr "Märge"
+msgstr "Rapporteer"
 
 #: templates/comments/flagged.html:4
 msgid "Thanks for flagging"
-msgstr "Aitäh, et märkisid kommentaari"
+msgstr "Dankie dat u dit rapporteer"
 
 #: templates/comments/form.html:17 templates/comments/preview.html:32
 msgid "Post"
-msgstr "Postita"
+msgstr "Dien in"
 
 #: templates/comments/form.html:18 templates/comments/preview.html:33
 msgid "Preview"
-msgstr "Eelvaade"
+msgstr "Voorskou"
 
 #: templates/comments/posted.html:4
 msgid "Thanks for commenting"
-msgstr "Tänan kommenteerimast"
+msgstr "Dankie vir die kommentaar"
 
 #: templates/comments/posted.html:7
 msgid "Thank you for your comment"
-msgstr "Aitäh kommentaari eest"
+msgstr "Dankie vir die opmerking"
 
 #: templates/comments/preview.html:4 templates/comments/preview.html.py:13
 msgid "Preview your comment"
-msgstr "Kommentaari eelvaade"
+msgstr "Voorskou van opmerking"
 
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] "Palun parandage allolev viga"
-msgstr[1] "Palun parandage allolevad vead"
+msgstr[0] "Korrigeer asb. die fout onder"
+msgstr[1] "Korrigeer asb. die foute onder"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"
-msgstr "Postita kommentaar"
+msgstr "Dien u opmerking in"
 
 #: templates/comments/preview.html:16
 msgid "or make changes"
-msgstr "või tee muudatused"
+msgstr "of maak verandering"

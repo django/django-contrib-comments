@@ -8,6 +8,7 @@ X.Y.Z (YYYY-MM-DD)
 
 * Added testing for Python 3.7.
 * Confirmed support for Django 2.2 (no code changes required).
+* Updated translations.
 
 1.9.0 (2018-08-04)
 ------------------

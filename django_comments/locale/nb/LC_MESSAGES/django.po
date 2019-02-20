@@ -3,16 +3,17 @@
 # Translators:
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
-# Jon <jon@funkbit.no>, 2015
+# Jon <jon@kolonial.no>, 2015
+# Jon <jon@kolonial.no>, 2018
 #   <jonklo@gmail.com>, 2012
 # Sigurd Gartmann <sigurdga-transifex@sigurdga.no>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-09-14 08:36+0000\n"
-"Last-Translator: Jon <jon@funkbit.no>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2018-07-30 11:46+0000\n"
+"Last-Translator: Jon <jon@kolonial.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/django/django-contrib-comments/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -204,6 +205,11 @@ msgstr "kommentarflagg"
 #: models.py:191
 msgid "comment flags"
 msgstr "kommentarflagg"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Ny kommentar skrevet på \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

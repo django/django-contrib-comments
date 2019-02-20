@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-10 09:06+0100\n"
-"PO-Revision-Date: 2016-04-17 23:17+0000\n"
+"PO-Revision-Date: 2017-09-22 10:39+0000\n"
 "Last-Translator: m_aciek <maciej.olko@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/django/django-contrib-comments/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: admin.py:25
 msgid "Content"
@@ -33,6 +33,7 @@ msgid_plural "flagged"
 msgstr[0] "oflagowany"
 msgstr[1] "oflagowane"
 msgstr[2] "oflagowanych"
+msgstr[3] "oflagowanych"
 
 #: admin.py:56
 msgid "Flag selected comments"
@@ -44,6 +45,7 @@ msgid_plural "approved"
 msgstr[0] "zaakceptowany"
 msgstr[1] "zaakceptowane"
 msgstr[2] "zaakceptowanych"
+msgstr[3] "zaakceptowanych"
 
 #: admin.py:61
 msgid "Approve selected comments"
@@ -55,6 +57,7 @@ msgid_plural "removed"
 msgstr[0] "usunięty"
 msgstr[1] "usunięte"
 msgstr[2] "usuniętych"
+msgstr[3] "usuniętych"
 
 #: admin.py:66
 msgid "Remove selected comments"
@@ -67,6 +70,7 @@ msgid_plural "%(count)s comments were successfully %(action)s."
 msgstr[0] "1 komentarz został %(action)s"
 msgstr[1] "%(count)s komentarze zostały %(action)s"
 msgstr[2] "%(count)s komentarzy zostało %(action)s"
+msgstr[3] "%(count)s komentarzy zostało %(action)s"
 
 #: feeds.py:14
 #, python-format
@@ -102,6 +106,7 @@ msgid_plural "Watch your mouth! The words %s are not allowed here."
 msgstr[0] "Nie wolno przeklinać! Słowo %s nie jest dozwolone."
 msgstr[1] "Nie wolno przeklinać! Słowa %s nie są dozwolone."
 msgstr[2] "Nie wolno przeklinać! Słowa %s nie są dozwolone."
+msgstr[3] "Nie wolno przeklinać! Słowa %s nie są dozwolone."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
@@ -294,6 +299,7 @@ msgid_plural "Please correct the errors below"
 msgstr[0] "Proszę poprawić poniższy błąd."
 msgstr[1] "Proszę poprawić poniższe błędy."
 msgstr[2] "Proszę poprawić poniższe błędy."
+msgstr[3] "Proszę poprawić poniższe błędy."
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

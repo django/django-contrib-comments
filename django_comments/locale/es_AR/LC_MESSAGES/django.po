@@ -3,13 +3,13 @@
 # Translators:
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
-# Ramiro Morales, 2015
+# Ramiro Morales, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-11-30 00:33+0000\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2017-09-23 21:23+0000\n"
 "Last-Translator: Ramiro Morales\n"
 "Language-Team: Spanish (Argentina) (http://www.transifex.com/django/django-contrib-comments/language/es_AR/)\n"
 "MIME-Version: 1.0\n"
@@ -202,6 +202,11 @@ msgstr "marca de comentario"
 #: models.py:191
 msgid "comment flags"
 msgstr "marcas de comentario"
+
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] Nuevo comentario publicado en \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"

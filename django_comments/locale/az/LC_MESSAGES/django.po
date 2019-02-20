@@ -3,13 +3,14 @@
 # Translators:
 # Translators:
 # Ali Ismayilov <ali@ismailov.info>, 2011
+# Emin Mastizada <emin@linux.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:43+0000\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2018-09-09 14:47+0000\n"
+"Last-Translator: Emin Mastizada <emin@linux.com>\n"
 "Language-Team: Azerbaijani (http://www.transifex.com/django/django-contrib-comments/language/az/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,8 +29,8 @@ msgstr "Meta-məlumat"
 #: admin.py:55
 msgid "flagged"
 msgid_plural "flagged"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "işarələndi"
+msgstr[1] "işarələndi"
 
 #: admin.py:56
 msgid "Flag selected comments"
@@ -38,18 +39,18 @@ msgstr "Seçilmiş şərhləri işarələ"
 #: admin.py:60
 msgid "approved"
 msgid_plural "approved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "təsdiqləndi"
+msgstr[1] "təsdiqləndi"
 
 #: admin.py:61
 msgid "Approve selected comments"
-msgstr "Seçilmiş şərhləri təsdiq et"
+msgstr "Seçilmiş şərhləri təsdiqlə"
 
 #: admin.py:65
 msgid "removed"
 msgid_plural "removed"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "silindi"
+msgstr[1] "silindi"
 
 #: admin.py:66
 msgid "Remove selected comments"
@@ -59,8 +60,8 @@ msgstr "Seçilmiş şərhləri sil"
 #, python-format
 msgid "1 comment was successfully %(action)s."
 msgid_plural "%(count)s comments were successfully %(action)s."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 şərh uğurla %(action)s."
+msgstr[1] "%(count)s şərh uğurla %(action)s."
 
 #: feeds.py:14
 #, python-format
@@ -75,7 +76,7 @@ msgstr "%(site_name)s üzrə son şərhlər"
 #: forms.py:105
 msgctxt "Person name"
 msgid "Name"
-msgstr ""
+msgstr "Ad"
 
 #: forms.py:97
 msgid "Email address"
@@ -93,8 +94,8 @@ msgstr "Şərh"
 #, python-format
 msgid "Watch your mouth! The word %s is not allowed here."
 msgid_plural "Watch your mouth! The words %s are not allowed here."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Danışığınıza diqqət edin! %s sözünə burada icazə verilmir."
+msgstr[1] "Danışığınıza diqqət edin! %s sözlərinə burada icazə verilmir."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
@@ -202,9 +203,14 @@ msgstr "şərh işarəsi"
 msgid "comment flags"
 msgstr "şərh işarələri"
 
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr "[%(site)s] \"%(object)s\" üçün yeni şərh yazıldı"
+
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
-msgstr "Şərhə icazə ver"
+msgstr "Şərhi təsdiqlə"
 
 #: templates/comments/approve.html:7
 msgid "Really make this comment public?"
@@ -216,7 +222,7 @@ msgstr "Təsdiqləyirəm"
 
 #: templates/comments/approved.html:4
 msgid "Thanks for approving"
-msgstr "Təsdiqlədiniz"
+msgstr "Təsdiqlədiyiniz üçün təşəkkürlər"
 
 #: templates/comments/approved.html:7 templates/comments/deleted.html:7
 #: templates/comments/flagged.html:7
@@ -226,19 +232,19 @@ msgstr "Saytımızda müzakirəni daha keyfiyyətli etmək üçün sərf etdiyin
 
 #: templates/comments/delete.html:4
 msgid "Remove a comment"
-msgstr "Şərhi yığışdır"
+msgstr "Şərhi sil"
 
 #: templates/comments/delete.html:7
 msgid "Really remove this comment?"
-msgstr "Şərhi yığışdıraq?"
+msgstr "Şərhi silmək istədiyinizə əminsiniz?"
 
 #: templates/comments/delete.html:12
 msgid "Remove"
-msgstr "Yığışdır"
+msgstr "Sil"
 
 #: templates/comments/deleted.html:4
 msgid "Thanks for removing"
-msgstr "Yığışdırdıq"
+msgstr "Sildiyiniz üçün təşəkkürlər"
 
 #: templates/comments/flag.html:4
 msgid "Flag this comment"
@@ -246,7 +252,7 @@ msgstr "Şərhi işarələ"
 
 #: templates/comments/flag.html:7
 msgid "Really flag this comment?"
-msgstr "Şərhi işarələyək?"
+msgstr "Şərhi işarələmək istədiyinizə əminsiniz?"
 
 #: templates/comments/flag.html:12
 msgid "Flag"
@@ -254,7 +260,7 @@ msgstr "İşarələ"
 
 #: templates/comments/flagged.html:4
 msgid "Thanks for flagging"
-msgstr "İşarələdik"
+msgstr "İşarələdiyiniz üçün təşəkkürlər"
 
 #: templates/comments/form.html:17 templates/comments/preview.html:32
 msgid "Post"
@@ -262,25 +268,25 @@ msgstr "Yaz"
 
 #: templates/comments/form.html:18 templates/comments/preview.html:33
 msgid "Preview"
-msgstr "Baxım"
+msgstr "Ön baxış"
 
 #: templates/comments/posted.html:4
 msgid "Thanks for commenting"
-msgstr "Şərh etdiyiniz üçün təşəkkür edirik"
+msgstr "Şərh yazdığınız üçün təşəkkürlər"
 
 #: templates/comments/posted.html:7
 msgid "Thank you for your comment"
-msgstr "Şərh etdiyiniz üçün təşəkkür edirik"
+msgstr "Şərhiniz üçün təşəkkür edirik"
 
 #: templates/comments/preview.html:4 templates/comments/preview.html.py:13
 msgid "Preview your comment"
-msgstr "Şərhin görünüşü"
+msgstr "Şərhin ön görünüşü"
 
 #: templates/comments/preview.html:11
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Lütfən aşağıdakı xətanı düzəldin"
+msgstr[1] "Lütfən aşağıdakı xətaları düzəldin"
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"

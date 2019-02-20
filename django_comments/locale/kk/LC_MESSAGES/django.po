@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 17:28+0200\n"
-"PO-Revision-Date: 2015-06-22 15:43+0000\n"
+"POT-Creation-Date: 2016-02-10 09:06+0100\n"
+"PO-Revision-Date: 2017-09-22 10:39+0000\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: Kazakh (http://www.transifex.com/django/django-contrib-comments/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kk\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: admin.py:25
 msgid "Content"
@@ -30,6 +30,7 @@ msgstr "Метадата"
 msgid "flagged"
 msgid_plural "flagged"
 msgstr[0] "белгіленген"
+msgstr[1] "белгіленген"
 
 #: admin.py:56
 msgid "Flag selected comments"
@@ -39,6 +40,7 @@ msgstr "Таңдалған коментарийлерді белгілеу"
 msgid "approved"
 msgid_plural "approved"
 msgstr[0] "Расталған"
+msgstr[1] "Расталған"
 
 #: admin.py:61
 msgid "Approve selected comments"
@@ -48,6 +50,7 @@ msgstr "Таңдалған аңғартпаларды бекіту"
 msgid "removed"
 msgid_plural "removed"
 msgstr[0] "өшірілген"
+msgstr[1] "өшірілген"
 
 #: admin.py:66
 msgid "Remove selected comments"
@@ -58,6 +61,7 @@ msgstr "Таңдалған аңғартпаларды өшіру"
 msgid "1 comment was successfully %(action)s."
 msgid_plural "%(count)s comments were successfully %(action)s."
 msgstr[0] "one: 1 аңғартпа ойдағыдай %(action)s.\nother: %(count)s аңғартпа ойдағыдай %(action)s."
+msgstr[1] "one: 1 аңғартпа ойдағыдай %(action)s.\nother: %(count)s аңғартпа ойдағыдай %(action)s."
 
 #: feeds.py:14
 #, python-format
@@ -91,6 +95,7 @@ msgstr "Аңғартпа"
 msgid "Watch your mouth! The word %s is not allowed here."
 msgid_plural "Watch your mouth! The words %s are not allowed here."
 msgstr[0] "Байқап сөйлеңіз! Бұл жерде %s сөзіне тыйым салынған."
+msgstr[1] "Байқап сөйлеңіз! Бұл жерде %s сөзіне тыйым салынған."
 
 #: forms.py:181 templates/comments/preview.html:16
 msgid "and"
@@ -198,6 +203,11 @@ msgstr "Аңғартпа жалаушасы"
 msgid "comment flags"
 msgstr "Аңғартпа жалаушалары"
 
+#: moderation.py:253
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(object)s\""
+msgstr ""
+
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
 msgstr "Аңғартпаны мақұлда"
@@ -276,6 +286,7 @@ msgstr "Аңғартпаны алдын ала қарап алу"
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
 msgstr[0] ""
+msgstr[1] ""
 
 #: templates/comments/preview.html:16
 msgid "Post your comment"
