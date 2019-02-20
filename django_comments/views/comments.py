@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 from django import http
 from django.apps import apps
 from django.conf import settings
@@ -24,7 +22,7 @@ class CommentPostBadRequest(http.HttpResponseBadRequest):
     """
 
     def __init__(self, why):
-        super(CommentPostBadRequest, self).__init__()
+        super().__init__()
         if settings.DEBUG:
             self.content = render_to_string("comments/400-debug.html", {"why": why})
 

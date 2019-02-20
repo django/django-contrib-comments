@@ -30,7 +30,7 @@ class CommentSecurityForm(forms.Form):
         if initial is None:
             initial = {}
         initial.update(self.generate_security_data())
-        super(CommentSecurityForm, self).__init__(data=data, initial=initial, **kwargs)
+        super().__init__(data=data, initial=initial, **kwargs)
 
     def security_errors(self):
         """Return just those errors associated with security"""

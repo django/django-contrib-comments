@@ -3,6 +3,11 @@
 History
 =======
 
+X.Y.Z (YYYY-MM-DD)
+------------------
+
+* Removed support for Python 2.
+
 1.9.2 (2019-12-03)
 ------------------
 

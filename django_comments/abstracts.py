@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
@@ -8,7 +6,6 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from six import python_2_unicode_compatible
 
 from .managers import CommentManager
 
@@ -45,7 +42,6 @@ class BaseCommentAbstractModel(models.Model):
         )
 
 
-@python_2_unicode_compatible
 class CommentAbstractModel(BaseCommentAbstractModel):
     """
     A user comment about some object.
@@ -90,7 +86,7 @@ class CommentAbstractModel(BaseCommentAbstractModel):
     def save(self, *args, **kwargs):
         if self.submit_date is None:
             self.submit_date = timezone.now()
-        super(CommentAbstractModel, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def _get_userinfo(self):
         """

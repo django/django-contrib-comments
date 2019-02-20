@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
@@ -17,7 +15,7 @@ from . import CommentTestCase
 class CommentTemplateTagTests(CommentTestCase):
 
     def setUp(self):
-        super(CommentTemplateTagTests, self).setUp()
+        super().setUp()
         self.site_2 = Site.objects.create(id=settings.SITE_ID + 1,
             domain="testserver", name="testserver")
 

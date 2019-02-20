@@ -1,5 +1,3 @@
-from __future__ import absolute_import, unicode_literals
-
 from django.contrib.auth.models import User, Permission
 from django.contrib.contenttypes.models import ContentType
 from django.test.utils import override_settings
@@ -268,7 +266,7 @@ class ApproveViewTests(CommentTestCase):
 class AdminActionsTests(CommentTestCase):
 
     def setUp(self):
-        super(AdminActionsTests, self).setUp()
+        super().setUp()
 
         # Make "normaluser" a moderator
         u = User.objects.get(username="normaluser")
