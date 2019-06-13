@@ -66,7 +66,7 @@ def post_comment(request, next=None, using=None):
                 escape(ctype), escape(object_pk)))
     except (ValueError, ValidationError) as e:
         return CommentPostBadRequest(
-            "Attempting go get content-type %r and object PK %r exists raised %s" % (
+            "Attempting go get content-type %r and object PK %r raised %s" % (
                 escape(ctype), escape(object_pk), e.__class__.__name__))
 
     # Do we want to preview the comment?
