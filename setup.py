@@ -42,5 +42,5 @@ setup(
     packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,
     test_suite='tests.runtests.main',
-    install_requires=['Django>=1.11']
+    install_requires=['Django>=1.11', 'six']
 )
