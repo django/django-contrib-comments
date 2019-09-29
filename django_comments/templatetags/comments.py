@@ -3,7 +3,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_str
 
 import django_comments
 
@@ -85,7 +85,7 @@ class BaseCommentNode(template.Node):
 
         qs = self.comment_model.objects.filter(
             content_type=ctype,
-            object_pk=smart_text(object_pk),
+            object_pk=smart_str(object_pk),
             site__pk=site_id,
         )
 

@@ -5,10 +5,10 @@ from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.forms.utils import ErrorDict
 from django.utils.crypto import salted_hmac, constant_time_compare
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.text import get_text_list
 from django.utils import timezone
-from django.utils.translation import pgettext_lazy, ungettext, ugettext, ugettext_lazy as _
+from django.utils.translation import pgettext_lazy, ngettext, gettext, gettext_lazy as _
 
 from . import get_model
 
@@ -139,7 +139,7 @@ class CommentDetailsForm(CommentSecurityForm):
         """
         return dict(
             content_type=ContentType.objects.get_for_model(self.target_object),
-            object_pk=force_text(self.target_object._get_pk_val()),
+            object_pk=force_str(self.target_object._get_pk_val()),
             user_name=self.cleaned_data["name"],
             user_email=self.cleaned_data["email"],
             user_url=self.cleaned_data["url"],
@@ -180,12 +180,12 @@ class CommentDetailsForm(CommentSecurityForm):
                 getattr(settings, 'PROFANITIES_LIST', False)):
             bad_words = [w for w in settings.PROFANITIES_LIST if w in comment.lower()]
             if bad_words:
-                raise forms.ValidationError(ungettext(
+                raise forms.ValidationError(ngettext(
                     "Watch your mouth! The word %s is not allowed here.",
                     "Watch your mouth! The words %s are not allowed here.",
                     len(bad_words)) % get_text_list(
                     ['"%s%s%s"' % (i[0], '-' * (len(i) - 2), i[-1])
-                     for i in bad_words], ugettext('and')))
+                     for i in bad_words], gettext('and')))
         return comment
 
 
