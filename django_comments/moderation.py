@@ -62,7 +62,7 @@ from django.core.mail import send_mail
 from django.db.models.base import ModelBase
 from django.template import loader
 from django.utils import timezone
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 import django_comments
 from django_comments import signals

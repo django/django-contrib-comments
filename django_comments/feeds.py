@@ -1,6 +1,6 @@
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.syndication.views import Feed
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 import django_comments
 
