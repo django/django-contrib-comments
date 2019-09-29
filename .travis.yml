@@ -41,7 +41,6 @@ matrix:
     - python: 3.7
       env: TOXENV=py37-django-master
   allow_failures:
-    - env: TOXENV=py35-django-master
     - env: TOXENV=py36-django-master
     - env: TOXENV=py37-django-master
 install:
