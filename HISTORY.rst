@@ -3,6 +3,11 @@
 History
 =======
 
+X.Y.Z (YYYY-MM-DD)
+------------------
+
+* Confirmed support for Django 3.0.
+
 1.9.1 (2019-02-20)
 ------------------
 
