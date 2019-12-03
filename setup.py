@@ -10,7 +10,7 @@ long_description = readme + history
 
 setup(
     name='django-contrib-comments',
-    version='1.9.1',
+    version='1.9.2',
     url="https://github.com/django/django-contrib-comments",
     description='The code formerly known as django.contrib.comments.',
     long_description=long_description,
@@ -35,8 +35,6 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],

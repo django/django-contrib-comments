@@ -3,10 +3,12 @@
 History
 =======
 
-X.Y.Z (YYYY-MM-DD)
+1.9.2 (2019-12-03)
 ------------------
 
+* WARNING: This *is* the last version supporting Python 2.
 * Confirmed support for Django 3.0.
+* Prevented deprecation warnings with Django 3.0.
 
 1.9.1 (2019-02-20)
 ------------------
