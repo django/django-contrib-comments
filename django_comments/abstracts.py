@@ -8,7 +8,6 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from six import python_2_unicode_compatible
 
 from .managers import CommentManager
 
@@ -45,7 +44,6 @@ class BaseCommentAbstractModel(models.Model):
         )
 
 
-@python_2_unicode_compatible
 class CommentAbstractModel(BaseCommentAbstractModel):
     """
     A user comment about some object.

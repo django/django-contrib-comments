@@ -2,7 +2,6 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from six import python_2_unicode_compatible
 
 from .abstracts import (
     COMMENT_MAX_LENGTH, BaseCommentAbstractModel, CommentAbstractModel,
@@ -14,7 +13,6 @@ class Comment(CommentAbstractModel):
         db_table = "django_comments"
 
 
-@python_2_unicode_compatible
 class CommentFlag(models.Model):
     """
     Records a flag on a comment. This is intentionally flexible; right now, a
