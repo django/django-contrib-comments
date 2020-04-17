@@ -1,179 +1,100 @@
 # This file is distributed under the same license as the Django package.
-# 
-# Translators:
+#
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Lele Long <schemacs@gmail.com>, 2011
 # Tuzi.Li <lzjwh1996@foxmail.com>, 2016
+# Lessica <i.82@me.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-10 09:06+0100\n"
-"PO-Revision-Date: 2016-07-13 09:47+0000\n"
-"Last-Translator: Tuzi.Li <lzjwh1996@foxmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/django/django-contrib-comments/language/zh_CN/)\n"
+"POT-Creation-Date: 2020-04-17 16:18+0800\n"
+"PO-Revision-Date: 2020-04-17 15:57+0800\n"
+"Last-Translator: Lessica <i.82@me.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/django/django-"
+"contrib-comments/language/zh_CN/)\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: admin.py:25
-msgid "Content"
-msgstr "内容"
-
-#: admin.py:28
-msgid "Metadata"
-msgstr "元数据"
-
-#: admin.py:55
-msgid "flagged"
-msgid_plural "flagged"
-msgstr[0] "标记"
-
-#: admin.py:56
-msgid "Flag selected comments"
-msgstr "标记选中的评论"
-
-#: admin.py:60
-msgid "approved"
-msgid_plural "approved"
-msgstr[0] "批准"
-
-#: admin.py:61
-msgid "Approve selected comments"
-msgstr "批准选中的评论"
-
-#: admin.py:65
-msgid "removed"
-msgid_plural "removed"
-msgstr[0] "移除"
-
-#: admin.py:66
-msgid "Remove selected comments"
-msgstr "移除选中的评论"
-
-#: admin.py:78
-#, python-format
-msgid "1 comment was successfully %(action)s."
-msgid_plural "%(count)s comments were successfully %(action)s."
-msgstr[0] "%(count)s 条评论被成功 %(action)s。"
-
-#: feeds.py:14
-#, python-format
-msgid "%(site_name)s comments"
-msgstr "%(site_name)s的评论"
-
-#: feeds.py:20
-#, python-format
-msgid "Latest comments on %(site_name)s"
-msgstr "%(site_name)s的最新评论"
-
-#: forms.py:105
-msgctxt "Person name"
-msgid "Name"
-msgstr "名称"
-
-#: forms.py:97
-msgid "Email address"
-msgstr "Email 地址"
-
-#: forms.py:98
-msgid "URL"
-msgstr "URL"
-
-#: forms.py:99
-msgid "Comment"
-msgstr "评论"
-
-#: forms.py:177
-#, python-format
-msgid "Watch your mouth! The word %s is not allowed here."
-msgid_plural "Watch your mouth! The words %s are not allowed here."
-msgstr[0] "注意言论！%s 不允许在这里出现。"
-
-#: forms.py:181 templates/comments/preview.html:16
-msgid "and"
-msgstr "和"
-
-#: forms.py:186
-msgid ""
-"If you enter anything in this field your comment will be treated as spam"
-msgstr "如果你在该字段中输入任何内容，那么你的评论就会被视为垃圾评论。"
-
-#: models.py:23
+#: abstracts.py:26
 msgid "content type"
 msgstr "内容类型"
 
-#: models.py:25
+#: abstracts.py:29
 msgid "object ID"
-msgstr "对象ID"
+msgstr "对象 ID"
 
-#: models.py:53 models.py:177
+#: abstracts.py:57 models.py:32
 msgid "user"
 msgstr "用户"
 
-#: models.py:55
+#: abstracts.py:60
 msgid "user's name"
 msgstr "用户名"
 
-#: models.py:56
+#: abstracts.py:61
 msgid "user's email address"
-msgstr "用户的 email 地址"
+msgstr "用户的电邮地址"
 
-#: models.py:57
+#: abstracts.py:62
 msgid "user's URL"
-msgstr "用户的网址"
+msgstr "用户的 URL"
 
-#: models.py:59 models.py:79 models.py:178
+#. Translators: 'comment' is a noun here.
+#: abstracts.py:64 abstracts.py:84 models.py:37
 msgid "comment"
 msgstr "评论"
 
-#: models.py:62
+#: abstracts.py:67
 msgid "date/time submitted"
 msgstr "提交日期/时间"
 
-#: models.py:63
+#: abstracts.py:68
 msgid "IP address"
 msgstr "IP 地址"
 
-#: models.py:64
+#: abstracts.py:69
 msgid "is public"
-msgstr "公开"
+msgstr "是否公开"
 
-#: models.py:65
+#: abstracts.py:70
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
-msgstr "取消选中此复选框，可隐藏该条评论。"
+msgstr "取消选中此复选框，可从站点隐藏该评论。"
 
-#: models.py:67
+#: abstracts.py:72
 msgid "is removed"
-msgstr "已删除"
+msgstr "是否已删除"
 
-#: models.py:68
+#: abstracts.py:73
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
-msgstr "若评论内容不妥，则选中这个复选框。该评论将被一条\"此评论已经被删除\"的消息所替换。"
+msgstr ""
+"若评论内容不妥，则选中这个复选框。该评论将被一条 \"此评论已经被删除\" 的消息"
+"所替换。"
 
-#: models.py:80
+#: abstracts.py:85
 msgid "comments"
 msgstr "评论"
 
-#: models.py:124
+#: abstracts.py:130
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
 msgstr "此评论由一位验证用户发表，因此该用户名是只读的。"
 
-#: models.py:134
+#: abstracts.py:141
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr "此评论由一位验证用户发表，因此该 email 是只读的。"
+msgstr "此评论由一位验证用户发表，因此该电邮地址是只读的。"
 
-#: models.py:160
+#: abstracts.py:169
 #, python-format
 msgid ""
 "Posted by %(user)s at %(date)s\n"
@@ -181,28 +102,119 @@ msgid ""
 "%(comment)s\n"
 "\n"
 "http://%(domain)s%(url)s"
-msgstr "由 %(user)s 在 %(date)s 张贴\n\n%(comment)s\n\nhttp://%(domain)s%(url)s"
+msgstr ""
+"由 %(user)s 在 %(date)s 张贴\n"
+"\n"
+"%(comment)s\n"
+"\n"
+"http://%(domain)s%(url)s"
 
-#: models.py:179
+#: admin.py:28
+msgid "Content"
+msgstr "内容"
+
+#: admin.py:32
+msgid "Metadata"
+msgstr "元数据"
+
+#: admin.py:59
+msgid "flagged"
+msgid_plural "flagged"
+msgstr[0] "标记"
+
+#: admin.py:61
+msgid "Flag selected comments"
+msgstr "标记选中的评论"
+
+#: admin.py:65
+msgid "approved"
+msgid_plural "approved"
+msgstr[0] "批准"
+
+#: admin.py:67
+msgid "Approve selected comments"
+msgstr "批准选中的评论"
+
+#: admin.py:71
+msgid "removed"
+msgid_plural "removed"
+msgstr[0] "移除"
+
+#: admin.py:73
+msgid "Remove selected comments"
+msgstr "移除选中的评论"
+
+#: admin.py:85
+#, python-format
+msgid "%(count)s comment was successfully %(action)s."
+msgid_plural "%(count)s comments were successfully %(action)s."
+msgstr[0] "%(count)s 条评论被成功 %(action)s。"
+msgstr[1] "%(count)s 条评论被成功 %(action)s。"
+
+#: feeds.py:16
+#, python-format
+msgid "%(site_name)s comments"
+msgstr "%(site_name)s 的评论"
+
+#: feeds.py:22
+#, python-format
+msgid "Latest comments on %(site_name)s"
+msgstr "%(site_name)s 的最新评论"
+
+#: forms.py:101
+msgctxt "Person name"
+msgid "Name"
+msgstr "名称"
+
+#: forms.py:102
+msgid "Email address"
+msgstr "电邮地址"
+
+#: forms.py:103
+msgid "URL"
+msgstr "URL"
+
+#. Translators: 'Comment' is a noun here.
+#: forms.py:105
+msgid "Comment"
+msgstr "评论"
+
+#: forms.py:184
+#, python-format
+msgid "Watch your mouth! The word %s is not allowed here."
+msgid_plural "Watch your mouth! The words %s are not allowed here."
+msgstr[0] "注意言论！%s 不允许在这里出现。"
+
+#: forms.py:188 templates/comments/preview.html:17
+msgid "and"
+msgstr "和"
+
+#: forms.py:194
+msgid ""
+"If you enter anything in this field your comment will be treated as spam"
+msgstr "如果你在评论中输入该字段中的任何内容，那么你的评论就会被视为垃圾评论。"
+
+#. Translators: 'flag' is a noun here.
+#: models.py:40
 msgid "flag"
 msgstr "标记"
 
-#: models.py:180
+#: models.py:41
 msgid "date"
 msgstr "标记时间"
 
-#: models.py:190
+#: models.py:51
 msgid "comment flag"
 msgstr "评论标记"
 
-#: models.py:191
+#: models.py:52
 msgid "comment flags"
 msgstr "评论标记"
 
-#: moderation.py:253
+#: moderation.py:252
 #, python-format
 msgid "[%(site)s] New comment posted on \"%(object)s\""
-msgstr "[%(site)s]  新评论发布于 \"%(object)s\""
+msgstr "[%(site)s] 新评论发布于 \"%(object)s\""
 
 #: templates/comments/approve.html:4
 msgid "Approve a comment"
@@ -212,7 +224,7 @@ msgstr "批准评论"
 msgid "Really make this comment public?"
 msgstr "真的要公开该评论？"
 
-#: templates/comments/approve.html:12
+#: templates/comments/approve.html:13
 msgid "Approve"
 msgstr "批准"
 
@@ -234,7 +246,7 @@ msgstr "删除评论"
 msgid "Really remove this comment?"
 msgstr "真的要删除该评论？"
 
-#: templates/comments/delete.html:12
+#: templates/comments/delete.html:13
 msgid "Remove"
 msgstr "删除"
 
@@ -250,7 +262,7 @@ msgstr "标记该评论"
 msgid "Really flag this comment?"
 msgstr "真的要标记该评论？"
 
-#: templates/comments/flag.html:12
+#: templates/comments/flag.html:13
 msgid "Flag"
 msgstr "标记"
 
@@ -258,11 +270,11 @@ msgstr "标记"
 msgid "Thanks for flagging"
 msgstr "感谢标记"
 
-#: templates/comments/form.html:17 templates/comments/preview.html:32
+#: templates/comments/form.html:18 templates/comments/preview.html:36
 msgid "Post"
 msgstr "张贴"
 
-#: templates/comments/form.html:18 templates/comments/preview.html:33
+#: templates/comments/form.html:19 templates/comments/preview.html:37
 msgid "Preview"
 msgstr "预览"
 
@@ -274,19 +286,20 @@ msgstr "感谢评论"
 msgid "Thank you for your comment"
 msgstr "感谢您所作的评论"
 
-#: templates/comments/preview.html:4 templates/comments/preview.html.py:13
+#: templates/comments/preview.html:4 templates/comments/preview.html:14
 msgid "Preview your comment"
 msgstr "预览您的评论"
 
-#: templates/comments/preview.html:11
+#: templates/comments/preview.html:12
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
 msgstr[0] "请修正如下错误"
 
-#: templates/comments/preview.html:16
+#: templates/comments/preview.html:18
 msgid "Post your comment"
 msgstr "张贴您的评论"
 
-#: templates/comments/preview.html:16
+#. Translators: This string follows the 'Post your comment' submit button.
+#: templates/comments/preview.html:20
 msgid "or make changes"
 msgstr "或进行修改"
