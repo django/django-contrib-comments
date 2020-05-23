@@ -9,6 +9,7 @@ X.Y.Z (YYYY-MM-DD)
 * Removed support for Python 2.
 * Renamed zh_CN to zh_Hans and zh_TW to zh_Hant to match
   Django Chinese translations naming.
+* Confirmed support for Django 3.1.
 
 1.9.2 (2019-12-03)
 ------------------
