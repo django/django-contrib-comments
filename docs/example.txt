@@ -89,7 +89,7 @@ creating a context variable. One can iterate over the ``form`` object to
 get individual fields. This gives you fine-grain control over the form::
 
   {% for field in form %}
-  {% ifequal field.name "comment" %}
+  {% if field.name == "comment" %}
     <!-- Customize the "comment" field, say, make CSS changes -->
   ...
   {% endfor %}
