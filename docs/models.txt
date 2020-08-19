@@ -28,8 +28,8 @@ The comment models
 
     .. attribute:: object_pk
 
-        A :class:`~django.db.models.TextField` containing the primary
-        key of the object the comment is attached to.
+        A :class:`~django.db.models.CharField` containing the primary
+        key of the object the comment is attached to. ``max_length=64``.
 
     .. attribute:: site
 
