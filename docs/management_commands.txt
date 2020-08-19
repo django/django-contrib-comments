@@ -1,0 +1,17 @@
+===================
+Management commands
+===================
+
+delete_stale_comments
+=====================
+
+Remove comments for which the related objects don't exist anymore!
+This is a handy house-keeping command because the comment model
+doesn't enforce cascade delete on the database level! Run:
+
+    .. code-block:: shell
+
+        manage.py delete_stale_comments
+
+This command supports the ``--yes`` flag to automatically confirm
+suggested deletions, suitable for running via cron.
