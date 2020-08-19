@@ -1,4 +1,7 @@
-from django.conf.urls import url
+try:
+    from django.urls import re_path as url
+except ImportError:
+    from django.conf.urls import url
 from django.contrib.contenttypes.views import shortcut
 
 from .views.comments import post_comment, comment_done

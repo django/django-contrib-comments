@@ -1,4 +1,7 @@
-from django.conf.urls import url
+try:
+    from django.urls import re_path as url
+except ImportError:
+    from django.conf.urls import url
 from django.contrib import admin
 from django_comments.admin import CommentsAdmin
 from django_comments.models import Comment
