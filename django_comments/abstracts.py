@@ -23,7 +23,7 @@ class BaseCommentAbstractModel(models.Model):
                                      verbose_name=_('content type'),
                                      related_name="content_type_set_for_%(class)s",
                                      on_delete=models.CASCADE)
-    object_pk = models.TextField(_('object ID'))
+    object_pk = models.CharField(_('object ID'), db_index=True, max_length=64)
     content_object = GenericForeignKey(ct_field="content_type", fk_field="object_pk")
 
     # Metadata about the comment
@@ -65,7 +65,7 @@ class CommentAbstractModel(BaseCommentAbstractModel):
     is_public = models.BooleanField(_('is public'), default=True,
                                     help_text=_('Uncheck this box to make the comment effectively '
                                                 'disappear from the site.'))
-    is_removed = models.BooleanField(_('is removed'), default=False,
+    is_removed = models.BooleanField(_('is removed'), default=False, db_index=True,
                                      help_text=_('Check this box if the comment is inappropriate. '
                                                  'A "This comment has been removed" message will '
                                                  'be displayed instead.'))

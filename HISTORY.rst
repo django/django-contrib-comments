@@ -8,6 +8,14 @@ Unreleased
 
 * Dropped support for Django 1.11, 2.0, and 2.1.
 * Added the ``delete_stale_comments`` management command.
+* Added db_index to ``object_pk`` and ``is_removed`` fields.
+* Altered ``object_pk`` from ``TextField`` to ``CharField(max_length=64)``
+  so that the field can be indexed on MySQL, too. **Warning:** if you attach
+  comments to objects whose primary key is serialized to more than 64
+  characters, you should provide a custom Comment model
+  (more about that in the documentation) with an appropriate
+  ``object_pk`` field.
+
 
 2.0.0 (2020-12-20)
 ------------------
