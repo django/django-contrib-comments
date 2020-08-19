@@ -1,4 +1,8 @@
-from django.conf.urls import include, url
+try:
+    from django.urls import re_path as url
+except ImportError:
+    from django.conf.urls import url
+from django.conf.urls import include
 from django.contrib.auth.views import LoginView, LogoutView
 
 
