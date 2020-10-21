@@ -3,9 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from .abstracts import (
-    COMMENT_MAX_LENGTH, BaseCommentAbstractModel, CommentAbstractModel,
-)
+from .abstracts import CommentAbstractModel
 
 
 class Comment(CommentAbstractModel):
