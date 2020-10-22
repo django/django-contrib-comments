@@ -2,7 +2,8 @@ from django.conf import settings
 from django.contrib.auth.models import User
 
 from django_comments import signals
-from django_comments.models import COMMENT_MAX_LENGTH, Comment
+from django_comments.abstracts import COMMENT_MAX_LENGTH
+from django_comments.models import Comment
 
 from . import CommentTestCase
 from testapp.models import Article, Book
