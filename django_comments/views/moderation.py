@@ -35,7 +35,8 @@ def flag(request, comment_id, next=None):
 
 
 @csrf_protect
-@permission_required("django_comments.can_moderate")
+@login_required
+@permission_required("django_comments.can_moderate", raise_exception=True)
 def delete(request, comment_id, next=None):
     """
     Deletes a comment. Confirmation on GET, action on POST. Requires the "can
@@ -63,7 +64,8 @@ def delete(request, comment_id, next=None):
 
 
 @csrf_protect
-@permission_required("django_comments.can_moderate")
+@login_required
+@permission_required("django_comments.can_moderate", raise_exception=True)
 def approve(request, comment_id, next=None):
     """
     Approve a comment (that is, mark it as public and non-removed). Confirmation
