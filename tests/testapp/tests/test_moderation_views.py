@@ -111,11 +111,17 @@ class DeleteViewTests(CommentTestCase):
         """The delete view should only be accessible to 'moderators'"""
         comments = self.createSomeComments()
         pk = comments[0].pk
-        self.client.login(username="normaluser", password="normaluser")
+
+        # Test that we redirect to login page if not logged in.
         response = self.client.get("/delete/%d/" % pk)
         self.assertRedirects(response,
             "/accounts/login/?next=/delete/%d/" % pk,
             fetch_redirect_response=False)
+
+        # Test that we return forbidden if you're logged in but don't have access.
+        self.client.login(username="normaluser", password="normaluser")
+        response = self.client.get("/delete/%d/" % pk)
+        self.assertEqual(response.status_code, 403)
 
         makeModerator("normaluser")
         response = self.client.get("/delete/%d/" % pk)
@@ -185,7 +191,8 @@ class ApproveViewTests(CommentTestCase):
         """The approve view should only be accessible to 'moderators'"""
         comments = self.createSomeComments()
         pk = comments[0].pk
-        self.client.login(username="normaluser", password="normaluser")
+
+        # Test that we redirect to login page if not logged in.
         response = self.client.get("/approve/%d/" % pk)
         self.assertRedirects(
             response,
@@ -193,6 +200,12 @@ class ApproveViewTests(CommentTestCase):
             fetch_redirect_response=False
         )
 
+        # Test that we return forbidden if you're logged in but don't have access.
+        self.client.login(username="normaluser", password="normaluser")
+        response = self.client.get("/approve/%d/" % pk)
+        self.assertEqual(response.status_code, 403)
+
+        # Verify that moderators can view this view.
         makeModerator("normaluser")
         response = self.client.get("/approve/%d/" % pk)
         self.assertEqual(response.status_code, 200)
