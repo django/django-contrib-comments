@@ -3,14 +3,15 @@
 History
 =======
 
-X.Y.Z (YYYY-MM-DD)
+2.0.0 (2020-12-20)
 ------------------
 
 * Removed support for Python 2.
 * Renamed zh_CN to zh_Hans and zh_TW to zh_Hant to match
   Django Chinese translations naming.
-* Confirmed support for Django 3.1.
+* Confirmed support for Django 3.1 and avoid deprecation warnings.
 * Confirmed support for Python 3.8.
+* Updated Arabic and German translations.
 
 1.9.2 (2019-12-03)
 ------------------
