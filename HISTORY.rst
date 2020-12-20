@@ -3,6 +3,11 @@
 History
 =======
 
+Unreleased
+----------
+
+* Dropped support for Django 1.11, 2.0, and 2.1.
+
 2.0.0 (2020-12-20)
 ------------------
 
