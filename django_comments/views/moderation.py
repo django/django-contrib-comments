@@ -148,6 +148,7 @@ def perform_approve(request, comment):
         request=request,
     )
 
+
 # Confirmation views.
 
 flag_done = confirmation_view(

@@ -85,6 +85,7 @@ class CommentsAdmin(admin.ModelAdmin):
                         n_comments)
         self.message_user(request, msg % {'count': n_comments, 'action': done_message(n_comments)})
 
+
 # Only register the default admin if the model is the built-in comment model
 # (this won't be true if there's a custom comment app).
 Klass = get_model()

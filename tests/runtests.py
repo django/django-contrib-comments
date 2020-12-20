@@ -58,6 +58,7 @@ def main(test_labels=None):
     failures = runner.run_tests(test_labels or ['testapp'], interactive=True)
     sys.exit(failures)
 
+
 if __name__ == '__main__':
     test_labels = None
     if len(sys.argv) > 1:

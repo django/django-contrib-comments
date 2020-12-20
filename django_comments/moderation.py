@@ -364,6 +364,7 @@ class Moderator:
             return
         self._registry[model].email(comment, comment.content_object, request)
 
+
 # Import this instance in your own code to use in registering
 # your models for moderation.
 moderator = Moderator()
