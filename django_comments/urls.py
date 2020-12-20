@@ -1,8 +1,5 @@
-try:
-    from django.urls import re_path as url
-except ImportError:
-    from django.conf.urls import url
 from django.contrib.contenttypes.views import shortcut
+from django.urls import path, re_path
 
 from .views.comments import post_comment, comment_done
 from .views.moderation import (
@@ -11,14 +8,14 @@ from .views.moderation import (
 
 
 urlpatterns = [
-    url(r'^post/$', post_comment, name='comments-post-comment'),
-    url(r'^posted/$', comment_done, name='comments-comment-done'),
-    url(r'^flag/(\d+)/$', flag, name='comments-flag'),
-    url(r'^flagged/$', flag_done, name='comments-flag-done'),
-    url(r'^delete/(\d+)/$', delete, name='comments-delete'),
-    url(r'^deleted/$', delete_done, name='comments-delete-done'),
-    url(r'^approve/(\d+)/$', approve, name='comments-approve'),
-    url(r'^approved/$', approve_done, name='comments-approve-done'),
+    path('post/', post_comment, name='comments-post-comment'),
+    path('posted/', comment_done, name='comments-comment-done'),
+    path('flag/<int:comment_id>/', flag, name='comments-flag'),
+    path('flagged/', flag_done, name='comments-flag-done'),
+    path('delete/<int:comment_id>/', delete, name='comments-delete'),
+    path('deleted/', delete_done, name='comments-delete-done'),
+    path('approve/<int:comment_id>/', approve, name='comments-approve'),
+    path('approved/', approve_done, name='comments-approve-done'),
 
-    url(r'^cr/(\d+)/(.+)/$', shortcut, name='comments-url-redirect'),
+    re_path(r'^cr/(\d+)/(.+)/$', shortcut, name='comments-url-redirect'),
 ]

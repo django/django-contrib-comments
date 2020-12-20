@@ -140,12 +140,12 @@ enable it in your project's ``urls.py``:
 
 .. code-block:: python
 
-  from django.conf.urls import url
+  from django.urls import path
   from django_comments.feeds import LatestCommentFeed
 
   urlpatterns = [
   # ...
-      url(r'^feeds/latest/$', LatestCommentFeed()),
+      path('feeds/latest/', LatestCommentFeed()),
   # ...
   ]
 
