@@ -2,7 +2,7 @@
 # 
 # Translators:
 # Translators:
-# Bashar Al-Abdulhadi, 2016
+# Bashar Al-Abdulhadi, 2016,2020
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Ossama Khayat <okhayat@gmail.com>, 2011
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: django-contrib-comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-10 09:06+0100\n"
-"PO-Revision-Date: 2016-04-03 08:20+0000\n"
+"PO-Revision-Date: 2020-08-12 01:39+0000\n"
 "Last-Translator: Bashar Al-Abdulhadi\n"
 "Language-Team: Arabic (http://www.transifex.com/django/django-contrib-comments/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "الاسم"
 
 #: forms.py:97
 msgid "Email address"
-msgstr "عنوان بريد إلكتروني"
+msgstr "عنوان البريد الإلكتروني"
 
 #: forms.py:98
 msgid "URL"
@@ -129,7 +129,7 @@ msgstr "إن كتبت أي شيء في هذا الحقل فسيُعتبر تعل
 
 #: models.py:23
 msgid "content type"
-msgstr "نوع البيانات"
+msgstr "نوع المحتوى"
 
 #: models.py:25
 msgid "object ID"
@@ -190,13 +190,13 @@ msgstr "تعليقات"
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
-msgstr "كتب هذا التعليق مستخدم مُسجّل ولذا كان اسمهللقراءة فقط."
+msgstr "كتب هذا التعليق من قبل مستخدم مُسجّل ولهذا الاسم للقراءة فقط.."
 
 #: models.py:134
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
-msgstr "كتب هذا التعليق مستخدم مُسجّل ولذا كان عنوان بريده الالكتروني للقراءة فقط."
+msgstr "كتب هذا التعليق من قبل مستخدم مُسجّل ولذا كان عنوان بريده الإلكتروني للقراءة فقط."
 
 #: models.py:160
 #, python-format
@@ -222,7 +222,7 @@ msgstr "علَم التعليق"
 
 #: models.py:191
 msgid "comment flags"
-msgstr "أعلام التعليقات"
+msgstr "أعلام التعليق"
 
 #: moderation.py:253
 #, python-format
@@ -239,7 +239,7 @@ msgstr "تريد فعلاً جعل هذا التعليق عامّاً؟"
 
 #: templates/comments/approve.html:12
 msgid "Approve"
-msgstr "وافق"
+msgstr "الموافقة"
 
 #: templates/comments/approved.html:4
 msgid "Thanks for approving"
@@ -281,11 +281,11 @@ msgstr "سٍم"
 
 #: templates/comments/flagged.html:4
 msgid "Thanks for flagging"
-msgstr "شكراً لك على الوَسم"
+msgstr "شكراً لك على التعليم"
 
 #: templates/comments/form.html:17 templates/comments/preview.html:32
 msgid "Post"
-msgstr "أرسل "
+msgstr "أرسل"
 
 #: templates/comments/form.html:18 templates/comments/preview.html:33
 msgid "Preview"
