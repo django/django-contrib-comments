@@ -287,5 +287,5 @@ epub_copyright = copyright
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
     'python': ('https://docs.python.org/', None),
-    'django': ('https://docs.djangoproject.com/en/stable', 'https://docs.djangoproject.com/en/stable/_objects'),
+    'django': ('https://docs.djangoproject.com/en/stable', None),
 }
