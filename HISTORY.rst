@@ -16,7 +16,7 @@ Unreleased
   (more about that in the documentation) with an appropriate
   ``object_pk`` field.
 * Confirmed support for Python 3.9.
-
+* Added support for Django 3.2.
 
 2.0.0 (2020-12-20)
 ------------------
