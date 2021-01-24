@@ -15,6 +15,7 @@ sys.path[0:0] = [here, parent]
 from django.conf import settings
 settings.configure(
     DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}},
+    DEFAULT_AUTO_FIELD='django.db.models.BigAutoField',
     INSTALLED_APPS=[
         "django.contrib.auth",
         "django.contrib.contenttypes",
