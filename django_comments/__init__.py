@@ -1,6 +1,6 @@
 from importlib import import_module
 
-from django.apps import apps
+from django.apps import apps as global_apps
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse
@@ -15,7 +15,7 @@ def get_comment_app():
     """
     # Make sure the app's in INSTALLED_APPS
     comments_app = get_comment_app_name()
-    if not apps.is_installed(comments_app):
+    if not global_apps.is_installed(comments_app):
         raise ImproperlyConfigured(
             "The COMMENTS_APP (%r) must be in INSTALLED_APPS" % comments_app
         )
