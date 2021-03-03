@@ -3,8 +3,8 @@
 History
 =======
 
-Unreleased
-----------
+2.1.0 (2021-03-03)
+------------------
 
 * Dropped support for Django 1.11, 2.0, and 2.1.
 * Added the ``delete_stale_comments`` management command.
