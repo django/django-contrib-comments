@@ -20,15 +20,6 @@ from django_comments import signals
 from django_comments.views.utils import confirmation_view
 
 
-class BadRequest(Exception):
-    """
-    Exception raised for a bad post request holding the CommentPostBadRequest
-    object.
-    """
-    def __init__(self, response):
-        self.response = response
-
-
 class CommentPostBadRequest(http.HttpResponseBadRequest):
     """
     Response returned when a comment post is invalid. If ``DEBUG`` is on a
@@ -42,6 +33,15 @@ class CommentPostBadRequest(http.HttpResponseBadRequest):
             self.content = render_to_string("comments/400-debug.html", {"why": why})
 
 
+class BadRequest(Exception):
+    """
+    Exception raised for a bad post request holding the CommentPostBadRequest
+    object.
+    """
+    def __init__(self, why):
+        self.response = CommentPostBadRequest(why)
+
+
 class CommentPostView(FormView):
     http_method_names = ['post']
 
@@ -50,24 +50,20 @@ class CommentPostView(FormView):
         ctype = data.get("content_type")
         object_pk = data.get("object_pk")
         if ctype is None or object_pk is None:
-            raise BadRequest(CommentPostBadRequest("Missing content_type or object_pk field."))
+            raise BadRequest("Missing content_type or object_pk field.")
         try:
             model = apps.get_model(*ctype.split(".", 1))
             return model._default_manager.using(self.kwargs.get('using')).get(pk=object_pk)
         except TypeError:
-            raise BadRequest(CommentPostBadRequest(
-                "Invalid content_type value: %r" % escape(ctype)))
+            raise BadRequest("Invalid content_type value: %r" % escape(ctype))
         except AttributeError:
-            raise BadRequest(CommentPostBadRequest(
-                "The given content-type %r does not resolve to a valid model." % escape(ctype)))
+            raise BadRequest("The given content-type %r does not resolve to a valid model." % escape(ctype))
         except ObjectDoesNotExist:
-            raise BadRequest(CommentPostBadRequest(
-                "No object matching content-type %r and object PK %r exists." % (
-                    escape(ctype), escape(object_pk))))
+            raise BadRequest("No object matching content-type %r and object PK %r exists." % (
+                    escape(ctype), escape(object_pk)))
         except (ValueError, ValidationError) as e:
-            raise BadRequest(CommentPostBadRequest(
-                "Attempting to get content-type %r and object PK %r raised %s" % (
-                    escape(ctype), escape(object_pk), e.__class__.__name__)))
+            raise BadRequest("Attempting to get content-type %r and object PK %r raised %s" % (
+                    escape(ctype), escape(object_pk), e.__class__.__name__))
 
     def get_form_kwargs(self):
         data = self.request.POST.copy()
@@ -124,8 +120,7 @@ class CommentPostView(FormView):
 
         for (receiver, response) in responses:
             if response is False:
-                raise BadRequest(CommentPostBadRequest(
-                    "comment_will_be_posted receiver %r killed the comment" % receiver.__name__))
+                raise BadRequest("comment_will_be_posted receiver %r killed the comment" % receiver.__name__)
 
         # Save the comment and signal that it was saved
         comment.save()
