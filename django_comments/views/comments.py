@@ -86,9 +86,9 @@ class CommentPostView(FormView):
 
     def get_success_url(self):
         """Return the URL to redirect to after processing a valid form."""
+        next = self.data.get('next')
         fallback = self.kwargs.get('next') or 'comments-comment-done'
         get_kwargs = dict(c=self.object._get_pk_val())
-        next = self.request.POST.get('next')
 
         if not url_has_allowed_host_and_scheme(url=next, allowed_hosts={self.request.get_host()}):
             next = resolve_url(fallback)
