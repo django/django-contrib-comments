@@ -131,24 +131,28 @@ class CommentPostView(FormView):
         )
         return comment
 
-    def form_invalid(self, form):
-        model = type(self.target_object)
-        template_list = [
-            # These first two exist for purely historical reasons.
-            # Django v1.0 and v1.1 allowed the underscore format for
-            # preview templates, so we have to preserve that format.
-            "comments/%s_%s_preview.html" % (model._meta.app_label, model._meta.model_name),
-            "comments/%s_preview.html" % model._meta.app_label,
-            # Now the usual directory based template hierarchy.
-            "comments/%s/%s/preview.html" % (model._meta.app_label, model._meta.model_name),
-            "comments/%s/preview.html" % model._meta.app_label,
-            "comments/preview.html",
-        ]
-        return render(self.request, template_list, {
-                "comment": form.data.get("comment", ""),
-                "form": form,
-                "next": self.data.get("next", self.kwargs.get('next')),
-            },
+    def get_template_names(self):
+        if self.template_name is None:
+            model = type(self.target_object)
+            return [
+                # These first two exist for purely historical reasons.
+                # Django v1.0 and v1.1 allowed the underscore format for
+                # preview templates, so we have to preserve that format.
+                "comments/%s_%s_preview.html" % (model._meta.app_label, model._meta.model_name),
+                "comments/%s_preview.html" % model._meta.app_label,
+                # Now the usual directory based template hierarchy.
+                "comments/%s/%s/preview.html" % (model._meta.app_label, model._meta.model_name),
+                "comments/%s/preview.html" % model._meta.app_label,
+                "comments/preview.html",
+            ]
+        else:
+            return [self.template_name]
+
+    def get_context_data(self, form):
+        return dict(
+            form=form,
+            comment=form.data.get("comment", ""),
+            next=self.data.get("next", self.kwargs.get('next')),
         )
 
     @method_decorator(csrf_protect)
