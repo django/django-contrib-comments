@@ -21,7 +21,7 @@ To get started using the ``comments`` app, follow these steps:
 
         urlpatterns = [
             ...
-            re_path(r'^comments/', include('django_comments.urls')),
+            path(r'^comments/', include('django_comments.urls')),
             ...
         ]
 
