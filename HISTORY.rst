@@ -3,6 +3,11 @@
 History
 =======
 
+Unreleased
+----------
+
+* Confirmed support for Django 4.0.
+
 2.1.0 (2021-03-03)
 ------------------
 
