@@ -4,6 +4,7 @@ more information.
 """
 
 from django.db import models
+import uuid
 
 
 class Author(models.Model):
@@ -15,11 +16,22 @@ class Author(models.Model):
 
 
 class Article(models.Model):
+    uuid = models.UUIDField(editable=False, null=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     headline = models.CharField(max_length=100)
 
     def __str__(self):
         return self.headline
+
+
+class UUIDArticle(Article):
+    """ Override _get_pk_val to use UUID as PK """
+
+    def _get_pk_val(self, meta=None):
+        return self.uuid
+
+    class Meta:
+        proxy = True
 
 
 class Entry(models.Model):

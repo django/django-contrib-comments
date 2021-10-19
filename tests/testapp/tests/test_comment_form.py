@@ -1,13 +1,15 @@
 import time
 
 from django.conf import settings
+from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
 
 from django_comments.forms import CommentForm
 from django_comments.models import Comment
 
 from . import CommentTestCase
-from testapp.models import Article
+from testapp.models import UUIDArticle, Article
+from django.test.utils import override_settings
 
 
 class CommentFormTests(CommentTestCase):
@@ -74,6 +76,39 @@ class CommentFormTests(CommentTestCase):
         f = CommentForm(Article.objects.get(pk=1), data=d)
         c = f.get_comment_object(site_id=self.site_2.id)
         self.assertEqual(c.site_id, self.site_2.id)
+
+    def testGetCommentCreateData(self):
+        """
+        Test that get_comment_create_data() returns
+        content_type for Article even if the proxy model UUIDArticle
+        is set to CommentForm.
+        """
+        a = UUIDArticle.objects.get(pk=1)
+        d = self.getValidData(a)
+        d["comment"] = "testGetCommentObject with a site"
+        f = CommentForm(UUIDArticle.objects.get(pk=1), data=d)
+        self.assertTrue(f.is_valid())
+        c = f.get_comment_create_data(site_id=self.site_2.id)
+        self.assertEqual(c["content_type"], ContentType.objects.get_for_model(Article, for_concrete_model=False))
+
+        o = f.get_comment_object(site_id=self.site_2.id)
+        self.assertEqual(o.content_type, ContentType.objects.get_for_model(Article, for_concrete_model=False))
+
+    def testGetCommentCreateDataConcreteModel(self):
+        """
+        Test that get_comment_create_data() returns
+        content_type for UUIDArticle if COMMENTS_FOR_CONCRETE_MODEL is False.
+        """
+        a = UUIDArticle.objects.get(pk=1)
+        d = self.getValidData(a)
+        d["comment"] = "testGetCommentObject with a site"
+        f = CommentForm(UUIDArticle.objects.get(pk=1), data=d)
+        self.assertTrue(f.is_valid())
+        c = f.get_comment_create_data(site_id=self.site_2.id, for_concrete_model=False)
+        self.assertEqual(c["content_type"], ContentType.objects.get_for_model(UUIDArticle, for_concrete_model=False))
+
+        o = f.get_comment_object(site_id=self.site_2.id, for_concrete_model=False)
+        self.assertEqual(o.content_type, ContentType.objects.get_for_model(UUIDArticle, for_concrete_model=False))
 
     def testProfanities(self):
         """Test COMMENTS_ALLOW_PROFANITIES and PROFANITIES_LIST settings"""
