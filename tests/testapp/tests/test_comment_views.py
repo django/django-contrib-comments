@@ -32,6 +32,20 @@ class CommentViewTests(CommentTestCase):
         response = self.client.post("/post/", data)
         self.assertEqual(response.status_code, 400)
 
+    def testPostCommentBadCtypeInvalidModelName(self):
+        a = Article.objects.get(pk=1)
+        data = self.getValidData(a)
+        data["content_type"] = str(Article._meta) + "_91232"
+        response = self.client.post("/post/", data)
+        self.assertEqual(response.status_code, 400)
+
+    def testPostCommentBadCtypeInjectionAttempt(self):
+        a = Article.objects.get(pk=1)
+        data = self.getValidData(a)
+        data["content_type"] = str(Article._meta) + "'\"()&%<acx><ScRiPt >prompt(998230)</ScRiPt>"
+        response = self.client.post("/post/", data)
+        self.assertEqual(response.status_code, 400)
+
     def testPostCommentMissingObjectPK(self):
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)

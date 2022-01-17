@@ -52,7 +52,7 @@ def post_comment(request, next=None, using=None):
     try:
         model = apps.get_model(*ctype.split(".", 1))
         target = model._default_manager.using(using).get(pk=object_pk)
-    except TypeError:
+    except (LookupError, TypeError):
         return CommentPostBadRequest(
             "Invalid content_type value: %r" % escape(ctype))
     except AttributeError:
