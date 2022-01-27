@@ -30,11 +30,11 @@ class Migration(migrations.Migration):
                     help_text='Check this box if the comment is inappropriate. A "This comment has been removed"'
                               ' message will be displayed instead.',
                     verbose_name='is removed')),
-                ('content_type', models.ForeignKey(related_name='content_type_set_for_comment',
+                ('content_type', models.ForeignKey(related_name='content_type_set_for_%(class)s',
                     verbose_name='content type', to='contenttypes.ContentType',
                     on_delete=models.CASCADE)),
                 ('site', models.ForeignKey(to='sites.Site', on_delete=models.CASCADE)),
-                ('user', models.ForeignKey(related_name='comment_comments', verbose_name='user',
+                ('user', models.ForeignKey(related_name='%(class)s_comments', verbose_name='user',
                     blank=True, to=settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)),
             ],
             options={
