@@ -3,8 +3,8 @@
 History
 =======
 
-Unreleased
-----------
+2.2.0 (2022-01-31)
+------------------
 
 * Confirmed support for Django 4.0.
 
