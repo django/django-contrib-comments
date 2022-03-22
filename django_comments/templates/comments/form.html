@@ -9,7 +9,7 @@
       {% if field.errors %}{{ field.errors }}{% endif %}
       <p
               {% if field.errors %} class="error"{% endif %}
-              {% if field.name == "honeypot" %} style="display:none;"{% endif %}>
+              {% if field.name == "honeypot" %}hidden{% endif %}>
         {{ field.label_tag }} {{ field }}
       </p>
     {% endif %}
