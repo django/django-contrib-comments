@@ -11,6 +11,7 @@ from django.utils import timezone
 from django.utils.translation import pgettext_lazy, ngettext, gettext, gettext_lazy as _
 
 from . import get_model
+from .utils import get_key_value
 
 COMMENT_MAX_LENGTH = getattr(settings, 'COMMENT_MAX_LENGTH', 3000)
 DEFAULT_COMMENTS_TIMEOUT = getattr(settings, 'COMMENTS_TIMEOUT', (2 * 60 * 60))  # 2h
@@ -65,7 +66,7 @@ class CommentSecurityForm(forms.Form):
         timestamp = int(time.time())
         security_dict = {
             'content_type': str(self.target_object._meta),
-            'object_pk': str(self.target_object._get_pk_val()),
+            'object_pk': get_key_value(self.target_object),
             'timestamp': str(timestamp),
             'security_hash': self.initial_security_hash(timestamp),
         }
@@ -79,7 +80,7 @@ class CommentSecurityForm(forms.Form):
 
         initial_security_dict = {
             'content_type': str(self.target_object._meta),
-            'object_pk': str(self.target_object._get_pk_val()),
+            'object_pk': get_key_value(self.target_object),
             'timestamp': str(timestamp),
         }
         return self.generate_security_hash(**initial_security_dict)
@@ -139,7 +140,7 @@ class CommentDetailsForm(CommentSecurityForm):
         """
         return dict(
             content_type=ContentType.objects.get_for_model(self.target_object),
-            object_pk=force_str(self.target_object._get_pk_val()),
+            object_pk=get_key_value(self.target_object),
             user_name=self.cleaned_data["name"],
             user_email=self.cleaned_data["email"],
             user_url=self.cleaned_data["url"],

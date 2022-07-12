@@ -12,6 +12,7 @@ from django.views.decorators.http import require_POST
 import django_comments
 from django_comments import signals
 from django_comments.views.utils import next_redirect, confirmation_view
+from django_comments.utils import get_key
 
 
 class CommentPostBadRequest(http.HttpResponseBadRequest):
@@ -51,7 +52,7 @@ def post_comment(request, next=None, using=None):
         return CommentPostBadRequest("Missing content_type or object_pk field.")
     try:
         model = apps.get_model(*ctype.split(".", 1))
-        target = model._default_manager.using(using).get(pk=object_pk)
+        target = model._default_manager.using(using).get(**{get_key(model): object_pk})
     except (LookupError, TypeError):
         return CommentPostBadRequest(
             "Invalid content_type value: %r" % escape(ctype))
