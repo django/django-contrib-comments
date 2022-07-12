@@ -7,6 +7,7 @@ Unreleased
 ----------
 
 * Confirmed support for Django 4.1.
+* Confirmed support for Python 3.10.
 
 2.2.0 (2022-01-31)
 ------------------
