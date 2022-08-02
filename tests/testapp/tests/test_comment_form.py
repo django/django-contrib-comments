@@ -1,14 +1,19 @@
 import time
+from datetime import datetime
 
 from django.conf import settings
+from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
+from django.test.utils import override_settings
+from freezegun import freeze_time
+from testapp.models import Article
 
 from django_comments.forms import CommentForm
 from django_comments.models import Comment
 
 from . import CommentTestCase
-from testapp.models import Article
 
+CT = ContentType.objects.get_for_model
 
 class CommentFormTests(CommentTestCase):
 
@@ -74,6 +79,92 @@ class CommentFormTests(CommentTestCase):
         f = CommentForm(Article.objects.get(pk=1), data=d)
         c = f.get_comment_object(site_id=self.site_2.id)
         self.assertEqual(c.site_id, self.site_2.id)
+
+    @freeze_time("2012-01-14 13:21:34")
+    def test_get_comment_create_data_uuid(self):
+        """
+        The get_comment_create_data() method returns
+        uuid field as  object_pk if overriden by settings
+        """
+        a = Article.objects.get(pk=1)
+        d = self.getValidData(a)
+        d["comment"] = "testGetCommentObject with a site"
+        f = CommentForm(Article.objects.get(pk=1), data=d)
+        self.assertTrue(f.is_valid())
+        with override_settings(
+            COMMENTS_ID_OVERRIDES={
+                "testapp.Article": "uuid",
+            }
+        ):
+            c = f.get_comment_create_data(site_id=self.site_2.id)
+            self.assertDictEqual(
+                c,
+                {
+                    "comment": "testGetCommentObject with a site",
+                    "content_type": CT(Article),
+                    "is_public": True,
+                    "is_removed": False,
+                    "object_pk": "336384ea-b04f-4a3a-a06a-1f25a8048f8f",  # uuid is returned
+                    "site_id": 2,
+                    "submit_date": datetime(2012, 1, 14, 13, 21, 34),
+                    "user_email": "jim.bob@example.com",
+                    "user_name": "Jim Bob",
+                    "user_url": "",
+                },
+            )
+        c = f.get_comment_create_data(site_id=self.site_2.id)
+        self.assertDictEqual(
+            c,
+            {
+                "comment": "testGetCommentObject with a site",
+                "content_type": CT(Article),
+                "is_public": True,
+                "is_removed": False,
+                "object_pk": "1",  # pk is returned as object_pk
+                "site_id": 2,
+                "submit_date": datetime(2012, 1, 14, 13, 21, 34),
+                "user_email": "jim.bob@example.com",
+                "user_name": "Jim Bob",
+                "user_url": "",
+            },
+        )
+
+    @freeze_time("2012-01-14 13:21:34")
+    def test_generate_security_data_uuid(self):
+        """
+        The generate_security_data() method returns
+        uuid field as  object_pk if overriden by settings
+        """
+        a = Article.objects.get(pk=1)
+        d = self.getValidData(a)
+        d["comment"] = "testGetCommentObject with a site"
+        f = CommentForm(Article.objects.get(pk=1), data=d)
+        self.assertTrue(f.is_valid())
+        with override_settings(
+            COMMENTS_ID_OVERRIDES={
+                "testapp.Article": "uuid",
+            }
+        ):
+            c = f.generate_security_data()
+            self.assertDictEqual(
+                c,
+                {
+                    "content_type": "testapp.article",
+                    "object_pk": "336384ea-b04f-4a3a-a06a-1f25a8048f8f",
+                    "security_hash": "b89ebc7c1c6ed757991fa06027405aecdf8d51f1",
+                    "timestamp": "1326547294",
+                },
+            )
+        c = f.generate_security_data()
+        self.assertDictEqual(
+            c,
+            {
+                "content_type": "testapp.article",
+                "object_pk": "1",
+                "security_hash": "2f4a55f47e58b22791d4d26f3b1a2e594302fb61",
+                "timestamp": "1326547294",
+            },
+        )
 
     def testProfanities(self):
         """Test COMMENTS_ALLOW_PROFANITIES and PROFANITIES_LIST settings"""

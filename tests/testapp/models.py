@@ -15,6 +15,7 @@ class Author(models.Model):
 
 
 class Article(models.Model):
+    uuid = models.UUIDField(editable=False, null=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     headline = models.CharField(max_length=100)
 
