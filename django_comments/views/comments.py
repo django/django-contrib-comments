@@ -71,7 +71,7 @@ def post_comment(request, next=None, using=None):
     preview = "preview" in data
 
     # Construct the comment form
-    form = django_comments.get_form()(target, data=data)
+    form = django_comments.get_form()(target, data=data, files=request.FILES)
 
     # Check security information
     if form.security_errors():
