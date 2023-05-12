@@ -14,7 +14,7 @@ CT = ContentType.objects.get_for_model
 
 
 @override_settings(
-    PASSWORD_HASHERS=('django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',),
+    PASSWORD_HASHERS=('django.contrib.auth.hashers.MD5PasswordHasher',),
     ROOT_URLCONF='testapp.urls_default',
 )
 class CommentTestCase(TestCase):
@@ -22,6 +22,16 @@ class CommentTestCase(TestCase):
     Helper base class for comment tests that need data.
     """
     fixtures = ["comment_tests"]
+
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
+        cls.user = User.objects.create(
+            username="normaluser",
+            first_name="Joe",
+            last_name="Normal",
+            email="joe.normal@example.com",
+        )
 
     def createSomeComments(self):
         # Two anonymous comments on two different objects
