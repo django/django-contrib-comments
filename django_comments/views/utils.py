@@ -8,8 +8,7 @@ from urllib.parse import urlencode
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, resolve_url
 from django.core.exceptions import ObjectDoesNotExist
-
-from ..compat import url_has_allowed_host_and_scheme
+from django.utils.http import url_has_allowed_host_and_scheme
 
 import django_comments
 

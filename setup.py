@@ -23,12 +23,10 @@ setup(
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 2.2',
-        'Framework :: Django :: 3.0',
-        'Framework :: Django :: 3.1',
         'Framework :: Django :: 3.2',
         'Framework :: Django :: 4.0',
         'Framework :: Django :: 4.1',
+        'Framework :: Django :: 4.2',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: BSD License',
@@ -43,5 +41,5 @@ setup(
     packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,
     test_suite='tests.runtests.main',
-    install_requires=['Django>=2.2']
+    install_requires=['Django>=3.2']
 )
