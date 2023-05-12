@@ -6,9 +6,10 @@ History
 Unreleased
 ----------
 
-* Confirmed support for Django 4.1.
+* Confirmed support for Django 4.1 and 4.2.
+* Dropped support for Django < 3.2.
 * Confirmed support for Python 3.10.
-* Removed support for Python 3.6.
+* Dropped support for Python 3.6.
 
 2.2.0 (2022-01-31)
 ------------------
