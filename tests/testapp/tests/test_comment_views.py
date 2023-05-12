@@ -172,16 +172,15 @@ class CommentViewTests(CommentTestCase):
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
         data['name'] = data['email'] = ''
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/post/", data, REMOTE_ADDR="1.2.3.4")
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Comment.objects.count(), 1)
         c = Comment.objects.first()
         self.assertEqual(c.ip_address, "1.2.3.4")
-        u = User.objects.get(username='normaluser')
-        self.assertEqual(c.user, u)
-        self.assertEqual(c.user_name, u.get_full_name())
-        self.assertEqual(c.user_email, u.email)
+        self.assertEqual(c.user, self.user)
+        self.assertEqual(c.user_name, self.user.get_full_name())
+        self.assertEqual(c.user_email, self.user.email)
 
     def testPostAsAuthenticatedUserWithoutFullname(self):
         """

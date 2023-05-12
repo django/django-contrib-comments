@@ -37,17 +37,5 @@
         "author" : 2,
         "headline" : "Dog Bites Man"
     }
-  },
-
-  {
-    "model" : "auth.user",
-    "pk" : 100,
-    "fields" : {
-        "username" : "normaluser",
-        "password" : "34ea4aaaf24efcbb4b30d27302f8657f",
-        "first_name": "Joe",
-        "last_name": "Normal",
-        "email": "joe.normal@example.com"
-    }
   }
 ]

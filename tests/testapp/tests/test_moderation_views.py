@@ -15,7 +15,7 @@ class FlagViewTests(CommentTestCase):
         """GET the flag view: render a confirmation page."""
         comments = self.createSomeComments()
         pk = comments[0].pk
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.get("/flag/%d/" % pk)
         self.assertTemplateUsed(response, "comments/flag.html")
 
@@ -23,7 +23,7 @@ class FlagViewTests(CommentTestCase):
         """POST the flag view: actually flag the view (nice for XHR)"""
         comments = self.createSomeComments()
         pk = comments[0].pk
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/flag/%d/" % pk)
         self.assertRedirects(response, "/flagged/?c=%d" % pk)
         c = Comment.objects.get(pk=pk)
@@ -36,7 +36,7 @@ class FlagViewTests(CommentTestCase):
         """
         comments = self.createSomeComments()
         pk = comments[0].pk
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/flag/%d/" % pk, {'next': "/go/here/"})
         self.assertRedirects(response, "/go/here/?c=%d" % pk, fetch_redirect_response=False)
 
@@ -47,7 +47,7 @@ class FlagViewTests(CommentTestCase):
         """
         comments = self.createSomeComments()
         pk = comments[0].pk
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/flag/%d/" % pk,
             {'next': "http://elsewhere/bad"})
         self.assertRedirects(response, "/flagged/?c=%d" % pk)
@@ -119,7 +119,7 @@ class DeleteViewTests(CommentTestCase):
             fetch_redirect_response=False)
 
         # Test that we return forbidden if you're logged in but don't have access.
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.get("/delete/%d/" % pk)
         self.assertEqual(response.status_code, 403)
 
@@ -132,7 +132,7 @@ class DeleteViewTests(CommentTestCase):
         comments = self.createSomeComments()
         pk = comments[0].pk
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/delete/%d/" % pk)
         self.assertRedirects(response, "/deleted/?c=%d" % pk)
         c = Comment.objects.get(pk=pk)
@@ -147,7 +147,7 @@ class DeleteViewTests(CommentTestCase):
         comments = self.createSomeComments()
         pk = comments[0].pk
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/delete/%d/" % pk, {'next': "/go/here/"})
         self.assertRedirects(response, "/go/here/?c=%d" % pk, fetch_redirect_response=False)
 
@@ -159,7 +159,7 @@ class DeleteViewTests(CommentTestCase):
         comments = self.createSomeComments()
         pk = comments[0].pk
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/delete/%d/" % pk,
             {'next': "http://elsewhere/bad"})
         self.assertRedirects(response, "/deleted/?c=%d" % pk)
@@ -201,7 +201,7 @@ class ApproveViewTests(CommentTestCase):
         )
 
         # Test that we return forbidden if you're logged in but don't have access.
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.get("/approve/%d/" % pk)
         self.assertEqual(response.status_code, 403)
 
@@ -217,7 +217,7 @@ class ApproveViewTests(CommentTestCase):
         c1.save()
 
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/approve/%d/" % c1.pk)
         self.assertRedirects(response, "/approved/?c=%d" % c1.pk)
         c = Comment.objects.get(pk=c1.pk)
@@ -234,7 +234,7 @@ class ApproveViewTests(CommentTestCase):
         c1.save()
 
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/approve/%d/" % c1.pk,
             {'next': "/go/here/"})
         self.assertRedirects(response, "/go/here/?c=%d" % c1.pk, fetch_redirect_response=False)
@@ -249,7 +249,7 @@ class ApproveViewTests(CommentTestCase):
         c1.save()
 
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.post("/approve/%d/" % c1.pk,
             {'next': "http://elsewhere/bad"})
         self.assertRedirects(response, "/approved/?c=%d" % c1.pk)
@@ -278,37 +278,36 @@ class ApproveViewTests(CommentTestCase):
 @override_settings(ROOT_URLCONF='testapp.urls_admin')
 class AdminActionsTests(CommentTestCase):
 
-    def setUp(self):
-        super().setUp()
-
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
         # Make "normaluser" a moderator
-        u = User.objects.get(username="normaluser")
-        u.is_staff = True
+        cls.user.is_staff = True
         perms = Permission.objects.filter(
             content_type__app_label='django_comments',
             codename__endswith='comment'
         )
         for perm in perms:
-            u.user_permissions.add(perm)
-        u.save()
+            cls.user.user_permissions.add(perm)
+        cls.user.save()
 
     def testActionsNonModerator(self):
         self.createSomeComments()
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.get("/admin/django_comments/comment/")
         self.assertNotContains(response, "approve_comments")
 
     def testActionsModerator(self):
         self.createSomeComments()
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.get("/admin/django_comments/comment/")
         self.assertContains(response, "approve_comments")
 
     def testActionsDisabledDelete(self):
         "Tests a CommentAdmin where 'delete_selected' has been disabled."
         self.createSomeComments()
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         response = self.client.get('/admin2/django_comments/comment/')
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, '<option value="delete_selected">')
@@ -329,7 +328,7 @@ class AdminActionsTests(CommentTestCase):
         one_comment = c1.pk
         many_comments = [c2.pk, c3.pk, c4.pk]
         makeModerator("normaluser")
-        self.client.login(username="normaluser", password="normaluser")
+        self.client.force_login(self.user)
         with translation.override('en'):
             # Test approving
             self.performActionAndCheckMessage('approve_comments', one_comment,
