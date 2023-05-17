@@ -1,3 +1,6 @@
+import shutil
+
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
@@ -22,6 +25,10 @@ class CommentTestCase(TestCase):
     Helper base class for comment tests that need data.
     """
     fixtures = ["comment_tests"]
+
+    def tearDown(self):
+        super().tearDown()
+        shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
 
     @classmethod
     def setUpTestData(cls):

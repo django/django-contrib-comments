@@ -1,5 +1,7 @@
 from django.db import models
 
+from django_comments.models import Comment
 
-class CustomComment(models.Model):
-    pass
+
+class CustomComment(Comment):
+    file = models.FileField()
