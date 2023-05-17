@@ -7,7 +7,6 @@ Adapted from django-constance, which itself was adapted from django-adminfiles.
 import os
 import sys
 import django
-from django.core.management import call_command
 
 here = os.path.dirname(os.path.abspath(__file__))
 parent = os.path.dirname(here)
