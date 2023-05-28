@@ -3,7 +3,6 @@ from django.urls import reverse
 from . import views
 
 
-
 def get_model():
     from .models import CustomComment
     return CustomComment
