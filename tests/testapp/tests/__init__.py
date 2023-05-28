@@ -7,8 +7,7 @@ from django.contrib.sites.models import Site
 from django.test import TestCase
 from django.test.utils import override_settings
 
-from django_comments.forms import CommentForm
-from django_comments.models import Comment
+from django_comments import get_model, get_form
 
 from testapp.models import Article, Author
 
@@ -42,7 +41,7 @@ class CommentTestCase(TestCase):
 
     def createSomeComments(self):
         # Two anonymous comments on two different objects
-        c1 = Comment.objects.create(
+        c1 = get_model().objects.create(
             content_type=CT(Article),
             object_pk="1",
             user_name="Joe Somebody",
@@ -51,7 +50,7 @@ class CommentTestCase(TestCase):
             comment="First!",
             site=Site.objects.get_current(),
         )
-        c2 = Comment.objects.create(
+        c2 = get_model().objects.create(
             content_type=CT(Author),
             object_pk="1",
             user_name="Joe Somebody",
@@ -73,7 +72,7 @@ class CommentTestCase(TestCase):
             is_active=True,
             is_superuser=False,
         )
-        c3 = Comment.objects.create(
+        c3 = get_model().objects.create(
             content_type=CT(Article),
             object_pk="1",
             user=user,
@@ -81,7 +80,7 @@ class CommentTestCase(TestCase):
             comment="Damn, I wanted to be first.",
             site=Site.objects.get_current(),
         )
-        c4 = Comment.objects.create(
+        c4 = get_model().objects.create(
             content_type=CT(Author),
             object_pk="2",
             user=user,
@@ -101,7 +100,7 @@ class CommentTestCase(TestCase):
         }
 
     def getValidData(self, obj):
-        f = CommentForm(obj)
+        f = get_form()(obj)
         d = self.getData()
         d.update(f.initial)
         return d
