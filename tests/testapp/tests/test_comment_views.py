@@ -1,11 +1,9 @@
 from django.conf import settings
-
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test.utils import override_settings
 
-import django_comments
-from django_comments import signals
+from django_comments import signals, get_model
 from django_comments.abstracts import COMMENT_MAX_LENGTH
 from django_comments.models import Comment
 
@@ -88,20 +86,6 @@ class CommentViewTests(CommentTestCase):
         self.assertContains(
             response, "Ensure this value has at most %d characters" % COMMENT_MAX_LENGTH
         )
-
-    @override_settings(
-        COMMENTS_APP='custom_comments',
-    )
-    def testPostCommentWithFile(self):
-        a = Article.objects.get(pk=1)
-        data = self.getValidData(a)
-        test_file = SimpleUploadedFile("test_file.txt", b"file_content")
-        data["file"] = test_file
-        response = self.client.post("/post/", data)
-        self.assertEqual(response.status_code, 302)
-        custom_comment = django_comments.get_model().objects.first()
-        self.assertTrue(custom_comment.file)
-        self.assertEqual(custom_comment.file.read(), b"file_content")
 
     def testCommentPreview(self):
         a = Article.objects.get(pk=1)
@@ -377,3 +361,18 @@ class CommentViewTests(CommentTestCase):
             '/somewhere/else/?c=%s#baz' % Comment.objects.latest('id').pk,
             fetch_redirect_response=False,
         )
+
+@override_settings(
+        COMMENTS_APP='custom_comments',
+    )
+class CustomCommentViewTests(CommentTestCase):
+    def testPostCommentWithFile(self):
+        a = Article.objects.get(pk=1)
+        data = self.getValidData(a)
+        test_file = SimpleUploadedFile("test_file.txt", b"file_content")
+        data["file"] = test_file
+        response = self.client.post("/post/", data)
+        self.assertEqual(response.status_code, 302)
+        custom_comment = get_model().objects.first()
+        self.assertTrue(custom_comment.file)
+        self.assertEqual(custom_comment.file.read(), b"file_content")
