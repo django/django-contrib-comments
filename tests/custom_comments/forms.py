@@ -1,10 +1,10 @@
-from django import forms
+from django.forms import FileField
 
 from django_comments.forms import CommentForm
 
 
 class CustomCommentForm(CommentForm):
-    file = forms.FileField()
+    file = FileField()
 
     def get_comment_create_data(self, site_id=None):
         data = super().get_comment_create_data(site_id=site_id)
