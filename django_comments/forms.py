@@ -105,7 +105,7 @@ class CommentDetailsForm(CommentSecurityForm):
     comment = forms.CharField(label=_('Comment'), widget=forms.Textarea,
                               max_length=COMMENT_MAX_LENGTH)
 
-    def get_comment_object(self, site_id=None):
+    def get_comment_object(self, site_id=None, for_concrete_model=True):
         """
         Return a new (unsaved) comment object based on the information in this
         form. Assumes that the form is already validated and will throw a
@@ -113,12 +113,23 @@ class CommentDetailsForm(CommentSecurityForm):
 
         Does not set any of the fields that would come from a Request object
         (i.e. ``user`` or ``ip_address``).
+
+        :param for_concrete_model: To change behavior of a model specifically for `django-comments` app like
+            overriding `_get_pk_val()` to use non-pk UUID field as key for comments in URL.
+
+            Django by default returns non-proxy ancestor when determining content type of proxy model.
+            With `COMMENTS_FOR_CONCRETE_MODEL=False` the `django-comments` app will pass `for_concrete_model=False`
+            argument when determining content type via `ContentType.get_for_model()` method.
         """
         if not self.is_valid():
             raise ValueError("get_comment_object may only be called on valid forms")
 
         CommentModel = self.get_comment_model()
-        new = CommentModel(**self.get_comment_create_data(site_id=site_id))
+        try:
+            create_data = self.get_comment_create_data(site_id=site_id, for_concrete_model=for_concrete_model)
+        except TypeError:  # Fallback for overrides that doesn't count with more attributes
+            create_data = self.get_comment_create_data(site_id=site_id)
+        new = CommentModel(**create_data)
         new = self.check_for_duplicate_comment(new)
 
         return new
@@ -131,14 +142,17 @@ class CommentDetailsForm(CommentSecurityForm):
         """
         return get_model()
 
-    def get_comment_create_data(self, site_id=None):
+    def get_comment_create_data(self, site_id=None, for_concrete_model=True):
         """
         Returns the dict of data to be used to create a comment. Subclasses in
         custom comment apps that override get_comment_model can override this
         method to add extra fields onto a custom comment model.
         """
         return dict(
-            content_type=ContentType.objects.get_for_model(self.target_object),
+            content_type=ContentType.objects.get_for_model(
+                self.target_object,
+                for_concrete_model=for_concrete_model,
+            ),
             object_pk=force_str(self.target_object._get_pk_val()),
             user_name=self.cleaned_data["name"],
             user_email=self.cleaned_data["email"],
