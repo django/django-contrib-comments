@@ -39,3 +39,20 @@ COMMENT_TIMEOUT
 
 The maximum comment form timeout in seconds. The default value is
 ``2 * 60 * 60`` (2 hours).
+
+
+COMMENTS_ID_OVERRIDES
+----------------------
+
+.. setting:: COMMENTS_ID_OVERRIDES
+
+A dictionary of ``{"app_label": "id_field"}`` pairs that override the
+PK used for referencing comment objects.
+
+If you want to disguise the plain IDs of your referenced model used by the comment form, you can
+use uuid field as an ID for the model. You don't have to change the model to use different PK.
+For example::
+
+    COMMENTS_ID_OVERRIDES = {
+        "myapp.MyModel": "uuid",
+    }

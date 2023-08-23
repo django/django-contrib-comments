@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.test.utils import override_settings
 
 from django_comments import signals
 from django_comments.abstracts import COMMENT_MAX_LENGTH
@@ -331,6 +332,28 @@ class CommentViewTests(CommentTestCase):
         broken_location = location + "\ufffd"
         response = self.client.get(broken_location)
         self.assertEqual(response.status_code, 200)
+
+    @override_settings(
+        COMMENTS_ID_OVERRIDES={
+            "testapp.Article": "uuid",
+        }
+    )
+    def testCommentPostWithUUID(self):
+        """
+        Tests that attempting to retrieve the location specified in the
+        post redirect, after adding some invalid data to the expected
+        querystring it ends with, doesn't cause a server error.
+        """
+        a = Article.objects.get(pk=1)
+        data = self.getValidData(a)
+        data["comment"] = "This is another comment"
+        self.assertEqual(data["object_pk"], "336384ea-b04f-4a3a-a06a-1f25a8048f8f")
+        response = self.client.post("/post/", data)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Comment.objects.count(), 1)
+        self.assertEqual(
+            Comment.objects.first().object_pk, "336384ea-b04f-4a3a-a06a-1f25a8048f8f"
+        )
 
     def testCommentNextWithQueryStringAndAnchor(self):
         """

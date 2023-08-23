@@ -27,6 +27,7 @@
     "pk" : 1,
     "fields" : {
         "author" : 1,
+        "uuid" : "336384ea-b04f-4a3a-a06a-1f25a8048f8f",
         "headline" : "Man Bites Dog"
     }
   },
@@ -35,6 +36,7 @@
     "pk" : 2,
     "fields" : {
         "author" : 2,
+        "uuid" : "d77c5d7d-1b0d-467b-814b-96697bd9a686",
         "headline" : "Dog Bites Man"
     }
   }
