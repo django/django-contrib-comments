@@ -1,7 +1,6 @@
 from django.urls import reverse
 
 from . import views
-from .forms import CustomCommentForm
 
 
 def get_model():
@@ -10,6 +9,7 @@ def get_model():
 
 
 def get_form():
+    from .forms import CustomCommentForm
     return CustomCommentForm
 
 

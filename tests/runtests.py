@@ -27,6 +27,7 @@ settings.configure(
         "testapp",
         "custom_comments",
     ],
+    MEDIA_ROOT=os.path.join(here, 'media'),
     MIDDLEWARE=(
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
