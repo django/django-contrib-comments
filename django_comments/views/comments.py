@@ -94,6 +94,7 @@ def post_comment(request, next=None, using=None):
         return render(request, template_list, {
                 "comment": form.data.get("comment", ""),
                 "form": form,
+                "target": target,
                 "next": data.get("next", next),
             },
         )
