@@ -81,8 +81,8 @@ class CommentsAdmin(admin.ModelAdmin):
             n_comments += 1
 
         msg = ngettext('%(count)s comment was successfully %(action)s.',
-                        '%(count)s comments were successfully %(action)s.',
-                        n_comments)
+                       '%(count)s comments were successfully %(action)s.',
+                       n_comments)
         self.message_user(request, msg % {'count': n_comments, 'action': done_message(n_comments)})
 
 
